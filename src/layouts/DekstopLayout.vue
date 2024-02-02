@@ -10,7 +10,7 @@ const toggleDark = useToggle(isDark);
 
 
 <template>
-  <nav id="nav" class="sticky top-0  shrink-0 h-screen border-r 2xl:w-[275px] dark:border-zinc-700">
+  <nav id="nav" class="sticky top-0 shrink-0 h-screen border-r 2xl:w-[275px] dark:border-zinc-700">
     <div class="flex flex-col h-full mx-3 justify-between">
       <div class="flex-1 flex flex-col gap-3">
         <RouterLink aria-current="page" :to="{name: 'home'}"
@@ -21,8 +21,7 @@ const toggleDark = useToggle(isDark);
           class="inline-flex items-center overflow-hidden rounded-full p-3 transition-[background-color] group-hover:bg-hover">
           <Icon :icon="isHomeActive ? 'mingcute:home-5-fill' : 'mingcute:home-5-line'" width="28"
             class="dark:text-white" />
-          <div class="ml-5 mr-4 text-xl text-dark dark:text-white max-2xl:hidden">
-            Home</div>
+          <div class="ml-5 mr-4 text-xl text-dark dark:text-white max-2xl:hidden">Home</div>
         </router-link>
         <router-link :to="{name: 'about'}" active-class="bg-white-1 dark:bg-dark-1 !font-black"
           class="inline-flex items-center overflow-hidden rounded-full p-3 transition-[background-color] group-hover:bg-hover">
