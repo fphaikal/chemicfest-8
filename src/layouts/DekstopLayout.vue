@@ -23,7 +23,19 @@ const toggleDark = useToggle(isDark);
             class="dark:text-white" />
           <div class="ml-5 mr-4 text-xl text-dark dark:text-white max-2xl:hidden">Home</div>
         </router-link>
-        <router-link :to="{name: 'about'}" active-class="bg-white-1 dark:bg-dark-1 !font-black"
+        <router-link :to="{name: 'shop'}" active-class="bg-white-1 dark:bg-dark-1 !font-black"
+          class="inline-flex items-center overflow-hidden rounded-full p-3 transition-[background-color] group-hover:bg-hover">
+          <Icon :icon="isShopActive ? 'mingcute:shopping-bag-2-fill' : 'mingcute:shopping-bag-2-line'"
+            width="28" class="dark:text-white" />
+          <div class="ml-5 mr-4 text-xl text-dark dark:text-white max-2xl:hidden">Shop</div>
+        </router-link>
+        <router-link :to="{name: 'gallery'}" active-class="bg-white-1 dark:bg-dark-1 !font-black"
+          class="inline-flex items-center overflow-hidden rounded-full p-3 transition-[background-color] group-hover:bg-hover">
+          <Icon :icon="isGalleryActive ? 'solar:gallery-bold' : 'solar:gallery-bold-duotone'"
+            width="28" class="dark:text-white" />
+          <div class="ml-5 mr-4 text-xl text-dark dark:text-white max-2xl:hidden">Gallery</div>
+        </router-link>
+        <router-link :to="{name: 'about'}" active-class="bg-white-1 dark:bg-dark-1 !font-bold"
           class="inline-flex items-center overflow-hidden rounded-full p-3 transition-[background-color] group-hover:bg-hover">
           <Icon :icon="isAboutActive ? 'material-symbols:info-rounded' : 'material-symbols:info-outline-rounded'"
             width="28" class="dark:text-white" />
@@ -58,12 +70,16 @@ export default {
     return {
       isHomeActive: false,
       isAboutActive: false,
+      isShopActive: false,
+      isGalleryActive: false,
     };
   },
   watch: {
     $route(to, from) {
       this.isHomeActive = to.name === 'home';
       this.isAboutActive = to.name === 'about';
+      this.isShopActive = to.name === 'shop';
+      this.isGalleryActive = to.name === 'gallery';
     },
   },
 };

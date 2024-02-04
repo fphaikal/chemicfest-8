@@ -10,6 +10,9 @@ export default {
         dark: "#1e2124",
         "dark-1": "#282b30",
       },
+      fontFamily: {
+        signika: ["Signika", "sans-serif"],
+      },
     },
   },
   plugins: [require("@headlessui/vue"), require("daisyui")],

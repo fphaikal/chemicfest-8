@@ -11,3 +11,9 @@ body {
 
   @apply max-w-[1630px] mx-auto dark:bg-dark bg-white  overflow-auto
 }
+
+
+@font-face {
+  font-family: "Signika";
+  src: url("../public/fonts/Signika-VariableFont_GRAD,wght.ttf");
+}
