@@ -61,8 +61,8 @@ const toggleDark = useToggle(isDark);
 
 <template>
   <section>
-    <div class="relative max-h-fit min-w-0 flex-1 p-3">
-      <div class="flex gap-3 min-h-[97vh] sm:min-h-[0vh]">
+    <div class="relative max-h-fit min-w-0 flex-1">
+      <div class="flex gap-3 min-h-[97vh] sm:min-h-[100vh] self-end">
         <div class="w-full  ">
           <div class="flex flex-col h-full justify-between">
             <RouterLink :to="{ name: 'home' }" class="text-bold font-bold text-4xl text-center text-dark dark:text-white pt-5">Chemicfest #8</RouterLink>
@@ -180,18 +180,8 @@ const toggleDark = useToggle(isDark);
             </div>
           </div>
         </div>
-        <!--
-        <!---->
-        <div class="bg-slate-50 shadow-2xl dark:bg-dark-1 w-full min-h-[97vh] rounded-3xl self-center hidden sm:flex">
-          <div class="flex flex-col self-end mx-auto h-100px">
-            <div>
-              <h1 class="text-5xl underline decoration-sky-500 font-bold text-dark dark:text-white text-center pb-20">Inovativ, Kompeten,
-                Siap Kerja</h1>
-            </div>
-            <div>
-              <img src="../assets/BA.png" class="w-auto h-[600px] self-end mx-auto" alt="">
-            </div>
-          </div>
+        <div class="w-full  self-end hidden lg:flex">
+          <img src="../assets/BA.png" class="w-auto h-[600px] self-end mx-auto" alt="">
         </div>
       </div>
     </div>

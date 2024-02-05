@@ -15,5 +15,5 @@ body {
 
 @font-face {
   font-family: "Signika";
-  src: url("../public/fonts/Signika-VariableFont_GRAD,wght.ttf");
+  src: url("/fonts/Signika-VariableFont_GRAD,wght.ttf");
 }

@@ -5,9 +5,7 @@ import { RouterLink } from "vue-router";
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
 
-
 </script>
-
 
 <template>
   <nav id="nav" class="sticky top-0 shrink-0 h-screen border-r 2xl:w-[275px] dark:border-zinc-700">
