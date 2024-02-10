@@ -1,62 +1,12 @@
 <script setup>
 import { Icon } from '@iconify/vue';
-import { ref } from 'vue'
 import { TabGroup, TabList, Tab, TabPanels, TabPanel } from '@headlessui/vue'
-
-const categories = ref({
-  Recent: [
-    {
-      id: 1,
-      title: 'Does drinking coffee make you smarter?',
-      date: '5h ago',
-      commentCount: 5,
-      shareCount: 2,
-    },
-    {
-      id: 2,
-      title: "So you've bought coffee... now what?",
-      date: '2h ago',
-      commentCount: 3,
-      shareCount: 2,
-    },
-  ],
-  Popular: [
-    {
-      id: 1,
-      title: 'Is tech making coffee better or worse?',
-      date: 'Jan 7',
-      commentCount: 29,
-      shareCount: 16,
-    },
-    {
-      id: 2,
-      title: 'The most innovative things happening in coffee',
-      date: 'Mar 19',
-      commentCount: 24,
-      shareCount: 12,
-    },
-  ],
-  Trending: [
-    {
-      id: 1,
-      title: 'Ask Me Anything: 10 answers to your questions about coffee',
-      date: '2d ago',
-      commentCount: 9,
-      shareCount: 5,
-    },
-    {
-      id: 2,
-      title: "The worst advice we've ever heard about coffee",
-      date: '4d ago',
-      commentCount: 1,
-      shareCount: 2,
-    },
-  ],
-})
 
 import { useDark, useToggle } from "@vueuse/core";
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
+
+
 </script>
 
 <template>
@@ -65,7 +15,8 @@ const toggleDark = useToggle(isDark);
       <div class="flex gap-3 min-h-[97vh] sm:min-h-[100vh] self-end">
         <div class="w-full  ">
           <div class="flex flex-col h-full justify-between">
-            <RouterLink :to="{ name: 'home' }" class="text-bold font-bold text-4xl text-center text-dark dark:text-white pt-5">Chemicfest #8</RouterLink>
+            <RouterLink :to="{ name: 'home' }"
+              class="text-bold font-bold text-4xl text-center text-dark dark:text-white pt-5">Chemicfest #8</RouterLink>
             <div>
               <TabGroup>
                 <TabList class="flex space-x-1 rounded-xl bg-dark dark:bg-dark-1 p-1 max-w-lg mx-auto shadow">
@@ -90,32 +41,30 @@ const toggleDark = useToggle(isDark);
                     <ul>
                       <li class="relative rounded-md pt-3">
                         <div class="flex flex-col ">
-                          <form class="w-full mx-auto">
+                          <form class="w-full mx-auto" @submit.prevent="handleLogin">
                             <div class="relative">
                               <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
                                 <Icon icon="ic:baseline-email" class="w-4 h-4 text-gray-500 dark:text-gray-400"
                                   aria-hidden="true" />
                               </div>
-                              <input type="email" id="email-address-icon"
+                              <input name="user" type="username" v-model="user"
                                 class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Email" required>
                             </div>
-                          </form>
-                          <form class="w-full pt-3 mx-auto">
-                            <div class="relative ">
+                            <div class="relative mt-3">
                               <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
                                 <Icon icon="mingcute:lock-fill" class="w-4 h-4 text-gray-500 dark:text-gray-400"
                                   aria-hidden="true" />
                               </div>
-                              <input type="password" id="email-address-icon"
+                              <input type="password" v-model="pass"
                                 class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Password" required>
                             </div>
+                            <div class="mx-auto text-center pt-5">
+                              <button type="submit"
+                                class="rounded-2xl py-3 px-10 inline-flex bg-dark-1 text-white hover:bg-dark">Login</button>
+                            </div>
                           </form>
-                          <div class="mx-auto pt-5">
-                            <button
-                              class="rounded-2xl py-3 px-10 w-full inline-flex bg-dark-1 text-white hover:bg-dark">Login</button>
-                          </div>
                         </div>
                       </li>
                     </ul>
@@ -188,3 +137,49 @@ const toggleDark = useToggle(isDark);
 
   </section>
 </template>
+
+<script>
+import axios from 'axios';
+import router from '../router';
+
+export default {
+  name: 'Login',
+  data() {
+    return {
+      user: '',
+      pass: '',
+    };
+  },
+  methods: {
+    async handleLogin() {
+      try {
+        const response = await axios.post('https://chemicfest.site/api/login', {
+          user: this.user,
+          pass: this.pass,
+        });
+
+        if (response.data.code === 200) {
+          document.cookie = `sessionId=${response.data.sessionId}`;
+
+          // Save user data to localStorage
+          localStorage.setItem('role', response.data.data.Role);
+          localStorage.setItem('username', response.data.data.Username);
+          localStorage.setItem('phone', response.data.data.Phone);
+          localStorage.setItem('email', response.data.data.Email);
+          localStorage.setItem('uuid', response.data.data.UUID);
+          localStorage.setItem('sessionId', response.data.data.sessionId);
+          console.log('User data saved to localStorage:', response.data.data.Role);
+  
+          console.log('Login response:', response);
+          router.push({ name: 'home' });
+        }
+
+      } catch (error) {
+        // Handle errors, such as displaying error messages to the user
+        console.error('Login error:', error);
+      }
+    },
+  },
+}
+
+</script>

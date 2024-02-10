@@ -5,6 +5,8 @@ import { RouterLink } from "vue-router";
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
 
+const isLoggedIn = !!localStorage.getItem('sessionId');
+const userName = isLoggedIn ? localStorage.getItem('username') : '';
 </script>
 
 <template>
@@ -48,12 +50,18 @@ const toggleDark = useToggle(isDark);
         </button>
       </div>
       <div class="border-t-2 py-5 dark:border-zinc-700 flex">
-        <RouterLink :to="{ name: 'login'}" class="flex my-auto bg-white-1 dark:bg-dark-1 w-full rounded-full p-3">
+        <router-link v-if="!isLoggedIn" :to="{ name: 'login'}" class="flex my-auto bg-white-1 dark:bg-dark-1 w-full rounded-full p-3">
           <div class="rounded-full flex items-center 2xl:p-2 p-0 justify-center  text-white">
             <Icon icon="icon-park-solid:people"  width="30" />
           </div>
           <div class="ml-4 mr-4 text-base text-dark dark:text-white font-semibold max-2xl:hidden self-center">Login</div>
-        </RouterLink>
+        </router-link>
+        <div v-else class="flex my-auto bg-white-1 dark:bg-dark-1 w-full rounded-full p-3">
+          <div class="rounded-full flex items-center 2xl:p-2 p-0 justify-center  text-white">
+            <Icon icon="icon-park-solid:user"  width="30" />
+          </div>
+          <div class="ml-4 mr-4 text-base text-dark dark:text-white font-semibold max-2xl:hidden self-center">{{ userName }}</div>
+        </div>
       </div>
     </div>
   </nav>
