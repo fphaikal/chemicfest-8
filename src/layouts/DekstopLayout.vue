@@ -7,6 +7,10 @@ const toggleDark = useToggle(isDark);
 
 const isLoggedIn = !!localStorage.getItem('sessionId');
 const userName = isLoggedIn ? localStorage.getItem('username') : '';
+
+const getAdmin = isLoggedIn ? localStorage.getItem('role') : '';
+
+const isAdmin = getAdmin === 'admin';
 </script>
 
 <template>
@@ -35,6 +39,12 @@ const userName = isLoggedIn ? localStorage.getItem('username') : '';
             width="28" class="dark:text-white" />
           <div class="ml-5 mr-4 text-xl text-dark dark:text-white max-2xl:hidden">Gallery</div>
         </router-link>
+        <router-link v-if="isAdmin" :to="{name: 'admin'}"  active-class="bg-white-1 dark:bg-dark-1 !font-black"
+          class="inline-flex items-center overflow-hidden rounded-full p-3 transition-[background-color] group-hover:bg-hover">
+          <Icon :icon="isGalleryActive ? 'eos-icons:admin-outlined' : 'eos-icons:admin'"
+            width="28" class="dark:text-white" />
+          <div class="ml-5 mr-4 text-xl text-dark dark:text-white max-2xl:hidden">Admin</div>
+        </router-link>
         <router-link :to="{name: 'about'}" active-class="bg-white-1 dark:bg-dark-1 !font-bold"
           class="inline-flex items-center overflow-hidden rounded-full p-3 transition-[background-color] group-hover:bg-hover">
           <Icon :icon="isAboutActive ? 'material-symbols:info-rounded' : 'material-symbols:info-outline-rounded'"
@@ -54,13 +64,17 @@ const userName = isLoggedIn ? localStorage.getItem('username') : '';
           <div class="rounded-full flex items-center 2xl:p-2 p-0 justify-center  text-white">
             <Icon icon="icon-park-solid:people"  width="30" />
           </div>
-          <div class="ml-4 mr-4 text-base text-dark dark:text-white font-semibold max-2xl:hidden self-center">Login</div>
+          <div class="ml-4 mr-4 text-base text-dark dark:text-white font-semibold max-2xl:hidden self-center ">Login</div>
         </router-link>
-        <div v-else class="flex my-auto bg-white-1 dark:bg-dark-1 w-full rounded-full p-3">
+
+        <div v-else class="flex my-auto bg-white-1 dark:bg-dark-1 w-full rounded-full p-3 dropdown dropdown-top" tabindex="0" role="button">
           <div class="rounded-full flex items-center 2xl:p-2 p-0 justify-center  text-white">
             <Icon icon="icon-park-solid:user"  width="30" />
           </div>
-          <div class="ml-4 mr-4 text-base text-dark dark:text-white font-semibold max-2xl:hidden self-center">{{ userName }}</div>
+          <div class="ml-4 mr-4 text-base text-dark dark:text-white  font-semibold max-2xl:hidden self-center">{{ userName }}</div>
+          <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-gray-50 dark:text-white dark:bg-dark-1 rounded-box w-56 mb-2">
+            <li><a @click="logout">Logout</a></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -71,6 +85,7 @@ const userName = isLoggedIn ? localStorage.getItem('username') : '';
 </template>
 
 <script>
+import axios from 'axios';
 export default {
   data() {
     return {
@@ -86,6 +101,34 @@ export default {
       this.isAboutActive = to.name === 'about';
       this.isShopActive = to.name === 'shop';
       this.isGalleryActive = to.name === 'gallery';
+    },
+  },
+  methods: {
+    async logout() {
+      const sessionId = document.cookie.match(/sessionId=([^;]+)/i)[1];
+      console.log(sessionId);
+
+      try {
+        const response = await axios.post('https://chemicfest.site/api/logout', {
+          session: sessionId,
+        });
+  
+        if (response.data.code === 200) {
+          document.cookie = 'sessionId=; expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+          console.log(response.data.message);
+
+          localStorage.removeItem('sessionId');
+          localStorage.removeItem('username');
+          localStorage.removeItem('role');
+          localStorage.removeItem('phone');
+          localStorage.removeItem('email');
+          localStorage.removeItem('uuid');
+
+          this.$router.push({ name: 'login' });
+        }
+      } catch (error) {
+        console.error(error);
+      }
     },
   },
 };

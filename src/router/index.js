@@ -6,6 +6,7 @@ import AboutView from '../pages/about.vue'
 import LoginView from '../pages/login.vue'
 import ShopView from '../pages/shop.vue'
 import GalleryView from '../pages/gallery.vue'
+import AdminView from '../pages/admin.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,6 +35,21 @@ const router = createRouter({
           path: 'about',
           name: 'about',
           component: AboutView
+        },
+        {
+          path: 'admin',
+          name: 'admin',
+          component: AdminView,
+          beforeEnter: (to, from, next) => {
+            const sessionId = localStorage.getItem('sessionId')
+            const role = localStorage.getItem('role')
+            console.log(sessionId, role)
+            if (sessionId || role === 'admin') {
+              next('/login')
+            } else {
+              next()
+            }
+          },
         },
       ] 
     },
