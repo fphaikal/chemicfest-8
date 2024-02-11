@@ -6,6 +6,11 @@ import { useDark, useToggle } from "@vueuse/core";
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
 
+const isLoggedIn = !!localStorage.getItem('sessionId');
+const userName = isLoggedIn ? localStorage.getItem('username') : '';
+const getAdmin = isLoggedIn ? localStorage.getItem('role') : '';
+
+const isAdmin = getAdmin === 'admin';
 </script>
 
 <template>
@@ -44,7 +49,7 @@ const toggleDark = useToggle(isDark);
         </div>
 
         <div class="flex flex-1 flex-col relative min-w-0 items-center">
-          <router-link to="login" active-class="active !font-semibold"
+          <router-link v-if="!isLoggedIn" :to="{ name:'login' }" active-class="active !font-semibold"
             class="relative top-1/2 h-20 w-20 shrink-0 -translate-y-1/2 rounded-full">
             <div
               class="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center">
@@ -52,6 +57,16 @@ const toggleDark = useToggle(isDark);
                 <Icon :icon="isLoginActive ?'iconamoon:profile-fill' : 'iconamoon:profile'" class="text-dark dark:text-white h-full w-full" />
               </div>
               <div class="shrink-0 text-xs dark:text-white">Profil</div>
+            </div>
+          </router-link>
+          <router-link v-else :to="{name:'profile'}" active-class="active !font-semibold"
+            class="relative top-1/2 h-20 w-20 shrink-0 -translate-y-1/2 rounded-full">
+            <div
+              class="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center">
+              <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full p-1 bg-hover">
+                <Icon :icon="isProfileActive ?'iconamoon:profile-fill' : 'iconamoon:profile'" class="text-dark dark:text-white h-full w-full" />
+              </div>
+              <div class="shrink-0 text-xs dark:text-white">{{ userName }} </div>
             </div>
           </router-link>
         </div>
@@ -62,9 +77,9 @@ const toggleDark = useToggle(isDark);
             <div
               class="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center drawer-button">
               <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full p-1 bg-hover">
-                <Icon icon="mingcute:settings-3-fill" class="text-dark dark:text-white h-full w-full" />
+                <Icon icon="mingcute:menu-fill" class="text-dark dark:text-white h-full w-full" />
               </div>
-              <div class="shrink-0 text-xs dark:text-white">Setting</div>
+              <div class="shrink-0 text-xs dark:text-white">Menu</div>
             </div>
           </label>
         </div>
@@ -81,7 +96,7 @@ export default {
     return {
       isHomeActive: false,
       isAboutActive: false,
-      isLoginActive: false,
+      isProfileActive: false,
     };
   },
   watch: {
@@ -89,6 +104,7 @@ export default {
       this.isHomeActive = to.name === 'home';
       this.isAboutActive = to.name === 'about';
       this.isLoginActive = to.name === 'login';
+      this.isProfileActive = to.name === 'profile';
     },
   },
 };

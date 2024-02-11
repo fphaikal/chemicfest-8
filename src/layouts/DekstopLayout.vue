@@ -27,21 +27,27 @@ const isAdmin = getAdmin === 'admin';
             class="dark:text-white" />
           <div class="ml-5 mr-4 text-xl text-dark dark:text-white max-2xl:hidden">Home</div>
         </router-link>
-        <router-link :to="{name: 'shop'}" active-class="bg-white-1 dark:bg-dark-1 !font-black"
+        <router-link v-if="!isAdmin" :to="{name: 'shop'}" active-class="bg-white-1 dark:bg-dark-1 !font-black"
           class="inline-flex items-center overflow-hidden rounded-full p-3 transition-[background-color] group-hover:bg-hover">
           <Icon :icon="isShopActive ? 'mingcute:shopping-bag-2-fill' : 'mingcute:shopping-bag-2-line'"
             width="28" class="dark:text-white" />
           <div class="ml-5 mr-4 text-xl text-dark dark:text-white max-2xl:hidden">Shop</div>
         </router-link>
-        <router-link :to="{name: 'gallery'}" active-class="bg-white-1 dark:bg-dark-1 !font-black"
+        <router-link v-if="!isAdmin" :to="{name: 'gallery'}" active-class="bg-white-1 dark:bg-dark-1 !font-black"
           class="inline-flex items-center overflow-hidden rounded-full p-3 transition-[background-color] group-hover:bg-hover">
           <Icon :icon="isGalleryActive ? 'solar:gallery-bold' : 'solar:gallery-bold-duotone'"
             width="28" class="dark:text-white" />
           <div class="ml-5 mr-4 text-xl text-dark dark:text-white max-2xl:hidden">Gallery</div>
         </router-link>
+        <router-link v-if="isAdmin" :to="{name: 'database'}"  active-class="bg-white-1 dark:bg-dark-1 !font-black"
+          class="inline-flex items-center overflow-hidden rounded-full p-3 transition-[background-color] group-hover:bg-hover">
+          <Icon :icon="isDatabaseActive ? 'mingcute:coin-2-fill' : 'mingcute:coin-2-line'"
+            width="28" class="dark:text-white" />
+          <div class="ml-5 mr-4 text-xl text-dark dark:text-white max-2xl:hidden">Database</div>
+        </router-link>
         <router-link v-if="isAdmin" :to="{name: 'admin'}"  active-class="bg-white-1 dark:bg-dark-1 !font-black"
           class="inline-flex items-center overflow-hidden rounded-full p-3 transition-[background-color] group-hover:bg-hover">
-          <Icon :icon="isGalleryActive ? 'eos-icons:admin-outlined' : 'eos-icons:admin'"
+          <Icon :icon="isAdminActive ? 'eos-icons:admin' : 'eos-icons:admin-outlined'"
             width="28" class="dark:text-white" />
           <div class="ml-5 mr-4 text-xl text-dark dark:text-white max-2xl:hidden">Admin</div>
         </router-link>
@@ -72,14 +78,16 @@ const isAdmin = getAdmin === 'admin';
             <Icon icon="icon-park-solid:user"  width="30" />
           </div>
           <div class="ml-4 mr-4 text-base text-dark dark:text-white  font-semibold max-2xl:hidden self-center">{{ userName }}</div>
+          
           <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow-lg bg-gray-50 dark:text-white dark:bg-dark-1 rounded-box w-56 mb-2">
+            <li><RouterLink :to="{ name: 'profile' }">Profile</RouterLink></li>
             <li><a @click="logout">Logout</a></li>
           </ul>
         </div>
       </div>
     </div>
   </nav>
-  <div class="min-w-0 flex-1 px-4">
+  <div class="min-w-0 flex-1 border-e-2 dark:border-zinc-700">
     <RouterView />
   </div>
 </template>
@@ -93,6 +101,8 @@ export default {
       isAboutActive: false,
       isShopActive: false,
       isGalleryActive: false,
+      isAdminActive: false,
+      isDatabaseActive: false,
     };
   },
   watch: {
@@ -101,6 +111,8 @@ export default {
       this.isAboutActive = to.name === 'about';
       this.isShopActive = to.name === 'shop';
       this.isGalleryActive = to.name === 'gallery';
+      this.isAdminActive = to.name === 'admin';
+      this.isDatabaseActive = to.name === 'database';
     },
   },
   methods: {

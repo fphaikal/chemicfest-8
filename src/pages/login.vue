@@ -142,13 +142,13 @@ const toggleDark = useToggle(isDark);
           <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
           <span>Silahkan Lakukan Verifikasi Akun Terlebih Dahulu</span>
         </div>
-        <div v-if="checkEmail" role="alert" class="alert alert-warning mt-2 bg-yellow-500 text-dark">
+        <div v-if="alertType" role="alert" class="alert alert-warning mt-2 bg-yellow-500 text-dark">
           <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
-          <span>Kode Berhasil Dikirim Silahkan Cek Email/Whatsapp Anda</span>
+          <span>{{ alertMessage }}</span>
         </div>
-        <div v-if="spamCode" role="alert" class="alert alert-warning mt-2 bg-yellow-500 text-dark">
+        <div v-if="wrongOtp" role="alert" class="alert alert-warning mt-2 bg-yellow-500 text-dark">
           <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
-          <span>Mohon tunggu 5 menit sebelum meminta OTP lagi</span>
+          <span>{{ wrongVerifyMessage }}</span>
         </div>
 
         <div class="py-4 flex gap-2">
@@ -205,10 +205,13 @@ export default {
         user: '',
         code: '',
       },
+      alertMessage: '',
+      alertType: false,
       verificationSuccess: false,
       verificationModal: true,
-      checkEmail: false,
-      spamCode: false,
+      wrongVerifyMessage: '',
+     
+      wrongOtp: false,
     };
   },
   methods: {
@@ -277,17 +280,19 @@ export default {
 
         if (response.data.code === 200) {
           console.log('Verify response:', response);
+          this.alertType = true;
+          this.alertMessage = 'Kode Berhasil Dikirim Silahkan Cek Email/Whatsapp Anda';
+
           this.verificationModal = false;
-          this.checkEmail = true;
-          this.spamCode = false;
         } 
         
       } catch (error) {
         // Handle errors, such as displaying error messages to the user
         if (error.response.data.code === 400) {
-          this.spamCode = true;
+          this.alertType = true;
+          this.alertMessage = 'Mohon tunggu 5 menit sebelum meminta OTP lagi';
+
           this.verificationModal = false;
-          this.checkEmail = false;
         }
         console.error('Verify error:', error);
       }
@@ -308,6 +313,17 @@ export default {
       } catch (error) {
         // Handle errors, such as displaying error messages to the user
         console.error('Verify OTP error:', error);
+        if (error.response.data.code === 400) {
+          this.alertMessage = 'OTP Kadaluwarsa Silahkan Coba Lagi';
+          this.alertType = true;
+
+          this.verificationModal = false;
+        } else if (error.response.data.code === 404) {
+          this.alertMessage = 'OTP Kadaluwarsa Silahkan Coba Lagi';
+          this.alertType = true;
+          
+          this.verificationModal = false;
+        }
       }
     }
   },
