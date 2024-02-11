@@ -72,7 +72,7 @@ const isAdmin = getAdmin === 'admin';
             <Icon icon="icon-park-solid:user"  width="30" />
           </div>
           <div class="ml-4 mr-4 text-base text-dark dark:text-white  font-semibold max-2xl:hidden self-center">{{ userName }}</div>
-          <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-gray-50 dark:text-white dark:bg-dark-1 rounded-box w-56 mb-2">
+          <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow-lg bg-gray-50 dark:text-white dark:bg-dark-1 rounded-box w-56 mb-2">
             <li><a @click="logout">Logout</a></li>
           </ul>
         </div>

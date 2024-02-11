@@ -41,10 +41,12 @@ const router = createRouter({
           name: 'admin',
           component: AdminView,
           beforeEnter: (to, from, next) => {
-            const sessionId = localStorage.getItem('sessionId')
+            const sessionId = document.cookie.match(/sessionId=([^;]+)/i)[1];
             const role = localStorage.getItem('role')
+
             console.log(sessionId, role)
-            if (sessionId || role === 'admin') {
+
+            if (sessionId && role !== 'admin') {
               next('/login')
             } else {
               next()
