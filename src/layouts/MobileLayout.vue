@@ -34,8 +34,8 @@ const isAdmin = getAdmin === 'admin';
             </div>
           </router-link>
         </div>
-        <div class="flex flex-1 flex-col relative min-w-0 items-center">
-          <router-link to="database" active-class="active !font-semibold"
+        <div v-if="isAdmin" class="flex flex-1 flex-col relative min-w-0 items-center">
+          <router-link  to="database" active-class="active !font-semibold"
             class="relative top-1/2 h-20 w-20 shrink-0 -translate-y-1/2 rounded-full">
             <div
               class="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center">
@@ -56,7 +56,7 @@ const isAdmin = getAdmin === 'admin';
               <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full p-1 bg-hover">
                 <Icon :icon="isLoginActive ?'iconamoon:profile-fill' : 'iconamoon:profile'" class="text-dark dark:text-white h-full w-full" />
               </div>
-              <div class="shrink-0 text-xs dark:text-white">Profil</div>
+              <div class="shrink-0 text-xs dark:text-white">Login</div>
             </div>
           </router-link>
           <router-link v-else :to="{name:'profile'}" active-class="active !font-semibold"
@@ -66,7 +66,7 @@ const isAdmin = getAdmin === 'admin';
               <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full p-1 bg-hover">
                 <Icon :icon="isProfileActive ?'iconamoon:profile-fill' : 'iconamoon:profile'" class="text-dark dark:text-white h-full w-full" />
               </div>
-              <div class="shrink-0 text-xs dark:text-white">{{ userName }} </div>
+              <div class="shrink-0 text-xs dark:text-white">{{ userName }}</div>
             </div>
           </router-link>
         </div>
