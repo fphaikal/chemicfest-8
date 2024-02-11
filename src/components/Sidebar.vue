@@ -4,6 +4,12 @@ import { useDark, useToggle } from "@vueuse/core";
 
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
+
+const isLoggedIn = !!localStorage.getItem('sessionId');
+
+const getAdmin = isLoggedIn ? localStorage.getItem('role') : '';
+
+const isAdmin = getAdmin === 'admin';
 </script>
 
 <template>
@@ -16,12 +22,22 @@ const toggleDark = useToggle(isDark);
       <label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay"></label>
       <ul class="menu p-4 w-80 min-h-full bg-white dark:bg-dark">
         <!-- Sidebar content here -->
-        <li><RouterLink :to="{name: 'shop'}"
+        <li v-if="!isAdmin"><RouterLink :to="{name: 'shop'}" 
             class="text-lg font-semibold dark:text-white hover:bg-white-1 dark:hover:bg-dark-1 dark:hover:text-white">Shop</RouterLink>
         </li>
-        <li><RouterLink :to="{name: 'gallery'}"
+        <li v-if="!isAdmin"><RouterLink :to="{name: 'gallery'}" 
             class="text-lg font-semibold dark:text-white hover:bg-white-1 dark:hover:bg-dark-1 dark:hover:text-white">Gallery</RouterLink>
         </li>
+        <li v-if="isAdmin"><RouterLink :to="{name: 'admin'}" 
+            class="text-lg font-semibold dark:text-white hover:bg-white-1 dark:hover:bg-dark-1 dark:hover:text-white">Admin</RouterLink>
+        </li>
+        <li v-if="isAdmin"><RouterLink :to="{name: 'database'}" 
+            class="text-lg font-semibold dark:text-white hover:bg-white-1 dark:hover:bg-dark-1 dark:hover:text-white">Database</RouterLink>
+        </li>
+        <li v-if="isAdmin"><RouterLink :to="{name: 'about'}" 
+            class="text-lg font-semibold dark:text-white hover:bg-white-1 dark:hover:bg-dark-1 dark:hover:text-white">About</RouterLink>
+        </li>
+        <div class="border-t-2 dark:border-zinc-700"></div>
         <li><a @click.prevent="logout"
             class="text-lg font-semibold dark:text-white hover:bg-white-1 dark:hover:bg-dark-1 dark:hover:text-white">Logout</a>
         </li>
