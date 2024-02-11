@@ -12,7 +12,7 @@ import { Icon } from "@iconify/vue";
       </div>
       <div class="flex mt-6 mx-8 ">
         <div class="overflow-x-auto w-full">
-            <table class="table">
+            <table v-if="users" class="table">
               <!-- head -->
               <thead>
                 <tr>
