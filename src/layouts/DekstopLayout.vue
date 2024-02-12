@@ -117,7 +117,7 @@ export default {
   },
   methods: {
     async logout() {
-      const sessionId = document.cookie.match(/sessionId=([^;]+)/i)[1];
+      const sessionId = localStorage.getItem('sessionId');
       console.log(sessionId);
 
       try {
