@@ -51,7 +51,7 @@ export default {
   name: 'Home',
   data() {
     const now = new Date();
-    const newYear = new Date('2024-05-18T07:00:00.000Z');
+    const newYear = new Date('2024-05-14T07:00:00.000Z');
 
     return {
       time: newYear - now,

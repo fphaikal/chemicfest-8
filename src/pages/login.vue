@@ -1,11 +1,11 @@
 <script setup>
+import { ref } from 'vue';
 import { Icon } from '@iconify/vue';
 import { TabGroup, TabList, Tab, TabPanels, TabPanel } from '@headlessui/vue'
 
 import { useDark, useToggle } from "@vueuse/core";
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
-
 
 </script>
 
@@ -19,7 +19,8 @@ const toggleDark = useToggle(isDark);
               class="text-bold font-bold text-4xl text-center text-dark dark:text-white pt-5">Chemicfest #8</RouterLink>
             <div>
               <TabGroup>
-                <TabList class="flex space-x-1 rounded-xl bg-dark dark:bg-dark-1 p-1 max-w-[370px] md:max-w-lg mx-auto shadow">
+                <TabList
+                  class="flex space-x-1 rounded-xl bg-dark dark:bg-dark-1 p-1 max-w-[370px] md:max-w-lg mx-auto shadow">
                   <Tab as="template" v-slot="{ selected }">
                     <button
                       :class="['w-full rounded-lg py-2.5 text-sm font-medium leading-5', 'ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2',
@@ -35,17 +36,25 @@ const toggleDark = useToggle(isDark);
                     </button>
                   </Tab>
                 </TabList>
-                
+
                 <TabPanels class="mt-2 max-w-[370px] md:max-w-lg  mx-auto">
                   <TabPanel>
                     <ul>
                       <li class="relative rounded-md pt-3">
                         <div v-if="verificationSuccess" role="alert" class="alert alert-success bg-green-500 mb-2">
-                          <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
                           <span>Akun Berhasil di Verifikasi</span>
                         </div>
                         <div v-if="alertType" role="alert" class="alert alert-error bg-red-500 mb-2">
-                          <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
                           <span>{{ alertMessage }}</span>
                         </div>
                         <div class="flex flex-col ">
@@ -110,6 +119,25 @@ const toggleDark = useToggle(isDark);
                                 class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Password" required>
                             </div>
+                            <div class="form-control mt-3">
+                              <label class="label cursor-pointer">
+                                <span class="label-text">Siswa</span> 
+                                <input v-model="selectedRole" value="siswa" type="radio" name="role" class="radio checked:bg-blue-500"/>
+                              </label>
+                            </div>
+                            <div class="form-control">
+                              <label class="label cursor-pointer">
+                                <span class="label-text">Guru</span> 
+                                <input v-model="selectedRole" value="guru" type="radio" name="role" class="radio checked:bg-blue-500" />
+                              </label>
+                            </div>
+                            <div class="form-control">
+                              <label class="label cursor-pointer">
+                                <span class="label-text">Alumni</span> 
+                                <input v-model="selectedRole" value="alumni" type="radio" name="role" class="radio checked:bg-blue-500"/>
+                              </label>
+                            </div>
+                            
                             <div class="mx-auto pt-5 text-center">
                               <button type="submit"
                                 class="rounded-2xl py-3 px-10 inline-flex bg-dark-1 text-white hover:bg-dark">Register</button>
@@ -143,15 +171,24 @@ const toggleDark = useToggle(isDark);
         <h3 class="font-bold text-lg">Verifikasi</h3>
 
         <div v-if="verificationModal" role="alert" class="alert alert-warning mt-2 bg-yellow-500 text-dark">
-          <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
           <span>Silahkan Lakukan Verifikasi Akun Terlebih Dahulu</span>
         </div>
         <div v-if="alertType" role="alert" class="alert alert-warning mt-2 bg-yellow-500 text-dark">
-          <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
           <span>{{ alertMessage }}</span>
         </div>
         <div v-if="wrongOtp" role="alert" class="alert alert-warning mt-2 bg-yellow-500 text-dark">
-          <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
           <span>{{ wrongVerifyMessage }}</span>
         </div>
 
@@ -194,6 +231,7 @@ export default {
   name: 'Login',
   data() {
     return {
+      selectedRole: null,
       login: {
         user: '',
         pass: '',
@@ -214,7 +252,7 @@ export default {
       verificationSuccess: false,
       verificationModal: true,
       wrongVerifyMessage: '',
-     
+
       wrongOtp: false,
     };
   },
@@ -246,7 +284,6 @@ export default {
         }
 
       } catch (error) {
-        // Handle errors, such as displaying error messages to the user
         console.error('Login error:', error);
         if (error.response.data.code === 403) {
           document.getElementById('my_modal_2').showModal();
@@ -258,13 +295,16 @@ export default {
     },
 
     async handleRegister() {
+      console.log('Selected Role:', this.selectedRole); // Tambahkan ini untuk mencetak nilai selectedRole
       try {
+
         const response = await axios.post('https://chemicfest.site/api/register', {
           name: this.register.name,
           username: this.register.username,
           email: this.register.email,
           phone: this.register.phone.toString(),
           password: this.register.password,
+          role: this.selectedRole,
         });
 
         if (response.data.code === 200) {
@@ -272,9 +312,9 @@ export default {
           router.push({ name: 'login' });
         }
 
-
       } catch (error) {
         // Handle errors, such as displaying error messages to the user
+        console.log(this.selectedRole)
         console.error('Register error:', error);
       }
     },
@@ -291,8 +331,8 @@ export default {
           this.alertMessage = 'Kode Berhasil Dikirim Silahkan Cek Email/Whatsapp Anda';
 
           this.verificationModal = false;
-        } 
-        
+        }
+
       } catch (error) {
         // Handle errors, such as displaying error messages to the user
         if (error.response.data.code === 400) {
@@ -328,7 +368,7 @@ export default {
         } else if (error.response.data.code === 404) {
           this.alertMessage = 'OTP Kadaluwarsa Silahkan Coba Lagi';
           this.alertType = true;
-          
+
           this.verificationModal = false;
         }
       }
