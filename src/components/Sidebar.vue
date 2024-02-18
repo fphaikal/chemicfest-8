@@ -38,7 +38,7 @@ const isAdmin = getAdmin === 'admin';
             class="text-lg font-semibold dark:text-white hover:bg-white-1 dark:hover:bg-dark-1 dark:hover:text-white">About</RouterLink>
         </li>
         <div class="border-t-2 dark:border-zinc-700"></div>
-        <li><a @click.prevent="logout"
+        <li v-if="isLoggedIn"><a @click.prevent="logout"
             class="text-lg font-semibold dark:text-white hover:bg-white-1 dark:hover:bg-dark-1 dark:hover:text-white">Logout</a>
         </li>
         <li><a><button @click="toggleDark()" class="  dark:text-white text-dark justify-between">

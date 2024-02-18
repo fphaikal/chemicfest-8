@@ -22,6 +22,7 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
       <button>close</button>
     </form>
   </dialog>
+  
   <div :class="isLoggedIn ? 'relative min-h-screen min-w-0 flex-1 xl:pb-20 overflow-hidden' : 'relative min-h-screen min-w-0 flex-1 '">
     <div id="thumbnail" class="bg-contain  bg-fixed" style="background-image: url(image.png);">
       <img class="w-full md:w-2/3 mx-auto"
@@ -30,7 +31,7 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
     </div>
     <section id="title" class="flex flex-col gap-3">
       <div class="flex mx-10 mt-8 gap-3 border-b-2 dark:border-zinc-700">
-        <div class="w-3/4 flex flex-col gap-3">
+        <div class="w-full sm:w-3/4 flex flex-col gap-3">
           <h1 class="text-5xl font-bold text-dark dark:text-white antialiased">CHEMICFEST #8 | ENJOY THE SHOW, LET THE RETRO FLOW</h1>
           <div class="flex flex-row gap-3">
             <Icon class="my-auto text-dark dark:text-white" width="28" icon="carbon:location-filled" />
@@ -52,7 +53,7 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
             <button class="w-fit text-blue-500" onclick="info.showModal()">Baca Selengkapnya</button>
           </div>
         </div>
-        <div class="w-1/4 flex flex-col">
+        <div class="w-1/4 sm:flex flex-col hidden">
           <p class="text-xl text-right font-base text-dark dark:text-white antialiased">Mulai Dari</p>
           <h1 v-if="getRole === 'guru' || getRole=== 'alumni'" class="text-4xl text-right font-bold text-dark dark:text-white  antialiased">IDR {{ priceOnline}} </h1>
           <h1 v-else class="text-4xl text-right font-bold text-dark dark:text-white  antialiased">IDR {{ priceOffline || 25000 }} </h1>
@@ -93,8 +94,8 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
         </div>
       </div>
     </section>
-    <div v-if="!isLoggedIn" class="toast toast-center w-1/2">
-      <div role="alert" class="alert shadow-lg bg-white dark:bg-dark dark:text-white">
+    <div v-if="!isLoggedIn" class="toast toast-center w-1/2 sm:w-fit">
+      <div role="alert" class="alert shadow-lg bg-white dark:bg-dark dark:text-white flex mb-20 sm:mb-0">
         <Icon width="28" icon="mingcute:bling-fill" />
         <div>
           <h3 class="font-bold">Tertarik Dengan Produk Ini!</h3>
