@@ -7,6 +7,7 @@ import LoginView from '../pages/login.vue'
 import ShopView from '../pages/shop.vue'
 import GalleryView from '../pages/gallery.vue'
 import ProfileView from '../pages/profile.vue'
+import BuyTicketView from '../pages/buyTicket.vue'
 
 // Admin Page
 import AdminView from '../pages/admin/admin.vue'
@@ -41,6 +42,13 @@ const router = createRouter({
           component: AboutView
         },
         {
+          name: 'buyticket',
+          path: 'buyticket',
+          component: BuyTicketView,
+        },
+
+        // Need to be protected
+        {
           path: 'admin',
           name: 'admin',
           component: AdminView,
@@ -70,6 +78,7 @@ const router = createRouter({
             }
           },
         },
+        
         {
           path: 'profile',
           name: 'profile',
@@ -83,7 +92,7 @@ const router = createRouter({
               next('/login')
             }
           },
-        }
+        },
       ] 
     },
     {

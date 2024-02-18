@@ -13,6 +13,7 @@ const getAll = async (endpoint) => {
     return null;
   }
 };
+
 const getUser = async (endpoint) => {
   try {
     const response = await apiCf.get(`get/user?${endpoint}`);

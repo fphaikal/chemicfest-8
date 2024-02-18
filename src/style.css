@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   -ms-overflow-style: none;
   /* for Internet Explorer, Edge */
