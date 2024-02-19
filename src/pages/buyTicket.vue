@@ -32,22 +32,21 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
     <section id="title" class="flex flex-col gap-3">
       <div class="flex mx-10 mt-8 gap-3 border-b-2 dark:border-zinc-700">
         <div class="w-full sm:w-3/4 flex flex-col gap-3">
-          <h1 class="text-5xl font-bold text-dark dark:text-white antialiased">CHEMICFEST #8 | ENJOY THE SHOW, LET THE RETRO FLOW</h1>
-          <div class="flex flex-row gap-3">
-            <Icon class="my-auto text-dark dark:text-white" width="28" icon="carbon:location-filled" />
-            <div class="my-auto text-lg text-gray-500">Auditorium RRI, Jl. Affandi No.37, Mrican, Caturtunggal, Kec.
-              Depok, Kabupaten Sleman, Yogyakarta</div>
+          <h1 class=" text-3xl lg:text-5xl font-bold text-dark dark:text-white antialiased">CHEMICFEST #8 | ENJOY THE SHOW, LET THE RETRO FLOW</h1>
+          <div class="flex flex-row gap-3 w-full">
+            <Icon class="my-auto text-dark dark:text-white w-1/6 md:w-fit" width="28" icon="carbon:location-filled" />
+            <div class="my-auto text-md lg:text-lg text-gray-500 w-5/4 md:w-fit">Auditorium RRI, Jl. Affandi No.37, Mrican, Caturtunggal</div>
           </div>
           <div class="flex flex-row gap-3">
-            <Icon class="my-auto text-dark dark:text-white" width="28" icon="uil:schedule" />
-            <div class="my-auto text-lg text-gray-500">14 Mei 2024</div>
+            <Icon class="my-auto text-dark dark:text-white mx-1 md:mx-0" width="28" icon="uil:schedule" />
+            <div class="my-auto text-md lg:text-lg text-gray-500">14 Mei 2024</div>
           </div>
           <div class="flex flex-col gap-3 p-4 bg-gray-50 dark:bg-dark-1 dark:text-white rounded-2xl mb-5">
             <h1 class="text-2xl font-semibold ">Info Penting</h1>
             <p>
               - General Sales dimulai pada 1 April 2024 pukul 14.00 WIB
             </p>
-            <p class="truncate w-80">
+            <p class="truncate w-68 md:w-80 ">
               - Maks. pembelian 1 tiket per akun/ID per show day.
             </p>
             <button class="w-fit text-blue-500" onclick="info.showModal()">Baca Selengkapnya</button>
@@ -61,9 +60,10 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
         </div>
       </div>
     </section>
+
     <section v-if="isLoggedIn" id="detail" class="flex flex-col gap-3 h-screen" >
-      <div class="flex flex-row mx-10 mt-5 gap-3">
-        <div class="flex flex-col w-3/4 gap-3">
+      <div class="flex flex-col md:flex-row mx-10 mt-5 gap-3">
+        <div class="flex flex-col w-full md:w-3/4 gap-3">
           <h2 class="font-semibold text-3xl dark:text-white">Paket</h2>
           <div class="flex flex-col gap-3 bg-gray-50 dark:bg-dark-1 rounded-3xl p-3">
             <div class="flex flex-col p-5 bg-white dark:bg-dark rounded-2xl w-full dark:text-white">
@@ -75,7 +75,7 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
                 <button class="btn my-auto ms-auto bg-dark text-white rounded-2xl hover:text-dark dark:text-dark dark:bg-white dark:hover:bg-dark dark:hover:text-white">Pesan</button>
               </div>
             </div>
-            <div v-if="getRole === 'guru' || getRole=== 'alumni'" class="flex flex-col p-5 bg-white rounded-2xl w-full">
+            <div v-if="getRole === 'guru' || getRole=== 'alumni'" class="flex flex-col p-5 bg-white dark:bg-dark dark:text-white text-dark rounded-2xl w-full">
               <h1 class="text-xl font-semibold">Tiket Online</h1>
               <p class="text-gray-500">Tidak Bisa Refund | Konfirmasi Instan</p>
               <div class="border-b-2 mt-4 mb-4 dark:border-zinc-700"></div>
@@ -86,7 +86,7 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
             </div>
           </div>
         </div>
-        <div class="flex flex-col w-1/4 gap-3">
+        <div class="flex flex-col w-full md:w-1/4 gap-3">
           <h2 class="font-semibold text-3xl dark:text-white">Venue</h2>
           <div class="flex bg-gray-50 dark:bg-dark-1 rounded-3xl p-3">
             <p class="text-md mx-auto font-base text-dark dark:text-white">Soon</p>
@@ -102,6 +102,15 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
           <div class="text-xs">Silahkan Login Untuk Mengetahui Lebih Lanjut</div>
         </div>
         <RouterLink to="login" class="btn btn-md rounded-lg">Login</RouterLink>
+      </div>
+    </div>
+    <div v-else class="toast toast-center w-full sm:w-fit">
+      <div role="alert" class="alert shadow-lg bg-white dark:bg-dark dark:text-white flex mb-20 sm:mb-0">
+        <div>
+          <h3 class="font-base text-left">Mulai Dari</h3>
+          <div class="text-2xl text-left font-bold">IDR {{ priceOnline }}</div>
+        </div>
+        <a href="#detail" class="btn btn-md rounded-lg ms-auto">Beli Tiket</a>
       </div>
     </div>
   </div>
