@@ -3,6 +3,7 @@ import './style.css'
 import App from './App.vue'
 import router from './router'
 import { Icon } from '@iconify/vue';
+import "video.js/dist/video-js.css"
 
 const app = createApp(App)
 app.use(router)

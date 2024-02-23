@@ -4,6 +4,10 @@ const apiCf = axios.create({
   baseURL: "https://chemicfest.site/api/",
 });
 
+const jkt48Api = axios.create({
+  baseURL: "https://api.crstlnz.my.id/api/",
+});
+
 const getAll = async (endpoint) => {
   try {
     const response = await apiCf.get(endpoint);
@@ -24,4 +28,13 @@ const getUser = async (endpoint) => {
   }
 };
 
-export { getUser, getAll };
+const getJKT48 = async (endpoint) => {
+  try {
+    const response = await jkt48Api.get(endpoint);
+    return response.data;
+  } catch (error) {
+    console.error("Gagal mengambil data dari API Member:", error);
+    return null;
+  }
+};
+export { getUser, getAll, getJKT48 };

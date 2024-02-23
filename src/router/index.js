@@ -9,9 +9,16 @@ import GalleryView from '../pages/gallery.vue'
 import ProfileView from '../pages/profile.vue'
 import BuyTicketView from '../pages/buyTicket.vue'
 
+import WatchView from '../pages/watch/index.vue'
+
 // Admin Page
 import AdminView from '../pages/admin/admin.vue'
 import DatabaseView from '../pages/admin/database.vue'
+
+//JKT48
+import JKT48Layout from '/layouts/jkt48.vue'
+import JKT48HomeView from '../pages/jkt48/home.vue'
+import JKT48MemberView from '../pages/jkt48/member.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -93,7 +100,30 @@ const router = createRouter({
             }
           },
         },
+        {
+          path: 'watch',
+          name: 'watch',
+          component: WatchView
+        }
+
       ] 
+    },
+    {
+      path: '/jkt48',
+      name: 'jkt48Layout',
+      component: JKT48Layout,
+      children: [
+        {
+          path: '',
+          name: 'jkt48',
+          component: JKT48HomeView
+        },
+        {
+          path: 'member',
+          name: 'member',
+          component: JKT48MemberView
+        },
+      ]
     },
     {
       path: '/login',
