@@ -29,6 +29,9 @@ const toggleDark = useToggle(isDark);
         </router-link>
       </div>
       <div class="justify-center my-3 flex flex-col gap-2">
+        <RouterLink :to="{ name:'home' }" class="py-2 rounded-full flex items-center p-2 justify-center dark:text-white text-dark shadow-lg  bg-slate-50 dark:bg-dark-1">
+          Back To CF#8
+        </RouterLink>
         <button @click="toggleDark()"
           class="py-2 rounded-full flex items-center p-2 justify-center dark:text-white text-dark shadow-lg  bg-slate-50 dark:bg-dark-1">
           <Icon icon="mingcute:sun-line" width="25" class="dark:!hidden" />
@@ -36,10 +39,7 @@ const toggleDark = useToggle(isDark);
         </button>
       </div>
       <div class="border-t-2 py-5 dark:border-zinc-700 flex">
-        <div class="flex my-auto bg-white-1 dark:bg-dark-1 w-full rounded-full p-3">
-          <div class="rounded-full flex items-center 2xl:p-2 p-0 justify-center  text-white">
-            <Icon icon="icon-park-solid:people"  width="30" />
-          </div>
+        <div class="flex my-auto bg-white-1 dark:bg-dark-1 w-full rounded-full p-3 justify-center">
           <div class="ml-4 mr-4 text-base text-dark dark:text-white font-semibold max-2xl:hidden self-center ">Made by FPH</div>
         </div>
       </div>
@@ -51,7 +51,6 @@ const toggleDark = useToggle(isDark);
 </template>
 
 <script>
-import axios from 'axios';
 export default {
   data() {
     return {

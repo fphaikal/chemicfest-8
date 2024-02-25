@@ -8,7 +8,7 @@
       </div>
       <div class="flex p-8">
         <div class="grid grid-cols-3 md:grid-cols-5 gap-2 md:gap-4">
-          <div  v-for="m in member" class="card bg-slate-50 dark:bg-dark-1">
+          <div  v-for="m in member" class="card bg-slate-50 dark:bg-dark-1 ">
             <div class="p-4 md:p-10">
               <figure class="aspect-square rounded-full shadow-lg"><img class=" bg-cover" :src="m.img_alt" :alt="m.name" /></figure>
             </div>
