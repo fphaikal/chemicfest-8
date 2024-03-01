@@ -5,9 +5,10 @@ import formatNumber from '../../utils/formatNumber'
 import recentLive from '../../components/jkt48/recentLive.vue';
 </script>
 <template>
-  <div class="relative min-w-0 flex-1 xl:pb-20 p-4">
-    <div class="flex flex-row w-full gap-3">
-      <div class="flex flex-col w-2/3 gap-5">
+  <div class="relative min-w-0 flex-1 xl:pb-20">
+    <img class=" h-1/2" src="https://pbs.twimg.com/media/F8K8jzMawAEhy3a.jpg:large" alt="">
+    <div class="flex flex-col sm:flex-row w-full gap-3 p-4">
+      <div class="flex flex-col w-full sm:w-2/3 gap-5">
         <div class="flex flex-col gap-2">
           <h1 class="text-2xl font-bold text-dark dark:text-white">LIVE</h1>
           <div v-if="liveStatus" class="grid grid-cols-4 bg-gray-50 dark:bg-dark-1 rounded-xl p-3 gap-3">
@@ -36,16 +37,15 @@ import recentLive from '../../components/jkt48/recentLive.vue';
         </div>
         <div class="flex flex-col gap-3">
           <h1 class="text-2xl font-bold text-dark dark:text-white">Jadwal Theater</h1>
-          <div class="grid grid-cols-2 gap-2">
-            <div v-for="s in scheduleJkt48" class="bg-gray-50 dark:bg-dark-1 p-4 flex-row flex gap-3 rounded-xl">
-              <img v-if="s.setlist.name === 'Cara Meminum Ramune'" class="w-1/3 rounded-lg" src="https://res.cloudinary.com/haymzm4wp/image/upload/v1702404446/nixg3rixpjpom3xa0ivf.jpg" alt="">
-              <img v-if="s.setlist.name === 'Ingin Bertemu'" class="w-1/3 rounded-lg" src="https://res.cloudinary.com/haymzm4wp/image/upload/v1697224788/uploads/w2zvghwk8tocey8e8xhv.jpg" alt="">
-              <img v-if="s.setlist.name === 'Aturan Anti Cinta'" class="w-1/3 rounded-lg" src="https://res.cloudinary.com/dpki2zhmf/image/fetch/f_webp,q_80,ar_0.75,w_320,c_fill/https://res.cloudinary.com/haymzm4wp/image/upload/v1697224423/uploads/ghr39gkb0fgdejhpppgq.jpg" alt="">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <RouterLink :to="'jkt48/theater/' + s._id" v-for="s in scheduleJkt48" class="bg-gray-50 dark:bg-dark-1 p-4 flex-row flex gap-3 rounded-xl">
+              <img class="w-1/3 rounded-lg" :src="getSetlistImg(s.setlist.name)" alt="">
+
               <div class="flex flex-col gap-1">
                 <h1 class="text-dark dark:text-white font-base text-xl">{{ s.setlist.name }}</h1>
                 <p class="text-dark dark:text-white font-light text-md">{{ formatLongDate(s.showDate) }}</p>
               </div>
-            </div>
+            </RouterLink>
           </div>
         </div> 
       </div>
@@ -65,7 +65,13 @@ export default {
       live: [],
       idnLive: [],
       scheduleJkt48: [],
-      recent: null
+
+      setlistImg: {
+        "Cara Meminum Ramune": "https://res.cloudinary.com/haymzm4wp/image/upload/v1702404446/nixg3rixpjpom3xa0ivf.jpg",
+        "Ingin Bertemu": "https://res.cloudinary.com/haymzm4wp/image/upload/v1697224788/uploads/w2zvghwk8tocey8e8xhv.jpg",
+        "Aturan Anti Cinta": "https://res.cloudinary.com/dpki2zhmf/image/fetch/f_webp,q_80,ar_0.75,w_320,c_fill/https://res.cloudinary.com/haymzm4wp/image/upload/v1697224423/uploads/ghr39gkb0fgdejhpppgq.jpg",
+        "Tunas di Balik Seragam": "https://res.cloudinary.com/dpki2zhmf/image/fetch/f_webp,q_80,ar_0.75,w_320,c_fill/https://res.cloudinary.com/haymzm4wp/image/upload/v1698750703/uploads/yvryrdy47ppla0nidn3m.webp",
+      },
     };
   },
   async mounted() {
@@ -74,6 +80,8 @@ export default {
 
     const scheduleJkt48 = await getScheduleJKT48('schedules?isOnWeekSchedule=true');
     this.scheduleJkt48 = scheduleJkt48;
+
+    console.log(this.scheduleJkt48[0].setlist.name);
   },
   methods: {
     async loadLive() {
@@ -83,9 +91,15 @@ export default {
       this.idnLive = idnLive;
 
       this.liveStatus = this.live.length > 0 || this.idnLive.length > 0;
-      const allRecentLive = await getJKT48("recent?sort=date&page=1&filter=all&order=-1&group=jkt48&type=all&perpage=30");
-      this.recent = allRecentLive.recents;
-    }
+    },
+    getSetlistImg(data) {
+      if(data in this.setlistImg) {
+        return this.setlistImg[data];
+      } else {
+        return data;
+      }
+    },
+    
   }
 };
 </script>

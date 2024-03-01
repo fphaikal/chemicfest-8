@@ -30,7 +30,9 @@ const toggleDark = useToggle(isDark);
       </div>
       <div class="justify-center my-3 flex flex-col gap-2">
         <RouterLink :to="{ name:'home' }" class="py-2 rounded-full flex items-center p-2 justify-center dark:text-white text-dark shadow-lg  bg-slate-50 dark:bg-dark-1">
-          Back To CF#8
+          <Icon icon="ion:chevron-back-circle" width="25"/>
+          <span class="ms-2 max-2xl:hidden">Back To CF#8</span>
+          
         </RouterLink>
         <button @click="toggleDark()"
           class="py-2 rounded-full flex items-center p-2 justify-center dark:text-white text-dark shadow-lg  bg-slate-50 dark:bg-dark-1">

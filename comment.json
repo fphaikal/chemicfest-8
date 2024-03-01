@@ -1,1865 +1,311 @@
-[
-    {
-        "id": "65ce68e51dd7aa2c8c0ca57a",
-        "name": "Stella Cornelia",
-        "generation": "gen1-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596790/jkt48/stage48/Stella%20Cornelia.jpg"
-    },
-    {
-        "id": "65ce68e51dd7aa2c8c0ca57c",
-        "name": "Delima Rizky",
-        "generation": "gen1-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596764/jkt48/stage48/Delima%20Rizky.jpg"
-    },
-    {
-        "id": "65ce68e51dd7aa2c8c0ca57e",
-        "name": "Alissa Galliamova",
-        "generation": "gen1-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596755/jkt48/stage48/Alissa%20Galliamova.jpg"
-    },
-    {
-        "id": "65ce68e51dd7aa2c8c0ca580",
-        "name": "Aninditha Rahma Cahyadi",
-        "generation": "gen3-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1618384244/jkt48/kabesha/04.jpg"
-    },
-    {
-        "id": "65ce68e51dd7aa2c8c0ca582",
-        "name": "Fransisca Saraswati Puspa Dewi",
-        "generation": "gen3-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689800189/uploads/j6zvscw0qlas4syyws9f.jpg"
-    },
-    {
-        "id": "65ce68e51dd7aa2c8c0ca584",
-        "name": "Maria Genoveva Natalia Desy Purnamasari Gunawan",
-        "generation": "gen3-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659599728/jkt48/stage48/Maria_Genoveva_ox7sbv.webp"
-    },
-    {
-        "id": "65ce68e51dd7aa2c8c0ca586",
-        "name": "Nadhifa Salsabila",
-        "generation": "gen3-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689876300/uploads/e1uu35q65pj0p9s1fx2l.jpg"
-    },
-    {
-        "id": "65ce68e51dd7aa2c8c0ca588",
-        "name": "Cindy Hapsari Maharani Pujiantoro Putri",
-        "generation": "gen4-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1618384244/jkt48/kabesha/07.jpg"
-    },
-    {
-        "id": "65ce68e51dd7aa2c8c0ca58a",
-        "name": "Tan Zhi Hui Celine",
-        "generation": "gen4-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1618384247/jkt48/kabesha/31.jpg"
-    },
-    {
-        "id": "65ce68e51dd7aa2c8c0ca58c",
-        "name": "Eve Antoinette Ichwan",
-        "generation": "gen5-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1618384247/jkt48/kabesha/10.jpg"
-    },
-    {
-        "id": "65ce68e51dd7aa2c8c0ca58e",
-        "name": "Denise Caroline",
-        "generation": "gen6-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596894/jkt48/stage48/Denise%20Caroline.jpg"
-    },
-    {
-        "id": "65ce68e51dd7aa2c8c0ca590",
-        "name": "Gita Sekar Andarini",
-        "generation": "gen6-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689799894/uploads/malhywirjwy76a209iih.jpg"
-    },
-    {
-        "id": "65ce68e51dd7aa2c8c0ca592",
-        "name": "Aurel Mayori",
-        "generation": "gen7-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596906/jkt48/stage48/Aurel%20Mayori.jpg"
-    },
-    {
-        "id": "65ce68e51dd7aa2c8c0ca594",
-        "name": "Mutiara Azzahra",
-        "generation": "gen7-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689800138/uploads/mo72tzdhlmrzabvfpgdq.jpg"
-    },
-    {
-        "id": "65ce68e51dd7aa2c8c0ca596",
-        "name": "Dwi Putri Bonita",
-        "generation": "gen2-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689855153/uploads/w4wfcjp6xxfaewjnix84.jpg"
-    },
-    {
-        "id": "65ce68e51dd7aa2c8c0ca598",
-        "name": "Natalia",
-        "generation": "gen2-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596807/jkt48/stage48/Natalia.jpg"
-    },
-    {
-        "id": "65ce68e51dd7aa2c8c0ca59a",
-        "name": "Alycia Ferryana",
-        "generation": "gen3-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596826/jkt48/stage48/Alycia%20Ferryana.jpg"
-    },
-    {
-        "id": "65ce68e51dd7aa2c8c0ca59c",
-        "name": "Elaine Hartanto",
-        "generation": "gen3-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596833/jkt48/stage48/Elaine%20Hartanto.jpg"
-    },
-    {
-        "id": "65ce68e51dd7aa2c8c0ca59e",
-        "name": "Ni Made Ayu Vania Aurellia",
-        "generation": "gen3-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659602970/jkt48/stage48/Aurel_RCTI_2B_2020_huc6a0.webp"
-    },
-    {
-        "id": "65ce68e51dd7aa2c8c0ca5a0",
-        "name": "Shania Gracia",
-        "generation": "gen3-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689799941/uploads/ruedqifz12t6hxlsatuq.jpg"
-    },
-    {
-        "id": "65ce68e51dd7aa2c8c0ca5a2",
-        "name": "Sofia Meifaliani",
-        "generation": "gen3-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596849/jkt48/stage48/Sofia%20Meifaliani.jpg"
-    },
-    {
-        "id": "65ce68e51dd7aa2c8c0ca5a4",
-        "name": "Made Devi Ranita Ningtara",
-        "generation": "gen4-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596863/jkt48/stage48/Made%20Devi%20Ranita%20Ningtara.jpg"
-    },
-    {
-        "id": "65ce68e51dd7aa2c8c0ca5a6",
-        "name": "Ruth Damayanti Sitanggang",
-        "generation": "gen5-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596887/jkt48/stage48/Ruth%20Damayanti%20Sitanggang.jpg"
-    },
-    {
-        "id": "65ce68e51dd7aa2c8c0ca5a8",
-        "name": "Rinanda Syahputri",
-        "generation": "gen6-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596900/jkt48/stage48/Rinanda%20Syahputri.jpg"
-    },
-    {
-        "id": "65ce68e51dd7aa2c8c0ca5aa",
-        "name": "Rifa Fatmasari",
-        "generation": "gen7-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596915/jkt48/stage48/Rifa%20Fatmasari.jpg"
-    },
-    {
-        "id": "65ce68e51dd7aa2c8c0ca5ac",
-        "name": "Pamela Krysanthe",
-        "generation": "gen8-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596928/jkt48/stage48/Pamela%20Krysanthe.jpg"
-    },
-    {
-        "id": "65ce68e51dd7aa2c8c0ca5ae",
-        "name": "Zahra Nur",
-        "generation": "gen8-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1618384247/jkt48/kabesha/33.jpg"
-    },
-    {
-        "id": "65ce68e51dd7aa2c8c0ca5b0",
-        "name": "Iris Vevina Prasetio",
-        "generation": "gen9-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689855318/uploads/pedgstbfqtvz8nhvapiv.jpg"
-    },
-    {
-        "id": "65ce68e61dd7aa2c8c0ca5b2",
-        "name": "Nabila Gusmarlia",
-        "generation": "gen9-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659602091/jkt48/stage48/Nabila-Gusmarlia-p_jtcsnp.jpg"
-    },
-    {
-        "id": "65ce68e61dd7aa2c8c0ca5b4",
-        "name": "Gabriela Abigail Mewengkang",
-        "generation": "gen10-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689799835/uploads/b2mpdd2dkujuahoceshw.jpg"
-    },
-    {
-        "id": "65ce68e61dd7aa2c8c0ca5b6",
-        "name": "Takajo Aki",
-        "generation": "gen1-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596934/jkt48/stage48/Takajo%20Aki.jpg"
-    },
-    {
-        "id": "65ce68e61dd7aa2c8c0ca5b8",
-        "name": "Jessica Veranda",
-        "generation": "gen1-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596775/jkt48/stage48/Jessica%20Veranda.jpg"
-    },
-    {
-        "id": "65ce68e61dd7aa2c8c0ca5ba",
-        "name": "Cindy Yuvia",
-        "generation": "gen2-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659597969/jkt48/stage48/Cindy_Yuvia.webp"
-    },
-    {
-        "id": "65ce68e61dd7aa2c8c0ca5bc",
-        "name": "Lidya Maulida Djuhandar",
-        "generation": "gen2-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596803/jkt48/stage48/Lidya%20Maulida%20Djuhandar.jpg"
-    },
-    {
-        "id": "65ce68e61dd7aa2c8c0ca5be",
-        "name": "Thalia Ivanka Elizabeth",
-        "generation": "gen2-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596823/jkt48/stage48/Thalia%20Ivanka%20Elizabeth.jpg"
-    },
-    {
-        "id": "65ce68e61dd7aa2c8c0ca5c0",
-        "name": "Amanda Dwi Arista",
-        "generation": "gen3-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596827/jkt48/stage48/Amanda%20Dwi%20Arista.jpg"
-    },
-    {
-        "id": "65ce68e61dd7aa2c8c0ca5c2",
-        "name": "Nina Hamidah",
-        "generation": "gen3-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596844/jkt48/stage48/Nina%20Hamidah.jpg"
-    },
-    {
-        "id": "65ce68e61dd7aa2c8c0ca5c4",
-        "name": "Shaffa Nabila",
-        "generation": "gen3-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689855759/uploads/ls6sqxujzk6nnil7uwoy.jpg"
-    },
-    {
-        "id": "65ce68e61dd7aa2c8c0ca5c6",
-        "name": "Christi",
-        "generation": "gen4-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596859/jkt48/stage48/Christi.jpg"
-    },
-    {
-        "id": "65ce68e61dd7aa2c8c0ca5c8",
-        "name": "Graciella Ruth Wiranto",
-        "generation": "gen6-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596898/jkt48/stage48/Graciella%20Ruth%20Wiranto.jpg"
-    },
-    {
-        "id": "65ce68e61dd7aa2c8c0ca5ca",
-        "name": "Angelina Christy",
-        "generation": "gen7-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689799808/uploads/pkxbl3bcgw91dkop39bv.jpg"
-    },
-    {
-        "id": "65ce68e61dd7aa2c8c0ca5cc",
-        "name": "Gabriel Angelina",
-        "generation": "gen7-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596912/jkt48/stage48/Gabriel%20Angelina.jpg"
-    },
-    {
-        "id": "65ce68e61dd7aa2c8c0ca5ce",
-        "name": "Eriena Kartika",
-        "generation": "gen8-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689855272/uploads/nuqzpw4fwcoofyilfkdc.jpg"
-    },
-    {
-        "id": "65ce68e61dd7aa2c8c0ca5d0",
-        "name": "Lulu Salsabila",
-        "generation": "gen8-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689800059/uploads/r2qjcvpat8obgey5bom4.jpg"
-    },
-    {
-        "id": "65ce68e61dd7aa2c8c0ca5d2",
-        "name": "Shinta Devi",
-        "generation": "gen9-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659602472/jkt48/stage48/Shinta-Devi-p_qxzjvn.jpg"
-    },
-    {
-        "id": "65ce68e61dd7aa2c8c0ca5d4",
-        "name": "Aurellia",
-        "generation": "gen10-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689800021/uploads/nsvagffsbnpkq642kurr.jpg"
-    },
-    {
-        "id": "65ce68e61dd7aa2c8c0ca5d6",
-        "name": "Fahira",
-        "generation": "gen1-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596769/jkt48/stage48/Fahira.jpg"
-    },
-    {
-        "id": "65ce68e61dd7aa2c8c0ca5d8",
-        "name": "Nabilah Ratna Ayu Azalia",
-        "generation": "gen1-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596778/jkt48/stage48/Nabilah%20Ratna%20Ayu%20Azalia.jpg"
-    },
-    {
-        "id": "65ce68e61dd7aa2c8c0ca5da",
-        "name": "Shinta Naomi",
-        "generation": "gen2-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596819/jkt48/stage48/Shinta%20Naomi.jpg"
-    },
-    {
-        "id": "65ce68e61dd7aa2c8c0ca5dc",
-        "name": "Anggie Putri Kurniasari",
-        "generation": "gen3-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596829/jkt48/stage48/Anggie%20Putri%20Kurniasari.jpg"
-    },
-    {
-        "id": "65ce68e61dd7aa2c8c0ca5de",
-        "name": "Farina Yogi Devani",
-        "generation": "gen3-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596834/jkt48/stage48/Farina%20Yogi%20Devani.jpg"
-    },
-    {
-        "id": "65ce68e61dd7aa2c8c0ca5e0",
-        "name": "Sri Lintang",
-        "generation": "gen4-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596868/jkt48/stage48/Sri%20Lintang.jpg"
-    },
-    {
-        "id": "65ce68e61dd7aa2c8c0ca5e2",
-        "name": "Citra Ayu Pranajaya Wibrado",
-        "generation": "gen5-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596873/jkt48/stage48/Citra%20Ayu%20Pranajaya%20Wibrado.jpg"
-    },
-    {
-        "id": "65ce68e61dd7aa2c8c0ca5e4",
-        "name": "Gabryela Marcelina",
-        "generation": "gen5-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596878/jkt48/stage48/Gabryela%20Marcelina.jpg"
-    },
-    {
-        "id": "65ce68e61dd7aa2c8c0ca5e6",
-        "name": "Jessica Chandra",
-        "generation": "gen7-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689799985/uploads/fdxosrullpoygof5rlvc.jpg"
-    },
-    {
-        "id": "65ce68e61dd7aa2c8c0ca5e8",
-        "name": "Viona Fadrin",
-        "generation": "gen7-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596917/jkt48/stage48/Viona%20Fadrin.jpg"
-    },
-    {
-        "id": "65ce68e61dd7aa2c8c0ca5ea",
-        "name": "Flora Shafiq",
-        "generation": "gen8-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689799862/uploads/hczpn1lmce5cquhfzr6z.jpg"
-    },
-    {
-        "id": "65ce68e61dd7aa2c8c0ca5ec",
-        "name": "Keisya Ramadhani",
-        "generation": "gen8-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596926/jkt48/stage48/Keisya%20Ramadhani.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca5ee",
-        "name": "Caithlyn Gwyneth",
-        "generation": "gen9-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659600201/jkt48/stage48/Chaitlyn-Gwyneth-p_ryt3ea.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca5f0",
-        "name": "Olivia Payten",
-        "generation": "gen9-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689855679/uploads/eocevizq1gklgw13rckn.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca5f2",
-        "name": "Jennifer Rachel Natasya",
-        "generation": "gen2-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596802/jkt48/stage48/Jennifer%20Rachel%20Natasya.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca5f4",
-        "name": "Octi Sevpin",
-        "generation": "gen2-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689855661/uploads/frwf2zlg0goqnuvtcljs.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca5f6",
-        "name": "Stephanie Pricilla Indarto Putri",
-        "generation": "gen3-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596851/jkt48/stage48/Stephanie%20Pricilla%20Indarto%20Putri.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca5f8",
-        "name": "Zebi Magnolia Fawwaz",
-        "generation": "gen3-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596856/jkt48/stage48/Zebi%20Magnolia%20Fawwaz.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca5fa",
-        "name": "Violeta Burhan",
-        "generation": "gen5-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596890/jkt48/stage48/Violeta%20Burhan.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca5fc",
-        "name": "Ariella Calista Ichwan",
-        "generation": "gen6-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1618384244/jkt48/kabesha/05.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca5fe",
-        "name": "Erika Ebisawa Kuswan",
-        "generation": "gen6-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596895/jkt48/stage48/Erika%20Ebisawa%20Kuswan.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca600",
-        "name": "Nabila Fitriana",
-        "generation": "gen7-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596914/jkt48/stage48/Nabila%20Fitriana.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca602",
-        "name": "Gabriella Stevany",
-        "generation": "gen8-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596924/jkt48/stage48/Gabriella%20Stevany.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca604",
-        "name": "Reva Fidela",
-        "generation": "gen8-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689796762/uploads/irqlb2wi9paeaoyfwvns.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca606",
-        "name": "Umega Maulana",
-        "generation": "gen8-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596932/jkt48/stage48/Umega%20Maulana.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca608",
-        "name": "Putri Elzahra",
-        "generation": "gen9-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659603025/jkt48/stage48/Putri-Elzahra-p_wgygpa.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca60a",
-        "name": "Naura Safinatunnajah",
-        "generation": "gen10-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689855633/uploads/byqrvw1ovv49zykh5fjq.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca60c",
-        "name": "Della Delila",
-        "generation": "gen2-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596797/jkt48/stage48/Della%20Delila.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca60e",
-        "name": "Putri Farin Kartika",
-        "generation": "gen3-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596847/jkt48/stage48/Putri%20Farin%20Kartika.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca610",
-        "name": "Shani Indira Natio",
-        "generation": "gen3-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689800178/uploads/guomkmghbjtneyx7bggu.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca612",
-        "name": "Chintya Hanindhitakirana Wirawan",
-        "generation": "gen5-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596874/jkt48/stage48/Chintya%20Hanindhitakirana%20Wirawan.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca614",
-        "name": "Febriola Sinambela",
-        "generation": "gen7-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689800147/uploads/pykmznyj873jbxvrntbj.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca616",
-        "name": "Amirah Fatin",
-        "generation": "gen8-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1618384245/jkt48/kabesha/02.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca618",
-        "name": "Amanda Puspita Sukma Mulyadewi",
-        "generation": "gen10-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689796776/uploads/iaggio0hn3xt7lrj1tuy.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca61a",
-        "name": "Gabriela Margareth Warouw",
-        "generation": "gen1-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1618384246/jkt48/kabesha/17.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca61c",
-        "name": "Nozawa Rena",
-        "generation": "gen1-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596780/jkt48/stage48/Nozawa%20Rena.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca61e",
-        "name": "Alicia Chanzia",
-        "generation": "gen2-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596792/jkt48/stage48/Alicia%20Chanzia.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca620",
-        "name": "Ratu Vienny Fitrilya",
-        "generation": "gen2-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596815/jkt48/stage48/Ratu%20Vienny%20Fitrilya.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca622",
-        "name": "Riskha Fairunissa",
-        "generation": "gen2-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689855728/uploads/j3adwtda0iopyt5m9l8r.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca624",
-        "name": "Pipit Ananda",
-        "generation": "gen3-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596846/jkt48/stage48/Pipit%20Ananda.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca626",
-        "name": "Helma Sonya",
-        "generation": "gen5-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596881/jkt48/stage48/Helma%20Sonya.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca628",
-        "name": "Kandiya Rafa Maulidita",
-        "generation": "gen6-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596899/jkt48/stage48/Kandiya%20Rafa%20Maulidita.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca62a",
-        "name": "Dhea Angelia",
-        "generation": "gen7-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1618384244/jkt48/kabesha/09.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca62c",
-        "name": "Adzana Shaliha",
-        "generation": "gen9-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689796791/uploads/k7qhwneatmid8jljoaqf.jpg"
-    },
-    {
-        "id": "65ce68e71dd7aa2c8c0ca62e",
-        "name": "Kathrina Irene",
-        "generation": "gen9-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689799999/uploads/fqhhbfwtsvtsmhvgybzi.jpg"
-    },
-    {
-        "id": "65ce68e81dd7aa2c8c0ca630",
-        "name": "Devi Kinal Putri",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596766/jkt48/stage48/Devi%20Kinal%20Putri.png"
-    },
-    {
-        "id": "65ce68e81dd7aa2c8c0ca632",
-        "name": "Ghaida Farisya",
-        "generation": "gen1-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596771/jkt48/stage48/Ghaida%20Farisya.jpg"
-    },
-    {
-        "id": "65ce68e81dd7aa2c8c0ca634",
-        "name": "Neneng Rosediana",
-        "generation": "gen1-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596779/jkt48/stage48/Neneng%20Rosediana.jpg"
-    },
-    {
-        "id": "65ce68e81dd7aa2c8c0ca636",
-        "name": "Sendy Ariani",
-        "generation": "gen1-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596784/jkt48/stage48/Sendy%20Ariani.jpg"
-    },
-    {
-        "id": "65ce68e81dd7aa2c8c0ca638",
-        "name": "Fakhriyani Shafariyanti",
-        "generation": "gen2-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596798/jkt48/stage48/Fakhriyani%20Shafariyanti.jpg"
-    },
-    {
-        "id": "65ce68e81dd7aa2c8c0ca63a",
-        "name": "Nadhifa Karimah",
-        "generation": "gen2-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659602870/jkt48/stage48/110px-Nadhifa_karimah_ezd8d8.jpg"
-    },
-    {
-        "id": "65ce68e81dd7aa2c8c0ca63c",
-        "name": "Nurhalima Oktavianti",
-        "generation": "gen2-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596811/jkt48/stage48/Nurhalima%20Oktavianti.jpg"
-    },
-    {
-        "id": "65ce68e81dd7aa2c8c0ca63e",
-        "name": "Rona Anggreani",
-        "generation": "gen2-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596816/jkt48/stage48/Rona%20Anggreani.jpg"
-    },
-    {
-        "id": "65ce68e81dd7aa2c8c0ca640",
-        "name": "Syahfira Angela Nurhaliza",
-        "generation": "gen3-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596852/jkt48/stage48/Syahfira%20Angela%20Nurhaliza.jpg"
-    },
-    {
-        "id": "65ce68e81dd7aa2c8c0ca642",
-        "name": "Zahra Yuriva Dermawan",
-        "generation": "gen4-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596869/jkt48/stage48/Zahra%20Yuriva%20Dermawan.jpg"
-    },
-    {
-        "id": "65ce68e81dd7aa2c8c0ca644",
-        "name": "Hasyakyla Utami Kusumawardhani",
-        "generation": "gen5-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596879/jkt48/stage48/Hasyakyla%20Utami%20Kusumawardhani.jpg"
-    },
-    {
-        "id": "65ce68e81dd7aa2c8c0ca646",
-        "name": "Ayana Shahab",
-        "generation": "gen1-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596757/jkt48/stage48/Ayana%20Shahab.jpg"
-    },
-    {
-        "id": "65ce68e81dd7aa2c8c0ca648",
-        "name": "Rezky Wiranti Dhike",
-        "generation": "gen1-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659603193/jkt48/stage48/Dhike15_m704f9.webp"
-    },
-    {
-        "id": "65ce68e81dd7aa2c8c0ca64a",
-        "name": "Annisa Athia",
-        "generation": "gen2-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596794/jkt48/stage48/Annisa%20Athia.jpg"
-    },
-    {
-        "id": "65ce68e81dd7aa2c8c0ca64c",
-        "name": "Novinta Dhini",
-        "generation": "gen2-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596810/jkt48/stage48/Novinta%20Dhini.jpg"
-    },
-    {
-        "id": "65ce68e81dd7aa2c8c0ca64e",
-        "name": "Priscillia Sari Dewi",
-        "generation": "gen2-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596813/jkt48/stage48/Priscillia%20Sari%20Dewi.jpg"
-    },
-    {
-        "id": "65ce68e81dd7aa2c8c0ca650",
-        "name": "Thalia",
-        "generation": "gen2-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596822/jkt48/stage48/Thalia.jpg"
-    },
-    {
-        "id": "65ce68e81dd7aa2c8c0ca652",
-        "name": "Milenia Christien Glory Goenawan",
-        "generation": "gen3-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596842/jkt48/stage48/Milenia%20Christien%20Glory%20Goenawan.jpg"
-    },
-    {
-        "id": "65ce68e81dd7aa2c8c0ca654",
-        "name": "Jinan Safa Safira",
-        "generation": "gen4-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1618384247/jkt48/kabesha/23.jpg"
-    },
-    {
-        "id": "65ce68e81dd7aa2c8c0ca656",
-        "name": "Elizabeth Gloria Setiawan",
-        "generation": "gen5-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596877/jkt48/stage48/Elizabeth%20Gloria%20Setiawan.jpg"
-    },
-    {
-        "id": "65ce68e81dd7aa2c8c0ca658",
-        "name": "Puti Nadhira Azalia",
-        "generation": "gen5-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596884/jkt48/stage48/Puti%20Nadhira%20Azalia.jpg"
-    },
-    {
-        "id": "65ce68e81dd7aa2c8c0ca65a",
-        "name": "Amanda Priscella",
-        "generation": "gen6-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596892/jkt48/stage48/Amanda%20Priscella.jpg"
-    },
-    {
-        "id": "65ce68e81dd7aa2c8c0ca65c",
-        "name": "Calista Lea",
-        "generation": "gen7-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596907/jkt48/stage48/Calista%20Lea.jpg"
-    },
-    {
-        "id": "65ce68e81dd7aa2c8c0ca65e",
-        "name": "Chalista Ellysia",
-        "generation": "gen9-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659599934/jkt48/stage48/Chalista_Ellysia_fodmmn.jpg"
-    },
-    {
-        "id": "65ce68e81dd7aa2c8c0ca660",
-        "name": "Abieza Syabira",
-        "generation": "gen10-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659599847/jkt48/stage48/Abieza_Syabira_dac2xy.webp"
-    },
-    {
-        "id": "65ce68e81dd7aa2c8c0ca662",
-        "name": "Indira Putri Seruni",
-        "generation": "gen10-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689799975/uploads/vwfujgkcnwj1bxvuqltt.jpg"
-    },
-    {
-        "id": "65ce68e81dd7aa2c8c0ca664",
-        "name": "Cleopatra",
-        "generation": "gen1-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596762/jkt48/stage48/Cleopatra.jpg"
-    },
-    {
-        "id": "65ce68e81dd7aa2c8c0ca666",
-        "name": "Feni Fitriyanti",
-        "generation": "gen3-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689799842/uploads/cxgfijqcfzghl1tzukfw.jpg"
-    },
-    {
-        "id": "65ce68e81dd7aa2c8c0ca668",
-        "name": "Indah Permata Sari",
-        "generation": "gen3-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596836/jkt48/stage48/Indah%20Permata%20Sari.jpg"
-    },
-    {
-        "id": "65ce68e81dd7aa2c8c0ca66a",
-        "name": "Michelle Christo Kusnadi",
-        "generation": "gen3-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596841/jkt48/stage48/Michelle%20Christo%20Kusnadi.jpg"
-    },
-    {
-        "id": "65ce68e81dd7aa2c8c0ca66c",
-        "name": "Fidly Immanda Azzahra",
-        "generation": "gen4-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596860/jkt48/stage48/Fidly%20Immanda%20Azzahra.jpg"
-    },
-    {
-        "id": "65ce68e81dd7aa2c8c0ca66e",
-        "name": "Erika Sintia",
-        "generation": "gen6-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596896/jkt48/stage48/Erika%20Sintia.jpg"
-    },
-    {
-        "id": "65ce68e91dd7aa2c8c0ca670",
-        "name": "Febrina Diponegoro",
-        "generation": "gen7-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596910/jkt48/stage48/Febrina%20Diponegoro.jpg"
-    },
-    {
-        "id": "65ce68e91dd7aa2c8c0ca672",
-        "name": "Freya Jayawardana",
-        "generation": "gen7-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689799878/uploads/jpbiydpkrbqivj2l0mfp.jpg"
-    },
-    {
-        "id": "65ce68e91dd7aa2c8c0ca674",
-        "name": "Jesslyn Callista",
-        "generation": "gen7-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689799991/uploads/kywothulucjmgo4pe000.jpg"
-    },
-    {
-        "id": "65ce68e91dd7aa2c8c0ca676",
-        "name": "Cornelia Vanisa",
-        "generation": "gen8-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689800163/uploads/f9ioizmusqyvyj6ibkuy.jpg"
-    },
-    {
-        "id": "65ce68e91dd7aa2c8c0ca678",
-        "name": "Fiony Alveria",
-        "generation": "gen8-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689799853/uploads/pouyi6e11g0z0ciwb5pv.jpg"
-    },
-    {
-        "id": "65ce68e91dd7aa2c8c0ca67a",
-        "name": "Allisa Astri",
-        "generation": "gen1-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596754/jkt48/stage48/Allisa%20Astri.jpg"
-    },
-    {
-        "id": "65ce68e91dd7aa2c8c0ca67c",
-        "name": "Intania Pratama Ilham",
-        "generation": "gen1-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596773/jkt48/stage48/Intania%20Pratama%20Ilham.jpg"
-    },
-    {
-        "id": "65ce68e91dd7aa2c8c0ca67e",
-        "name": "Sonya Pandarmawan",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596789/jkt48/stage48/Sonya%20Pandarmawan.jpg"
-    },
-    {
-        "id": "65ce68e91dd7aa2c8c0ca680",
-        "name": "Melody Nurramdhani Laksani",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596777/jkt48/stage48/Melody%20Nurramdhani%20Laksani.jpg"
-    },
-    {
-        "id": "65ce68e91dd7aa2c8c0ca682",
-        "name": "Dellia Erdita",
-        "generation": "gen2-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689855083/uploads/rsvwo5shaz2gbxmclh9h.jpg"
-    },
-    {
-        "id": "65ce68e91dd7aa2c8c0ca684",
-        "name": "Rica Leyona",
-        "generation": "gen1-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596782/jkt48/stage48/Rica%20Leyona.jpg"
-    },
-    {
-        "id": "65ce68e91dd7aa2c8c0ca686",
-        "name": "Intar Putri Kariina",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596799/jkt48/stage48/Intar%20Putri%20Kariina.jpg"
-    },
-    {
-        "id": "65ce68e91dd7aa2c8c0ca688",
-        "name": "Noella Sisterina",
-        "generation": "gen2-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596808/jkt48/stage48/Noella%20Sisterina.jpg"
-    },
-    {
-        "id": "65ce68e91dd7aa2c8c0ca68a",
-        "name": "Olivia Robberecht",
-        "generation": "gen2-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596812/jkt48/stage48/Olivia%20Robberecht.jpg"
-    },
-    {
-        "id": "65ce68e91dd7aa2c8c0ca68c",
-        "name": "Triarona Kusuma",
-        "generation": "gen3-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596854/jkt48/stage48/Triarona%20Kusuma.jpg"
-    },
-    {
-        "id": "65ce68e91dd7aa2c8c0ca68e",
-        "name": "Jennifer Hanna",
-        "generation": "gen2-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596801/jkt48/stage48/Jennifer%20Hanna.jpg"
-    },
-    {
-        "id": "65ce68e91dd7aa2c8c0ca690",
-        "name": "Nadila Cindi Wantari",
-        "generation": "gen2-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596806/jkt48/stage48/Nadila%20Cindi%20Wantari.jpg"
-    },
-    {
-        "id": "65ce68e91dd7aa2c8c0ca692",
-        "name": "Adhisty Zara",
-        "generation": "gen5-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596870/jkt48/stage48/Adhisty%20Zara.jpg"
-    },
-    {
-        "id": "65ce68e91dd7aa2c8c0ca694",
-        "name": "Putri Cahyaning Anggraini",
-        "generation": "gen6-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689855701/uploads/pwalv3n5wo6urkiesvyu.jpg"
-    },
-    {
-        "id": "65ce68e91dd7aa2c8c0ca696",
-        "name": "Aiko Harumi",
-        "generation": "gen7-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596904/jkt48/stage48/Aiko%20Harumi.jpg"
-    },
-    {
-        "id": "65ce68e91dd7aa2c8c0ca698",
-        "name": "Sinka Juliani",
-        "generation": "gen2-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596820/jkt48/stage48/Sinka%20Juliani.jpg"
-    },
-    {
-        "id": "65ce68e91dd7aa2c8c0ca69a",
-        "name": "Ayu Safira Oktaviani",
-        "generation": "gen3-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596831/jkt48/stage48/Ayu%20Safira%20Oktaviani.jpg"
-    },
-    {
-        "id": "65ce68e91dd7aa2c8c0ca69c",
-        "name": "Kezia Putri Andinta",
-        "generation": "gen3-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596837/jkt48/stage48/Kezia%20Putri%20Andinta.jpg"
-    },
-    {
-        "id": "65ce68e91dd7aa2c8c0ca69e",
-        "name": "Helisma Putri",
-        "generation": "gen7-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689799817/uploads/i3lrvelwshof1mhemi11.jpg"
-    },
-    {
-        "id": "65ce68e91dd7aa2c8c0ca6a0",
-        "name": "Marsha Lenathea",
-        "generation": "gen9-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689800100/uploads/d9dwg3unugklbzx3gug2.jpg"
-    },
-    {
-        "id": "65ce68e91dd7aa2c8c0ca6a2",
-        "name": "Amanina Afiqah",
-        "generation": "gen8-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596918/jkt48/stage48/Amanina%20Afiqah.jpg"
-    },
-    {
-        "id": "65ce68e91dd7aa2c8c0ca6a4",
-        "name": "Tiara Sasi",
-        "generation": "gen9-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689855793/uploads/cmfnzduiyuj5truv02ct.jpg"
-    },
-    {
-        "id": "65ce68e91dd7aa2c8c0ca6a6",
-        "name": "Chikano Rina",
-        "generation": "gen5-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596937/jkt48/stage48/Chikano%20Rina.jpg"
-    },
-    {
-        "id": "65ce68e91dd7aa2c8c0ca6a8",
-        "name": "Beby Chaesara Anadila",
-        "generation": "gen1-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596759/jkt48/stage48/Beby%20Chaesara%20Anadila.jpg"
-    },
-    {
-        "id": "65ce68e91dd7aa2c8c0ca6aa",
-        "name": "Dena Siti Rohyati",
-        "generation": "gen2-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689855119/uploads/db76ynbuvpevnztrjj0w.jpg"
-    },
-    {
-        "id": "65ce68e91dd7aa2c8c0ca6ac",
-        "name": "Frieska Anastasia Laksani",
-        "generation": "gen1-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596770/jkt48/stage48/Frieska%20Anastasia%20Laksani.jpg"
-    },
-    {
-        "id": "65ce68e91dd7aa2c8c0ca6ae",
-        "name": "Andela Yuwono",
-        "generation": "gen3-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659599579/jkt48/stage48/Andela_Yuwono_pg9tg7.webp"
-    },
-    {
-        "id": "65ce68ea1dd7aa2c8c0ca6b0",
-        "name": "Martha Graciela",
-        "generation": "gen3-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596839/jkt48/stage48/Martha%20Graciela.jpg"
-    },
-    {
-        "id": "65ce68ea1dd7aa2c8c0ca6b2",
-        "name": "Siti Gayatri",
-        "generation": "gen1-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596786/jkt48/stage48/Siti%20Gayatri.png"
-    },
-    {
-        "id": "65ce68ea1dd7aa2c8c0ca6b4",
-        "name": "Diani Amalia Ramadhani",
-        "generation": "gen5-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596875/jkt48/stage48/Diani%20Amalia%20Ramadhani.jpg"
-    },
-    {
-        "id": "65ce68ea1dd7aa2c8c0ca6b6",
-        "name": "Viviyona Apriani",
-        "generation": "gen2-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596824/jkt48/stage48/Viviyona%20Apriani.jpg"
-    },
-    {
-        "id": "65ce68ea1dd7aa2c8c0ca6b8",
-        "name": "Rissanda Putri Tuarissa",
-        "generation": "gen5-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596886/jkt48/stage48/Rissanda%20Putri%20Tuarissa.jpg"
-    },
-    {
-        "id": "65ce68ea1dd7aa2c8c0ca6ba",
-        "name": "Rizka Khalila",
-        "generation": "gen3-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596848/jkt48/stage48/Rizka%20Khalila.jpg"
-    },
-    {
-        "id": "65ce68ea1dd7aa2c8c0ca6bc",
-        "name": "Shalza Grasita",
-        "generation": "gen6-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596903/jkt48/stage48/Shalza%20Grasita.jpg"
-    },
-    {
-        "id": "65ce68ea1dd7aa2c8c0ca6be",
-        "name": "Regina Angelina",
-        "generation": "gen5-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596885/jkt48/stage48/Regina%20Angelina.jpg"
-    },
-    {
-        "id": "65ce68ea1dd7aa2c8c0ca6c0",
-        "name": "Azizi Asadel",
-        "generation": "gen7-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689800198/uploads/ccwsp4lzfsq0fuxqgash.jpg"
-    },
-    {
-        "id": "65ce68ea1dd7aa2c8c0ca6c2",
-        "name": "Jihan Miftahul Jannah",
-        "generation": "gen6-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689855580/uploads/ebb3qlyykx154rqvfuxw.png"
-    },
-    {
-        "id": "65ce68ea1dd7aa2c8c0ca6c4",
-        "name": "Jesslyn Elly",
-        "generation": "gen10-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689800090/uploads/vxugjxgyovvdimn1tue2.jpg"
-    },
-    {
-        "id": "65ce68ea1dd7aa2c8c0ca6c6",
-        "name": "Riska Amelia Putri",
-        "generation": "gen6-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596902/jkt48/stage48/Riska%20Amelia%20Putri.jpg"
-    },
-    {
-        "id": "65ce68ea1dd7aa2c8c0ca6c8",
-        "name": "Devytha Maharani",
-        "generation": "gen8-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596923/jkt48/stage48/Devytha%20Maharani.jpg"
-    },
-    {
-        "id": "65ce68ea1dd7aa2c8c0ca6ca",
-        "name": "Reva Adriana",
-        "generation": "gen8-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596930/jkt48/stage48/Reva%20Adriana.jpg"
-    },
-    {
-        "id": "65ce68ea1dd7aa2c8c0ca6cc",
-        "name": "Salma Annisa",
-        "generation": "gen8-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596931/jkt48/stage48/Salma%20Annisa.jpg"
-    },
-    {
-        "id": "65ce68ea1dd7aa2c8c0ca6ce",
-        "name": "Raisha Syifa Wardhana",
-        "generation": "gen10-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689800171/uploads/r9ps8vuvtzkvczgcsfzl.jpg"
-    },
-    {
-        "id": "65ce68ea1dd7aa2c8c0ca6d0",
-        "name": "Cindy Gulla",
-        "generation": "gen1-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596760/jkt48/stage48/Cindy%20Gulla.jpg"
-    },
-    {
-        "id": "65ce68ea1dd7aa2c8c0ca6d2",
-        "name": "Diasta Priswarini",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596767/jkt48/stage48/Diasta%20Priswarini.jpg"
-    },
-    {
-        "id": "65ce68ea1dd7aa2c8c0ca6d4",
-        "name": "Althea Callista",
-        "generation": "gen2-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596793/jkt48/stage48/Althea%20Callista.jpg"
-    },
-    {
-        "id": "65ce68ea1dd7aa2c8c0ca6d6",
-        "name": "Saktia Oktapyani",
-        "generation": "gen2-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596818/jkt48/stage48/Saktia%20Oktapyani.jpg"
-    },
-    {
-        "id": "65ce68ea1dd7aa2c8c0ca6d8",
-        "name": "Jessica Berliana Ekawardani",
-        "generation": "gen4-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596862/jkt48/stage48/Jessica%20Berliana%20Ekawardani.jpg"
-    },
-    {
-        "id": "65ce68ea1dd7aa2c8c0ca6da",
-        "name": "Melati Putri Rahel Sesilia",
-        "generation": "gen4-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596866/jkt48/stage48/Melati%20Putri%20Rahel%20Sesilia.jpg"
-    },
-    {
-        "id": "65ce68ea1dd7aa2c8c0ca6dc",
-        "name": "Anggita Destiana Dewi",
-        "generation": "gen5-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596872/jkt48/stage48/Anggita%20Destiana%20Dewi.jpg"
-    },
-    {
-        "id": "65ce68ea1dd7aa2c8c0ca6de",
-        "name": "Nurhayati",
-        "generation": "gen5-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596882/jkt48/stage48/Nurhayati.jpg"
-    },
-    {
-        "id": "65ce68ea1dd7aa2c8c0ca6e0",
-        "name": "Sania Julia Montolalu",
-        "generation": "gen5-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596889/jkt48/stage48/Sania%20Julia%20Montolalu.jpg"
-    },
-    {
-        "id": "65ce68ea1dd7aa2c8c0ca6e2",
-        "name": "Anastasya Narwastu Tety Handuran",
-        "generation": "gen6-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596893/jkt48/stage48/Anastasya%20Narwastu%20Tety%20Handuran.jpg"
-    },
-    {
-        "id": "65ce68ea1dd7aa2c8c0ca6e4",
-        "name": "Febi Komaril",
-        "generation": "gen7-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596908/jkt48/stage48/Febi%20Komaril.jpg"
-    },
-    {
-        "id": "65ce68ea1dd7aa2c8c0ca6e6",
-        "name": "Cindy Nugroho",
-        "generation": "gen8-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596921/jkt48/stage48/Cindy%20Nugroho.jpg"
-    },
-    {
-        "id": "65ce68ea1dd7aa2c8c0ca6e8",
-        "name": "Danessa Valerie Hertanto",
-        "generation": "gen10-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659600954/jkt48/stage48/Danessa_JKT48_Audition_2020_igyxqq.webp"
-    },
-    {
-        "id": "65ce68ea1dd7aa2c8c0ca6ea",
-        "name": "Nakagawa Haruka",
-        "generation": "gen1-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596935/jkt48/stage48/Nakagawa%20Haruka.jpg"
-    },
-    {
-        "id": "65ce68eb1dd7aa2c8c0ca6ec",
-        "name": "Jessica Vania",
-        "generation": "gen1-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596774/jkt48/stage48/Jessica%20Vania.jpg"
-    },
-    {
-        "id": "65ce68eb1dd7aa2c8c0ca6ee",
-        "name": "Shania Junianatha",
-        "generation": "gen1-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596785/jkt48/stage48/Shania%20Junianatha.jpg"
-    },
-    {
-        "id": "65ce68eb1dd7aa2c8c0ca6f0",
-        "name": "Sonia Natalia",
-        "generation": "gen1-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596788/jkt48/stage48/Sonia%20Natalia.jpg"
-    },
-    {
-        "id": "65ce68eb1dd7aa2c8c0ca6f2",
-        "name": "Chikita Ravenska Mamesah",
-        "generation": "gen3-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596832/jkt48/stage48/Chikita%20Ravenska%20Mamesah.jpg"
-    },
-    {
-        "id": "65ce68eb1dd7aa2c8c0ca6f4",
-        "name": "Yansen Indiani",
-        "generation": "gen3-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596855/jkt48/stage48/Yansen%20Indiani.jpg"
-    },
-    {
-        "id": "65ce68eb1dd7aa2c8c0ca6f6",
-        "name": "Adriani Elisabeth",
-        "generation": "gen4-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596858/jkt48/stage48/Adriani%20Elisabeth.jpg"
-    },
-    {
-        "id": "65ce68eb1dd7aa2c8c0ca6f8",
-        "name": "Mega Suryani",
-        "generation": "gen4-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596865/jkt48/stage48/Mega%20Suryani.jpg"
-    },
-    {
-        "id": "65ce68eb1dd7aa2c8c0ca6fa",
-        "name": "Kanya Caya",
-        "generation": "gen7-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689855605/uploads/nch8f5x99cjtbx8ghnog.jpg"
-    },
-    {
-        "id": "65ce68eb1dd7aa2c8c0ca6fc",
-        "name": "Yessica Tamara",
-        "generation": "gen7-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689799798/uploads/e7t0huyfdklvjkfifo6f.jpg"
-    },
-    {
-        "id": "65ce68eb1dd7aa2c8c0ca6fe",
-        "name": "Nyimas Ratu Rafa",
-        "generation": "gen8-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596927/jkt48/stage48/Nyimas%20Ratu%20Rafa.jpg"
-    },
-    {
-        "id": "65ce68eb1dd7aa2c8c0ca700",
-        "name": "Christabel Jocelyn",
-        "generation": "gen9-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1702405685/r0wspl7lifjpsqmo7zdq.jpg"
-    },
-    {
-        "id": "65ce68eb1dd7aa2c8c0ca702",
-        "name": "Indah Cahya Nabilla",
-        "generation": "gen9-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689799956/uploads/zpoyz0nq9ijoyicjt98j.jpg"
-    },
-    {
-        "id": "65ce68eb1dd7aa2c8c0ca704",
-        "name": "Alia Giselle Maharani",
-        "generation": "gen10-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1651942232/jkt48/kabesha/34_cupxxk.jpg"
-    },
-    {
-        "id": "65ce68eb1dd7aa2c8c0ca706",
-        "name": "Callista Alifia Wardhana",
-        "generation": "gen10-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689799786/uploads/ff0xfdfcbq3h6sxxrymy.jpg"
-    },
-    {
-        "id": "65ce68eb1dd7aa2c8c0ca708",
-        "name": "Iguchi Mao",
-        "generation": "gen1-hinatazaka46",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596938/jkt48/stage48/Iguchi%20Mao.jpg"
-    },
-    {
-        "id": "65ce68eb1dd7aa2c8c0ca70a",
-        "name": "Ushio Sarina",
-        "generation": "gen1-hinatazaka46",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689084039/hinatazaka46/kabesha-2/Ushio%20Sarina.jpg"
-    },
-    {
-        "id": "65ce68eb1dd7aa2c8c0ca70c",
-        "name": "Kakizaki Memi",
-        "generation": "gen1-hinatazaka46",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1659596939/jkt48/stage48/Kakizaki%20Memi.jpg"
-    },
-    {
-        "id": "65ce68eb1dd7aa2c8c0ca70e",
-        "name": "Kageyama Yuka",
-        "generation": "gen1-hinatazaka46",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689084044/hinatazaka46/kabesha-2/Kageyama%20Yuka.jpg"
-    },
-    {
-        "id": "65ce68eb1dd7aa2c8c0ca710",
-        "name": "Kato Shiho",
-        "generation": "gen1-hinatazaka46",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689084048/hinatazaka46/kabesha-2/Kato%20Shiho.jpg"
-    },
-    {
-        "id": "65ce68eb1dd7aa2c8c0ca712",
-        "name": "Saito Kyoko",
-        "generation": "gen1-hinatazaka46",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689084055/hinatazaka46/kabesha-2/Saito%20Kyoko.jpg"
-    },
-    {
-        "id": "65ce68eb1dd7aa2c8c0ca714",
-        "name": "Sasaki Kumi",
-        "generation": "gen1-hinatazaka46",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689084063/hinatazaka46/kabesha-2/Sasaki%20Kumi.jpg"
-    },
-    {
-        "id": "65ce68eb1dd7aa2c8c0ca716",
-        "name": "Sasaki Mirei",
-        "generation": "gen1-hinatazaka46",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689084067/hinatazaka46/kabesha-2/Sasaki%20Mirei.jpg"
-    },
-    {
-        "id": "65ce68eb1dd7aa2c8c0ca718",
-        "name": "Takase Mana",
-        "generation": "gen1-hinatazaka46",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689084075/hinatazaka46/kabesha-2/Takase%20Mana.jpg"
-    },
-    {
-        "id": "65ce68eb1dd7aa2c8c0ca71a",
-        "name": "Takamoto Ayaka",
-        "generation": "gen1-hinatazaka46",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689084082/hinatazaka46/kabesha-2/Takamoto%20Ayaka.jpg"
-    },
-    {
-        "id": "65ce68eb1dd7aa2c8c0ca71c",
-        "name": "Higashimura Mei",
-        "generation": "gen1-hinatazaka46",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689084086/hinatazaka46/kabesha-2/Higashimura%20Mei.jpg"
-    },
-    {
-        "id": "65ce68eb1dd7aa2c8c0ca71e",
-        "name": "Kanemura Miku",
-        "generation": "gen2-hinatazaka46",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689084093/hinatazaka46/kabesha-2/Kanemura%20Miku.jpg"
-    },
-    {
-        "id": "65ce68eb1dd7aa2c8c0ca720",
-        "name": "Kawata Hina",
-        "generation": "gen2-hinatazaka46",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689084099/hinatazaka46/kabesha-2/Kawata%20Hina.jpg"
-    },
-    {
-        "id": "65ce68eb1dd7aa2c8c0ca722",
-        "name": "Kosaka Nao",
-        "generation": "gen2-hinatazaka46",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689084105/hinatazaka46/kabesha-2/Kosaka%20Nao.jpg"
-    },
-    {
-        "id": "65ce68eb1dd7aa2c8c0ca724",
-        "name": "Tomita Suzuka",
-        "generation": "gen2-hinatazaka46",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689084108/hinatazaka46/kabesha-2/Tomita%20Suzuka.jpg"
-    },
-    {
-        "id": "65ce68eb1dd7aa2c8c0ca726",
-        "name": "Nibu Akari",
-        "generation": "gen2-hinatazaka46",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689084114/hinatazaka46/kabesha-2/Nibu%20Akari.jpg"
-    },
-    {
-        "id": "65ce68eb1dd7aa2c8c0ca728",
-        "name": "Hamagishi Hiyori",
-        "generation": "gen2-hinatazaka46",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689084117/hinatazaka46/kabesha-2/Hamagishi%20Hiyori.jpg"
-    },
-    {
-        "id": "65ce68ec1dd7aa2c8c0ca72a",
-        "name": "Matsuda Konoka",
-        "generation": "gen2-hinatazaka46",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689084123/hinatazaka46/kabesha-2/Matsuda%20Konoka.jpg"
-    },
-    {
-        "id": "65ce68ec1dd7aa2c8c0ca72c",
-        "name": "Miyata Manamo",
-        "generation": "gen2-hinatazaka46",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1651749426/hinatazaka46/kabesha-1/Miyata%20Manamo.jpg"
-    },
-    {
-        "id": "65ce68ec1dd7aa2c8c0ca72e",
-        "name": "Watanabe Miho",
-        "generation": "gen2-hinatazaka46",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1651749430/hinatazaka46/kabesha-1/Watanabe%20Miho.jpg"
-    },
-    {
-        "id": "65ce68ec1dd7aa2c8c0ca730",
-        "name": "Kamimura Hinano",
-        "generation": "gen3-hinatazaka46",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689084132/hinatazaka46/kabesha-2/Kamimura%20Hinano.jpg"
-    },
-    {
-        "id": "65ce68ec1dd7aa2c8c0ca732",
-        "name": "Takahashi Mikuni",
-        "generation": "gen3-hinatazaka46",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689084136/hinatazaka46/kabesha-2/Takahashi%20Mikuni.jpg"
-    },
-    {
-        "id": "65ce68ec1dd7aa2c8c0ca734",
-        "name": "Morimoto Marie",
-        "generation": "gen3-hinatazaka46",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689084141/hinatazaka46/kabesha-2/Morimoto%20Marie.jpg"
-    },
-    {
-        "id": "65ce68ec1dd7aa2c8c0ca736",
-        "name": "Yamaguchi Haruyo",
-        "generation": "gen3-hinatazaka46",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689084145/hinatazaka46/kabesha-2/Yamaguchi%20Haruyo.jpg"
-    },
-    {
-        "id": "65ce68ec1dd7aa2c8c0ca738",
-        "name": "Alya Amanda",
-        "generation": "gen11-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1683991029/jkt48/kabesha/alya_amanda_sson6b.jpg"
-    },
-    {
-        "id": "65ce68ec1dd7aa2c8c0ca73a",
-        "name": "Anindya Ramadhani",
-        "generation": "gen11-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1683991048/jkt48/kabesha/anindya_ramadhani_ojolr2.jpg"
-    },
-    {
-        "id": "65ce68ec1dd7aa2c8c0ca73c",
-        "name": "Aulia Asyira",
-        "generation": "gen11-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1683991097/jkt48/kabesha/Aulia_JKT48_2022_vgd79u.webp"
-    },
-    {
-        "id": "65ce68ec1dd7aa2c8c0ca73e",
-        "name": "Cathleen Nixie",
-        "generation": "gen11-jkt48",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1683991052/jkt48/kabesha/cathleen_nixie_szxkgf.jpg"
-    },
-    {
-        "id": "65ce68ec1dd7aa2c8c0ca740",
-        "name": "Celline Thefani",
-        "generation": "gen11-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1683991244/jkt48/kabesha/celline_thefani_watiai.jpg"
-    },
-    {
-        "id": "65ce68ec1dd7aa2c8c0ca742",
-        "name": "Chelsea Davina",
-        "generation": "gen11-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1683991250/jkt48/kabesha/chelsea_davina_a8jwuy.jpg"
-    },
-    {
-        "id": "65ce68ec1dd7aa2c8c0ca744",
-        "name": "Cynthia Yaputera",
-        "generation": "gen11-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1683991270/jkt48/kabesha/cynthia_yaputera_n49b6m.jpg"
-    },
-    {
-        "id": "65ce68ec1dd7aa2c8c0ca746",
-        "name": "Dena Natalia",
-        "generation": "gen11-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1683991284/jkt48/kabesha/dena_natalia_alnmjz.jpg"
-    },
-    {
-        "id": "65ce68ec1dd7aa2c8c0ca748",
-        "name": "Desy Natalia",
-        "generation": "gen11-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1683991286/jkt48/kabesha/desy_natalia_mxdzsp.jpg"
-    },
-    {
-        "id": "65ce68ec1dd7aa2c8c0ca74a",
-        "name": "Gendis Mayrannisa",
-        "generation": "gen11-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1683991307/jkt48/kabesha/gendis_mayrannisa_i5nkzm.jpg"
-    },
-    {
-        "id": "65ce68ec1dd7aa2c8c0ca74c",
-        "name": "Grace Octaviani",
-        "generation": "gen11-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1683991310/jkt48/kabesha/grace_octaviani_gdkukl.jpg"
-    },
-    {
-        "id": "65ce68ec1dd7aa2c8c0ca74e",
-        "name": "Greesella Adhalia",
-        "generation": "gen11-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1683991315/jkt48/kabesha/greesella_adhalia_bpy0de.jpg"
-    },
-    {
-        "id": "65ce68ec1dd7aa2c8c0ca750",
-        "name": "Jeane Victoria",
-        "generation": "gen11-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689781110/uploads/yl9xkqlfduqwgs9r0amd.jpg"
-    },
-    {
-        "id": "65ce68ec1dd7aa2c8c0ca752",
-        "name": "Michelle Alexandra",
-        "generation": "gen11-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1683991352/jkt48/kabesha/michelle_alexandra_afiwaw.jpg"
-    },
-    {
-        "id": "65ce68ec1dd7aa2c8c0ca754",
-        "name": "Ishizuka Tamaki",
-        "generation": "gen4-hinatazaka46",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689082571/hinatazaka46/kabesha-2/Ishizuka%20Tamaki.jpg"
-    },
-    {
-        "id": "65ce68ec1dd7aa2c8c0ca756",
-        "name": "Kishi Honoka",
-        "generation": "gen4-hinatazaka46",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689082575/hinatazaka46/kabesha-2/Kishi%20Honoka.jpg"
-    },
-    {
-        "id": "65ce68ec1dd7aa2c8c0ca758",
-        "name": "Konishi Nanami",
-        "generation": "gen4-hinatazaka46",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689082579/hinatazaka46/kabesha-2/Konishi%20Nanami.jpg"
-    },
-    {
-        "id": "65ce68ec1dd7aa2c8c0ca75a",
-        "name": "Shimizu Rio",
-        "generation": "gen4-hinatazaka46",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689082582/hinatazaka46/kabesha-2/Shimizu%20Rio.jpg"
-    },
-    {
-        "id": "65ce68ec1dd7aa2c8c0ca75c",
-        "name": "Shogenji Yoko",
-        "generation": "gen4-hinatazaka46",
-        "is_graduate": true,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689082585/hinatazaka46/kabesha-2/Shogenji%20Yoko.jpg"
-    },
-    {
-        "id": "65ce68ec1dd7aa2c8c0ca75e",
-        "name": "Takeuchi Kirari",
-        "generation": "gen4-hinatazaka46",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689082589/hinatazaka46/kabesha-2/Takeuchi%20Kirari.jpg"
-    },
-    {
-        "id": "65ce68ec1dd7aa2c8c0ca760",
-        "name": "Hirao Honoka",
-        "generation": "gen4-hinatazaka46",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689082592/hinatazaka46/kabesha-2/Hirao%20Honoka.jpg"
-    },
-    {
-        "id": "65ce68ec1dd7aa2c8c0ca762",
-        "name": "Hiraoka Mitsuki",
-        "generation": "gen4-hinatazaka46",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689082595/hinatazaka46/kabesha-2/Hiraoka%20Mitsuki.jpg"
-    },
-    {
-        "id": "65ce68ec1dd7aa2c8c0ca764",
-        "name": "Fujishima Kaho",
-        "generation": "gen4-hinatazaka46",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689082598/hinatazaka46/kabesha-2/Fujishima%20Kaho.jpg"
-    },
-    {
-        "id": "65ce68ec1dd7aa2c8c0ca766",
-        "name": "Miyachi Sumire",
-        "generation": "gen4-hinatazaka46",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689082602/hinatazaka46/kabesha-2/Miyachi%20Sumire.jpg"
-    },
-    {
-        "id": "65ce68ed1dd7aa2c8c0ca768",
-        "name": "Yamashita Haruka",
-        "generation": "gen4-hinatazaka46",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689082605/hinatazaka46/kabesha-2/Yamashita%20Haruka.jpg"
-    },
-    {
-        "id": "65ce68ed1dd7aa2c8c0ca76a",
-        "name": "Watanabe Rina",
-        "generation": "gen4-hinatazaka46",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689082609/hinatazaka46/kabesha-2/Watanabe%20Rina.jpg"
-    },
-    {
-        "id": "65ce68ed1dd7aa2c8c0ca76c",
-        "name": "Abigail Rachel",
-        "generation": "gen12-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1704955001/eep8y1aal9g3891mv1jx.jpg"
-    },
-    {
-        "id": "65ce68ed1dd7aa2c8c0ca76e",
-        "name": "Adeline Wijaya",
-        "generation": "gen12-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1704955207/elvpyo6boofno8h60lyb.jpg"
-    },
-    {
-        "id": "65ce68ed1dd7aa2c8c0ca770",
-        "name": "Aisa Maharani Napitupulu",
-        "generation": "gen12-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1704955219/bmkbrvjxtz9rxcloappz.jpg"
-    },
-    {
-        "id": "65ce68ed1dd7aa2c8c0ca772",
-        "name": "Aurhel Alana",
-        "generation": "gen12-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1704955233/wlho5exk4shmdydlacoe.jpg"
-    },
-    {
-        "id": "65ce68ed1dd7aa2c8c0ca774",
-        "name": "Catherina Vallencia",
-        "generation": "gen12-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1704955247/b2wzbpqqjakfcuugxx89.jpg"
-    },
-    {
-        "id": "65ce68ed1dd7aa2c8c0ca776",
-        "name": "Fritzy Rosmerian",
-        "generation": "gen12-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1704955258/mansq71yjxbxuqipvb6o.jpg"
-    },
-    {
-        "id": "65ce68ed1dd7aa2c8c0ca778",
-        "name": "Hillary Abigail",
-        "generation": "gen12-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1704955276/yjeqwv0k4tnmif2hu020.jpg"
-    },
-    {
-        "id": "65ce68ed1dd7aa2c8c0ca77a",
-        "name": "Jazzlyn Trisha",
-        "generation": "gen12-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1704955304/m6z0h31rtk9glwjwe3mq.jpg"
-    },
-    {
-        "id": "65ce68ed1dd7aa2c8c0ca77c",
-        "name": "Letycia Moreen",
-        "generation": "gen12-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1704955317/rsdbew8ngjywb6wn8eyd.jpg"
-    },
-    {
-        "id": "65ce68ed1dd7aa2c8c0ca77e",
-        "name": "Michelle Levia",
-        "generation": "gen12-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1704955333/rx14ngo0fwqqktj7b38z.jpg"
-    },
-    {
-        "id": "65ce68ed1dd7aa2c8c0ca780",
-        "name": "Nayla Suji Aurelia",
-        "generation": "gen12-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1704955350/lzp80ydmg16rq8f1i5mp.jpg"
-    },
-    {
-        "id": "65ce68ed1dd7aa2c8c0ca782",
-        "name": "Nina Tutachia",
-        "generation": "gen12-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1704955383/h6q2msbyiotfosnk4wfb.jpg"
-    },
-    {
-        "id": "65ce68ed1dd7aa2c8c0ca784",
-        "name": "Oline Manuel",
-        "generation": "gen12-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1704955391/ocennz32ftbc8egfkwdw.jpg"
-    },
-    {
-        "id": "65ce68ed1dd7aa2c8c0ca786",
-        "name": "Regina Wilian",
-        "generation": "gen12-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1704955399/cirhr22dhtpnrku7k2cd.jpg"
-    },
-    {
-        "id": "65ce68ed1dd7aa2c8c0ca788",
-        "name": "Ribka Budiman",
-        "generation": "gen12-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1704955415/ipkawh7tixqmxqqyw358.jpg"
-    },
-    {
-        "id": "65ce68ed1dd7aa2c8c0ca78a",
-        "name": "Shabilqis Naila",
-        "generation": "gen12-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1704955431/femuoprkfjeyjyaja9vg.jpg"
-    },
-    {
-        "id": "65ce68ed1dd7aa2c8c0ca78c",
-        "name": "Victoria Kimberly",
-        "generation": "gen12-jkt48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1704955441/uojolh7j8f0q6ex52gba.jpg"
-    },
-    {
-        "id": "65ce68ed1dd7aa2c8c0ca78e",
-        "name": "JKT48",
-        "is_graduate": false,
-        "img": "https://res.cloudinary.com/haymzm4wp/image/upload/s--rRdgtH_E--/c_fill,w_150/v1697402288/assets/img/jkt48poster1_pemrgm.jpg"
-    }
-]
+{
+    "recents": [
+        {
+            "_id": "65d8c43f27810756d543da58",
+            "data_id": "idn-1708701324",
+            "idn": {
+                "id": "67896474-8e0a-487a-8415-22846bb9f4ae",
+                "username": "jkt48_jeane",
+                "slug": "tes-240223221512",
+                "title": "Tes",
+                "image": "https://cdn.idntimes.com/content-images/post/20240223/img20240124223412-691b0aa9ed324b2c876de468db307f48.jpg"
+            },
+            "member": {
+                "name": "Jeane /ジーン（JKT48）",
+                "nickname": "Jeane",
+                "img_alt": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689781110/uploads/yl9xkqlfduqwgs9r0amd.jpg",
+                "img": "https://static.showroom-live.com/image/room/cover/cd068c05e4e342a9986c37a00f0342cfdfa346221a685af4e1f5fbe8a55ad58a_m.jpeg?v=1683720205",
+                "url": "jeane",
+                "is_graduate": false,
+                "is_official": false
+            },
+            "created_at": "2024-02-23T16:13:51.049Z",
+            "live_info": {
+                "duration": 3506434,
+                "viewers": {
+                    "num": 4516,
+                    "is_excitement": false
+                },
+                "date": {
+                    "start": "2024-02-23T15:15:24.615Z",
+                    "end": "2024-02-23T16:13:51.049Z"
+                }
+            },
+            "gift_rate": 2500,
+            "room_id": 461480,
+            "points": 26502,
+            "type": "idn"
+        },
+        {
+            "_id": "65d8b93e27810756d51d3e66",
+            "data_id": "1708698075317738",
+            "member": {
+                "name": "Feni/フェニ（JKT48）",
+                "nickname": "Feni",
+                "img_alt": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689799842/uploads/cxgfijqcfzghl1tzukfw.jpg",
+                "img": "https://static.showroom-live.com/image/room/cover/bc8b10acffc5adee44b5d8b7dade3bc9435607fe3a766ae772ec633ac08b649b_m.jpeg?v=1675092939",
+                "url": "feni",
+                "is_graduate": false,
+                "is_official": false
+            },
+            "created_at": "2024-02-23T15:26:41.137Z",
+            "live_info": {
+                "duration": 3926137,
+                "viewers": {
+                    "num": 39215,
+                    "is_excitement": true
+                },
+                "date": {
+                    "start": "2024-02-23T14:21:15.000Z",
+                    "end": "2024-02-23T15:26:41.137Z"
+                }
+            },
+            "gift_rate": 103.76,
+            "room_id": 317738,
+            "points": 51570,
+            "type": "showroom"
+        },
+        {
+            "_id": "65d8b82627810756d51977e5",
+            "data_id": "1708698183461480",
+            "member": {
+                "name": "Jeane /ジーン（JKT48）",
+                "nickname": "Jeane",
+                "img_alt": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689781110/uploads/yl9xkqlfduqwgs9r0amd.jpg",
+                "img": "https://static.showroom-live.com/image/room/cover/cd068c05e4e342a9986c37a00f0342cfdfa346221a685af4e1f5fbe8a55ad58a_m.jpeg?v=1683720205",
+                "url": "jeane",
+                "is_graduate": false,
+                "is_official": false
+            },
+            "created_at": "2024-02-23T15:22:04.993Z",
+            "live_info": {
+                "duration": 3541993,
+                "viewers": {
+                    "num": 22255,
+                    "is_excitement": true
+                },
+                "date": {
+                    "start": "2024-02-23T14:23:03.000Z",
+                    "end": "2024-02-23T15:22:04.993Z"
+                }
+            },
+            "gift_rate": 103.76,
+            "room_id": 461480,
+            "points": 30326,
+            "type": "showroom"
+        },
+        {
+            "_id": "65d8ad4b27810756d5f43b43",
+            "data_id": "1708692680318208",
+            "member": {
+                "name": "Gracia/グラシア（JKT48）",
+                "nickname": "Gracia",
+                "img_alt": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689799941/uploads/ruedqifz12t6hxlsatuq.jpg",
+                "img": "https://static.showroom-live.com/image/room/cover/3026b77b664e3f6acc416ed606d20c23356fe91d18cb4345d53715ac50541912_m.jpeg?v=1675092465",
+                "url": "gracia",
+                "is_graduate": false,
+                "is_official": false
+            },
+            "created_at": "2024-02-23T14:34:35.449Z",
+            "live_info": {
+                "duration": 6195449,
+                "viewers": {
+                    "num": 91876,
+                    "is_excitement": true
+                },
+                "date": {
+                    "start": "2024-02-23T12:51:20.000Z",
+                    "end": "2024-02-23T14:34:35.449Z"
+                }
+            },
+            "gift_rate": 103.73,
+            "room_id": 318208,
+            "points": 180137,
+            "type": "showroom"
+        },
+        {
+            "_id": "65d89d7327810756d5bc87b2",
+            "data_id": "1708683973318118",
+            "member": {
+                "name": "Eli/エリ（JKT48）",
+                "nickname": "Eli",
+                "img_alt": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689799817/uploads/i3lrvelwshof1mhemi11.jpg",
+                "img": "https://static.showroom-live.com/image/room/cover/6ac7ec5ce772cca881de55354f99c07c0987240e057c4f2fecb11024eeaae6a6_m.jpeg?v=1675092663",
+                "url": "eli",
+                "is_graduate": false,
+                "is_official": false
+            },
+            "created_at": "2024-02-23T13:27:51.729Z",
+            "live_info": {
+                "duration": 10898729,
+                "viewers": {
+                    "num": 56180,
+                    "is_excitement": true
+                },
+                "date": {
+                    "start": "2024-02-23T10:26:13.000Z",
+                    "end": "2024-02-23T13:27:51.729Z"
+                }
+            },
+            "gift_rate": 103.69,
+            "room_id": 318118,
+            "points": 75831,
+            "type": "showroom"
+        },
+        {
+            "_id": "65d847ff27810756d5937334",
+            "data_id": "idn-1708672429",
+            "idn": {
+                "id": "ab901d82-db49-488c-8d03-da0082ab70e2",
+                "username": "jkt48_gendis",
+                "slug": "hi-240223141332",
+                "title": "hi",
+                "image": "https://cdn.idntimes.com/content-images/post/20240223/image-8f4087e2083b0b9bbbc38e164f39f8d4.jpg"
+            },
+            "member": {
+                "name": "Gendis /ゲンディス（JKT48）",
+                "nickname": "Gendis",
+                "img_alt": "https://res.cloudinary.com/haymzm4wp/image/upload/v1683991307/jkt48/kabesha/gendis_mayrannisa_i5nkzm.jpg",
+                "img": "https://static.showroom-live.com/image/room/cover/4e2f064db08d9b22d45a2ff98271ca8754e2f058981823193d38c8e22cb09e00_m.jpeg?v=1683720244",
+                "url": "gendis",
+                "is_graduate": false,
+                "is_official": false
+            },
+            "created_at": "2024-02-23T07:23:42.960Z",
+            "live_info": {
+                "duration": 593903,
+                "viewers": {
+                    "num": 968,
+                    "is_excitement": false
+                },
+                "date": {
+                    "start": "2024-02-23T07:13:49.057Z",
+                    "end": "2024-02-23T07:23:42.960Z"
+                }
+            },
+            "gift_rate": 2500,
+            "room_id": 461476,
+            "points": 46,
+            "type": "idn"
+        },
+        {
+            "_id": "65d77751f6d688e9345f47ac",
+            "data_id": "1708615121318232",
+            "member": {
+                "name": "Lulu /ルル （JKT48）",
+                "nickname": "Lulu",
+                "img_alt": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689800059/uploads/r2qjcvpat8obgey5bom4.jpg",
+                "img": "https://static.showroom-live.com/image/room/cover/b0dfb9a6b2a6d51b17d0149d72ac19992469d2734876ca2c1d55672ae91e0943_m.jpeg?v=1675091765",
+                "url": "lulu",
+                "is_graduate": false,
+                "is_official": false
+            },
+            "created_at": "2024-02-22T16:32:52.553Z",
+            "live_info": {
+                "duration": 4451553,
+                "viewers": {
+                    "num": 35769,
+                    "is_excitement": true
+                },
+                "date": {
+                    "start": "2024-02-22T15:18:41.000Z",
+                    "end": "2024-02-22T16:32:52.553Z"
+                }
+            },
+            "gift_rate": 103.6,
+            "room_id": 318232,
+            "points": 72193,
+            "type": "showroom"
+        },
+        {
+            "_id": "65d75ea5f6d688e93407ecd1",
+            "data_id": "1708612284461480",
+            "member": {
+                "name": "Jeane /ジーン（JKT48）",
+                "nickname": "Jeane",
+                "img_alt": "https://res.cloudinary.com/haymzm4wp/image/upload/v1689781110/uploads/yl9xkqlfduqwgs9r0amd.jpg",
+                "img": "https://static.showroom-live.com/image/room/cover/cd068c05e4e342a9986c37a00f0342cfdfa346221a685af4e1f5fbe8a55ad58a_m.jpeg?v=1683720205",
+                "url": "jeane",
+                "is_graduate": false,
+                "is_official": false
+            },
+            "created_at": "2024-02-22T14:53:33.961Z",
+            "live_info": {
+                "duration": 1329961,
+                "viewers": {
+                    "num": 14735,
+                    "is_excitement": true
+                },
+                "date": {
+                    "start": "2024-02-22T14:31:24.000Z",
+                    "end": "2024-02-22T14:53:33.961Z"
+                }
+            },
+            "gift_rate": 103.61,
+            "room_id": 461480,
+            "points": 24730,
+            "type": "showroom"
+        },
+        {
+            "_id": "65d7550df6d688e934e4c44d",
+            "data_id": "1708602346332503",
+            "member": {
+                "name": "JKT48 Official SHOWROOM",
+                "nickname": "Cara Meminum Ramune - 22 Februari 2024",
+                "img_alt": "https://res.cloudinary.com/haymzm4wp/image/upload/v1702404446/nixg3rixpjpom3xa0ivf.jpg",
+                "img": "https://res.cloudinary.com/haymzm4wp/image/upload/v1702404446/nixg3rixpjpom3xa0ivf.jpg",
+                "url": "jkt48",
+                "is_graduate": false,
+                "is_official": true
+            },
+            "created_at": "2024-02-22T14:07:06.933Z",
+            "live_info": {
+                "duration": 8480933,
+                "viewers": {
+                    "num": 594,
+                    "is_excitement": true
+                },
+                "date": {
+                    "start": "2024-02-22T11:45:46.000Z",
+                    "end": "2024-02-22T14:07:06.933Z"
+                }
+            },
+            "gift_rate": 103.61,
+            "room_id": 332503,
+            "points": 1922,
+            "type": "showroom"
+        },
+        {
+            "_id": "65d5ec5ff6d9571d0e73e61a",
+            "data_id": "1708516051461451",
+            "member": {
+                "name": "Alya /アリア（JKT48）",
+                "nickname": "Alya",
+                "img_alt": "https://res.cloudinary.com/haymzm4wp/image/upload/v1683991029/jkt48/kabesha/alya_amanda_sson6b.jpg",
+                "img": "https://static.showroom-live.com/image/room/cover/0a1644ab1bc0333a175bbd13744995241b42a796d81fb939b5def608942a8e96_m.jpeg?v=1683720288",
+                "url": "alya",
+                "is_graduate": false,
+                "is_official": false
+            },
+            "created_at": "2024-02-21T12:28:01.213Z",
+            "live_info": {
+                "duration": 2430213,
+                "viewers": {
+                    "num": 23879,
+                    "is_excitement": true
+                },
+                "date": {
+                    "start": "2024-02-21T11:47:31.000Z",
+                    "end": "2024-02-21T12:28:01.213Z"
+                }
+            },
+            "gift_rate": 104.19,
+            "room_id": 461451,
+            "points": 39384,
+            "type": "showroom"
+        }
+    ],
+    "page": 1,
+    "perpage": 10,
+    "total_count": 7468
+}
