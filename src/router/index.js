@@ -20,7 +20,8 @@ import JKT48Layout from '/layouts/jkt48.vue'
 import JKT48HomeView from '../pages/jkt48/home.vue'
 import JKT48MemberView from '../pages/jkt48/members.vue'
 import JKT48TheaterDetail from '../pages/jkt48/theater/index.vue'
-import JKT48VideoPlayer from '../pages/jkt48/watch/index.vue'
+import JKT48ShowroomLive from '../pages/jkt48/watch/index.vue'
+import JKT48IdnLive from '../pages/jkt48/watch/idn/index.vue'
 import JKT48MemberProfileView from '../pages/jkt48/member/index.vue'
 
 const router = createRouter({
@@ -133,8 +134,14 @@ const router = createRouter({
         },
         {
           path: 'watch/:id',
-          name: 'watch48',
-          component: JKT48VideoPlayer
+          name: 'watch48Sr',
+          component: JKT48ShowroomLive
+        },
+        {
+          path: 'watch/idn/:id',
+          name: 'watch48Idn',
+          component: JKT48IdnLive
+
         },
         {
           path: 'member/profile/:id',

@@ -12,17 +12,17 @@ import recentLive from '../../components/jkt48/recentLive.vue';
         <div class="flex flex-col gap-2">
           <h1 class="text-2xl font-bold text-dark dark:text-white">LIVE</h1>
           <div v-if="liveStatus" class="grid  grid-cols-2 md:grid-cols-4 bg-gray-50 dark:bg-dark-1 rounded-xl p-3 gap-3">
-            <div v-for="l in live" class="card bg-white dark:bg-dark dark:text-white text-dark shadow-xl h-72rounded-lg" >
+            <div v-for="l in live" class="card bg-white dark:bg-dark dark:text-white text-dark shadow-xl h-72 rounded-xl" >
               <figure><img :src="l.img" alt=""></figure>
               <div class="card-body p-4 justify-between">
                 <div class="flex flex-col">
                   <div class="card-title">{{ l.url }}</div>
-                  <div class="card-text">{{ formatLongDate(l.started_at) }}</div>
+                  <div class="card-text">{{ formatDate(l.started_at) }}</div>
                 </div>
-                <a :href="'https://www.showroom-live.com/r/' + l.url" class="btn bg-dark text-white hover:text-dark dark:hover:text-white dark:hover:bg-dark dark:bg-white dark:text-dark h-fit rounded-xl" target="_blank">Watch</a>
+                <RouterLink :to="'jkt48/watch/' + l.url" class="btn bg-dark text-white hover:text-dark dark:hover:text-white dark:hover:bg-dark dark:bg-white dark:text-dark h-fit rounded-xl">Watch</RouterLink>
               </div>
             </div>
-            <RouterLink :to="'jkt48/watch/'+ l.user.username " v-for="l in idnLive" class="transition ease-in-out delay-150 hover:-translate-y-0 hover:scale-105 hover:bg-indigo-500 duration-300 card bg-white shadow-xl h-72 bg-cover rounded-lg justify-center" :style="{ 'background-image': 'linear-gradient(to top, rgba(0,0,0,0.8) , rgba(255,255,255,0)), url(' + l.image + ')' }">
+            <RouterLink :to="'jkt48/watch/idn/'+ l.user.username " v-for="l in idnLive" class="transition ease-in-out delay-150 hover:-translate-y-0 hover:scale-105 hover:bg-indigo-500 duration-300 card bg-white shadow-xl h-72 bg-cover rounded-lg justify-center" :style="{ 'background-image': 'linear-gradient(to top, rgba(0,0,0,0.8) , rgba(255,255,255,0)), url(' + l.image + ')' }">
               <figure><img class="p-4 w-28 mx-auto"  src="https://upload.wikimedia.org/wikipedia/commons/b/ba/IDN_Live.svg" alt=""></figure>
 
               <div class="card-body p-4 justify-end gap-0 text-center text-white">
