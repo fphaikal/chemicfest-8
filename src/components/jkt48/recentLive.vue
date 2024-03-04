@@ -1,5 +1,5 @@
 <script setup>
-import formatLongDate  from '../../utils/formatDate'
+import formatLongDate  from '../../utils/formatLongDate'
 </script>
 <template>
   <div class="flex flex-col w-full sm:w-1/3 gap-2">
@@ -43,4 +43,4 @@ export default {
     }
   }
 };
-</script>
+</script>../../utils/formatLongDate

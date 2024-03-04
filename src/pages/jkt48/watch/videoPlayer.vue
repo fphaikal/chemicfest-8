@@ -1,8 +1,9 @@
 <template>
-  <div class="w-3/4 ">
-    <video ref="videoPlayer" class="video-js w-full h-auto aspect-video text-center mx-auto my-auto"></video>
+  <div class="w-full h-full flex justify-center items-center">
+    <video ref="videoPlayer" class="video-js"></video>
   </div>
 </template>
+
 
 <script>
 import videojs from 'video.js';

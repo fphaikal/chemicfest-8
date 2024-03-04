@@ -42,10 +42,6 @@ export default {
   },
   methods: {
     changeSource() {
-      this.videoOptions.sources = [{
-        src: 'https:// .zencdn.net/v/oceans.mp4',
-        type: 'video/mp4'
-      }];
     }
   }
 }
