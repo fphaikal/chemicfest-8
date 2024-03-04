@@ -1,6 +1,8 @@
 <script setup>
 const isLoggedIn = !!localStorage.getItem('sessionId');
 const getRole = isLoggedIn ? localStorage.getItem('role') : '';
+
+
 </script>
 
 <template>
@@ -139,7 +141,7 @@ export default {
       priceOnline: null,
       priceOffline: null,
       ticketType: null,
-      ticketid: null
+      ticketid: null,
     };
   },
   async mounted() {
@@ -168,7 +170,7 @@ export default {
       const script = document.createElement('script');
       script.src = 'https://app.sandbox.midtrans.com/snap/snap.js';
       script.type = 'text/javascript';
-      script.setAttribute('data-client-key', 'SB-Mid-client-BCAUuvF3WY0arA3Y'); // Menggunakan setAttribute() untuk mengatur atribut data
+      script.setAttribute('data-client-key', import.meta.env.MIDTRANS_CLIENT_KEY); // Menggunakan setAttribute() untuk mengatur atribut data
       document.head.appendChild(script);
     }
     catch (error) {
@@ -196,7 +198,24 @@ export default {
           type: "offline"
         });
 
-        window.snap.pay(response.data);
+        window.snap.pay(response.data, {
+          onSuccess: function(result){
+            /* You may add your own implementation here */
+            alert("payment success!"); console.log(result);
+          },
+          onPending: function(result){
+            /* You may add your own implementation here */
+            alert("wating your payment!"); console.log(result);
+          },
+          onError: function(result){
+            /* You may add your own implementation here */
+            alert("payment failed!"); console.log(result);
+          },
+          onClose: function(){
+            /* You may add your own implementation here */
+            alert('you closed the popup without finishing the payment');
+          }
+        })
         console.log(response.data);
       } catch (error) {
         console.error(error);
@@ -207,19 +226,36 @@ export default {
         const getRole = localStorage.getItem('role');
         const uuid = parseInt(localStorage.getItem('uuid'));
 
-        if (getRole === 'guru' || getRole === 'alumni') {
+        if (getRole === 'guru') {
           this.ticketid = this.data.TicketOnline.find(ticket => ticket.Role === 'Guru').ProductId;
-        } else {
+        } else if (getRole === 'alumni')  {
           this.ticketid = this.data.TicketOnline.find(ticket => ticket.Role === 'Alumni').ProductId;
         }
 
-
+        console.log(this.ticketid)
         const response = await axios.post('https://chemicfest.site/api/buyticket', {
           ticketid: this.ticketid,
           uuid: uuid,
           type: "online"
         });
-        window.snap.pay(response.data.transactionToken);
+        window.snap.pay(response.data, {
+          onSuccess: function(result){
+            /* You may add your own implementation here */
+            alert("payment success!"); console.log(result);
+          },
+          onPending: function(result){
+            /* You may add your own implementation here */
+            alert("wating your payment!"); console.log(result);
+          },
+          onError: function(result){
+            /* You may add your own implementation here */
+            alert("payment failed!"); console.log(result);
+          },
+          onClose: function(){
+            /* You may add your own implementation here */
+            alert('you closed the popup without finishing the payment');
+          }
+        })``
         console.log(response.data);
       } catch (error) {
         console.error(error);
