@@ -12,9 +12,7 @@ import formatViews from '../../../utils/formatViews';
             <div class="flex flex-col gap-2">
               <h1 class="text-xl xl:text-3xl font-bold text-dark dark:text-white">{{data.name}}</h1>
               <div class="flex gap-2">
-                <!--
-                  <div class="badge bg-red-600 gap-2">{{ formatViews(data.started_at) }}</div>
-                -->
+                <div class="badge bg-red-600 gap-2">{{ formatStarted(data.started_at) }}</div>
                 <div class="badge bg-blue-500 gap-2">Views: {{ info.views }}</div>
               </div>
             </div>
@@ -36,6 +34,9 @@ import formatViews from '../../../utils/formatViews';
 import { getJKT48 } from '../../../utils/api/api';
 import VideoPlayer from './videoPlayer.vue';
 import axios from 'axios';
+import formatDate from '../../../utils/formatDate';
+import { formatTimeAgo } from '@vueuse/core';
+import formatStarted from '../../../utils/formatStarted';
 
 export default {
   components: {

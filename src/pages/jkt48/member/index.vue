@@ -96,6 +96,7 @@ import formatLiveDuration from "../../../utils/formatLiveDuration";
 import { getJKT48 } from "../../../utils/api/api";
 import { Icon } from "@iconify/vue";
 import formatNumber from "../../../utils/formatNumber";
+import { TiktokStalk } from "@lucas_monroe/tiktok-api-dl";
 
 export default {
   data() {

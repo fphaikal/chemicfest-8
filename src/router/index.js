@@ -62,6 +62,15 @@ const router = createRouter({
           name: 'cart',
           path: 'cart',
           component: CartView,
+          beforeEnter: (to, from, next) => {
+            const sessionId = localStorage.getItem('sessionId')
+
+            if (sessionId) {
+              next()
+            } else {
+              next('/login')
+            }
+          },
         },
 
         // Need to be protected
