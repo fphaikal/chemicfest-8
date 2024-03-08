@@ -266,8 +266,9 @@ export default {
         });
 
         if (response.data.code === 200) {
-          document.cookie = `sessionId=${response.data.sessionId}`;
-
+          const expires = new Date(Date.now() + 1 * 24 * 60 * 60 * 1000); // One year from now
+          document.cookie = `sessionId=${response.data.sessionId}; expires=${expires.toUTCString()}; path=/`;
+         
           // Save user data to localStorage
           localStorage.setItem('role', response.data.data.Role);
           localStorage.setItem('username', response.data.data.Username);

@@ -191,7 +191,6 @@ export default {
           this.ticketid = this.data.TicketOffline.find(ticket => ticket.Role === 'Alumni').ProductId;
         }
 
-
         const response = await axios.post('https://chemicfest.site/api/buyticket', {
           ticketid: this.ticketid,
           uuid: uuid,

@@ -8,6 +8,7 @@ import ShopView from '../pages/shop.vue'
 import GalleryView from '../pages/gallery.vue'
 import ProfileView from '../pages/profile.vue'
 import BuyTicketView from '../pages/buyTicket.vue'
+import CartView from '../pages/cart.vue'
 
 import WatchView from '../pages/watch/index.vue'
 
@@ -56,6 +57,11 @@ const router = createRouter({
           name: 'buyticket',
           path: 'buyticket',
           component: BuyTicketView,
+        },
+        {
+          name: 'cart',
+          path: 'cart',
+          component: CartView,
         },
 
         // Need to be protected

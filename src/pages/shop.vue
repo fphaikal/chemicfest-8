@@ -1,5 +1,113 @@
+<script setup>
+import formatNumber from "../utils/formatNumber";
+</script>
 <template>
-    <div class="flex flex-col items-center justify-center h-screen">
-        <h1 class="text-4xl font-bold">Shop</h1>
+  <div v-if="product" class="realtive xl:pb-20 flex-1 min-h-screen min-w-0">
+    <div class="flex flex-col gap-3 pt-4 pb-4 px-8 border-b-2 dark:border-zinc-700">
+      <div class="w-full flex flex-row">
+        <h1 class="text-3xl font-black text-dark dark:text-white my-auto">Shop</h1>
+          <RouterLink to="/cart" @mouseover="showCartData" @mouseleave="hideCartData" class="my-auto relative ms-auto">
+            <Icon icon="mingcute:shopping-cart-2-fill" class="text-dark dark:text-white" width="30" />
+            <div v-if="isHovered"  class="absolute top-8 right-0 text-dark dark:text-white bg-gray-50 dark:bg-dark-1 p-4 shadow-md rounded-lg w-96">
+              <!-- Display cart data here -->
+              <div class="flex flex-col gap-3">
+                <h2 class="text-xl font-bold me-auto">Keranjang</h2>
+                <div v-for="c in cart.Cart" class="flex gap-2">
+                  <img class="w-1/5 rounded-lg my-auto" :src="c.Picture" alt="">
+                  <h3 class="text-lg font-semibold my-auto">{{ c.Name }}</h3>
+                  <p class="ms-auto my-auto">{{ c.Qty }}x Rp.{{ formatNumber(c.Price) }}</p>
+                </div>
+                <div v-if="cart" class="border-t-2 dark:border-zinc-700">
+                  <div class="flex mt-2">
+                    <p class="font-bold">Total</p>
+                    <p class="ms-auto">Rp.{{ formatNumber(cart.Total) }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </RouterLink>
+      </div>
+      
     </div>
+    <div class="flex gap-3 p-5 ">
+      <div v-for="p in product" class="card card-compact w-1/6 bg-gray-50 dark:bg-dark-1 text-dark dark:text-white shadow-xl">
+        <figure><img :src="p.Picture" alt="Shoes" /></figure>
+        <div class="card-body">
+          <h2 class=" text-2xl font-bold">{{ p.Name }}</h2>
+          <p class="text-lg">Rp. {{ formatNumber(p.Price) }}</p>
+          <p>{{ p.Description }}</p>
+          <div class="card-actions ">
+            <button @click.prevent="handleAddToCart(p)" class="btn btn-primary w-full rounded-xl">Add To Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
+
+<script>
+import { Icon } from "@iconify/vue";
+import { getAll } from "../utils/api/api";
+import axios from 'axios';
+import { RouterLink } from "vue-router";
+
+export default {
+  data() {
+    return {
+      isHovered: false,
+      product: [],
+      cart: null,
+    };
+  },
+  async mounted() {
+    try {
+      const uuid = parseInt(localStorage.getItem('uuid'))
+
+      const shop = await getAll('get/pricelist');
+
+      this.product = shop.Shop
+
+      this.handleGetCart()
+      setInterval(() => {
+        this.handleGetCart()
+      }, 1000)
+      console.log(this.product);
+    } catch (error) {
+      console.error(error);
+    }
+  },
+  methods: {
+    async handleAddToCart(product) {
+      try {
+        const uuid = parseInt(localStorage.getItem('uuid'))
+
+        console.log(uuid)
+        const response = await axios.post('https://chemicfest.site/api/product/add', {
+          UUID: uuid,
+          Productid: product.ProductId,
+          Qty: 1,
+        })
+      } catch (error) {
+        console.log(error)
+      }
+    },
+    async handleGetCart() {
+      try {
+        const uuid = parseInt(localStorage.getItem('uuid'))
+
+        this.cart = await getAll(`product/cart/${uuid}`)
+
+      } catch (error) {
+        console.log(error)
+      }
+    },
+    showCartData() {
+      this.isHovered = true;
+    },
+    hideCartData() {
+      this.isHovered = false;
+    },
+  },
+  components: {Icon}
+}
+</script>
