@@ -4,10 +4,10 @@ import App from './App.vue'
 import router from './router'
 import { Icon } from '@iconify/vue';
 import "video.js/dist/video-js.css"
-import { Analytics } from "@vercel/analytics/react"
+import { inject } from "@vercel/analytics"
 
 const app = createApp(App)
 app.use(router)
 app.component('icon', Icon)
 app.mount('#app')
-app.use(Analytics)
+app.use(inject)
