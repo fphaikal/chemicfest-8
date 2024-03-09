@@ -24,14 +24,14 @@ const toggleDark = useToggle(isDark);
                   <Tab as="template" v-slot="{ selected }">
                     <button
                       :class="['w-full rounded-lg py-2.5 text-sm font-medium leading-5', 'ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2',
-                        selected ? 'bg-white dark:bg-dark dark:text-white text-dark-1 shadow' : 'text-white dark:text-white hover:bg-white/[0.12] hover:text-white',]">
+              selected ? 'bg-white dark:bg-dark dark:text-white text-dark-1 shadow' : 'text-white dark:text-white hover:bg-white/[0.12] hover:text-white',]">
                       Login
                     </button>
                   </Tab>
                   <Tab as="template" v-slot="{ selected }">
                     <button
                       :class="['w-full rounded-lg py-2.5 text-sm font-medium leading-5', 'ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2',
-                        selected ? 'bg-white dark:bg-dark dark:text-white text-dark-1 shadow' : 'text-white dark:text-white hover:bg-white/[0.12] hover:text-white',]">
+              selected ? 'bg-white dark:bg-dark dark:text-white text-dark-1 shadow' : 'text-white dark:text-white hover:bg-white/[0.12] hover:text-white',]">
                       Register
                     </button>
                   </Tab>
@@ -64,7 +64,7 @@ const toggleDark = useToggle(isDark);
                                 <Icon icon="ic:baseline-email" class="w-4 h-4 text-gray-500 dark:text-gray-400"
                                   aria-hidden="true" />
                               </div>
-                              
+
                               <input name="user" type="username" v-model="login.user"
                                 class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Email" required>
@@ -74,9 +74,15 @@ const toggleDark = useToggle(isDark);
                                 <Icon icon="mingcute:lock-fill" class="w-4 h-4 text-gray-500 dark:text-gray-400"
                                   aria-hidden="true" />
                               </div>
-                              <input type="password" v-model="login.pass"
+                              <input :type="showPassword ? 'text' : 'password'" v-model="login.pass"
                                 class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Password" required>
+                              <div class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5">
+                                <button type="button" @click="toggleShow"><span class="icon is-small is-right">
+                                    <Icon :icon="showPassword ? 'mdi:show' : 'mdi:hide'" width="20"></Icon>
+                                  </span>
+                                </button>
+                              </div>
                             </div>
                             <div class="mx-auto text-center pt-5">
                               <button type="submit"
@@ -91,54 +97,72 @@ const toggleDark = useToggle(isDark);
                   <TabPanel>
                     <ul>
                       <li class="relative rounded-md pt-3">
+                        <div v-if="alertType" role="alert" class="alert alert-error bg-red-500 mb-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          <span>{{ alertMessage }}</span>
+                        </div>
                         <div class="flex flex-col mx-auto" @submit.prevent="handleRegister">
                           <form class="w-full flex ">
                             <div class="relative w-1/2">
-                              <input type="text" id="email-address-icon" v-model="register.name"
-                              class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                              <input type="text" v-model="register.name"
+                                class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Nama" required>
                             </div>
                             <div class="relative w-1/2 ml-2">
-                              <input type="text" id="email-address-icon" v-model="register.username"
+                              <input type="text" v-model="register.username"
                                 class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Username" required>
                             </div>
                           </form>
                           <form class="w-full pt-3 mx-auto">
                             <div class="relative ">
-                              <input type="email" id="email-address-icon" v-model="register.email"
+                              <input type="email" v-model="register.email"
                                 class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Email" required>
                             </div>
                             <div class="relative mt-3">
-                              <input type="number" id="email-address-icon" v-model="register.phone"
+                              <input type="number" v-model="register.phone"
                                 class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Nomor Telepon" required>
                             </div>
                             <div class="relative mt-3">
-                              <input type="password" id="email-address-icon" v-model="register.password"
+                              <input :type="showPassword ? 'text' : 'password'" v-model="register.password"
                                 class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Password" required>
+                              <div class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5">
+                                <button type="button" @click="toggleShow"><span class="icon is-small is-right">
+                                    <Icon :icon="showPassword ? 'mdi:show' : 'mdi:hide'" width="20"></Icon>
+                                  </span>
+                                </button>
+                              </div>
                             </div>
-                            <div class="form-control mt-3">
-                              <label class="label cursor-pointer">
-                                <span class="label-text">Siswa</span> 
-                                <input v-model="selectedRole" value="siswa" type="radio" name="role" class="radio checked:bg-blue-500"/>
-                              </label>
+                            <div class="flex flex-row gap-5 mt-3 text-dark dark:text-white">
+                              <div class="form-control ">
+                                <label class="label cursor-pointer gap-2">
+                                  <input v-model="selectedRole" value="siswa" type="radio" name="role"
+                                    class="radio checked:bg-dark dark:checked:bg-white" />
+                                  <span class="label-text">Siswa</span>
+                                </label>
+                              </div>
+                              <div class="form-control">
+                                <label class="label cursor-pointer gap-2">
+                                  <input v-model="selectedRole" value="guru" type="radio" name="role"
+                                    class="radio checked:bg-dark dark:checked:bg-white" />
+                                  <span class="label-text">Guru</span>
+                                </label>
+                              </div>
+                              <div class="form-control">
+                                <label class="label cursor-pointer gap-2">
+                                  <input v-model="selectedRole" value="alumni" type="radio" name="role"
+                                    class="radio checked:bg-dark dark:checked:bg-white" />
+                                  <span class="label-text">Alumni</span>
+                                </label>
+                              </div>
                             </div>
-                            <div class="form-control">
-                              <label class="label cursor-pointer">
-                                <span class="label-text">Guru</span> 
-                                <input v-model="selectedRole" value="guru" type="radio" name="role" class="radio checked:bg-blue-500" />
-                              </label>
-                            </div>
-                            <div class="form-control">
-                              <label class="label cursor-pointer">
-                                <span class="label-text">Alumni</span> 
-                                <input v-model="selectedRole" value="alumni" type="radio" name="role" class="radio checked:bg-blue-500"/>
-                              </label>
-                            </div>
-                            
                             <div class="mx-auto pt-5 text-center">
                               <button type="submit"
                                 class="rounded-2xl py-3 px-10 inline-flex bg-dark-1 text-white hover:bg-dark">Register</button>
@@ -172,30 +196,24 @@ const toggleDark = useToggle(isDark);
         <h3 class="font-bold text-lg">Verifikasi</h3>
 
         <div v-if="verificationModal" role="alert" class="alert alert-warning mt-2 bg-yellow-500 text-dark">
-          <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+          <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none"
+            viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
           </svg>
           <span>Silahkan Lakukan Verifikasi Akun Terlebih Dahulu</span>
         </div>
-        <div v-if="alertType" role="alert" class="alert alert-warning mt-2 bg-yellow-500 text-dark">
-          <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+        <div v-if="warningType" role="alert" class="alert alert-warning mt-2 bg-yellow-500 text-dark">
+          <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none"
+            viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
           </svg>
-          <span>{{ alertMessage }}</span>
+          <span>{{ warningMessage }}</span>
         </div>
-        <div v-if="wrongOtp" role="alert" class="alert alert-warning mt-2 bg-yellow-500 text-dark">
-          <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-          </svg>
-          <span>{{ wrongVerifyMessage }}</span>
-        </div>
-
         <div class="py-4 flex gap-2">
           <div class="w-3/4 my-auto">
-            <input type="email" id="email-address-icon" v-model="verify.user"
+            <input type="email" v-model="verify.user"
               class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Email/Phone Number" required>
           </div>
@@ -255,9 +273,22 @@ export default {
       wrongVerifyMessage: '',
 
       wrongOtp: false,
+
+      warningMessage: '',
+      warningType: false,
+      showPassword: false,
+
     };
   },
+  computed: {
+    buttonLabel() {
+      return (this.showPassword) ? "Hide" : "Show";
+    }
+  },
   methods: {
+    toggleShow() {
+      this.showPassword = !this.showPassword;
+    },
     async handleLogin() {
       try {
         const response = await axios.post('https://chemicfest.site/api/login', {
@@ -268,7 +299,7 @@ export default {
         if (response.data.code === 200) {
           const expires = new Date(Date.now() + 1 * 24 * 60 * 60 * 1000); // One year from now
           document.cookie = `sessionId=${response.data.sessionId}; expires=${expires.toUTCString()}; path=/`;
-         
+
           // Save user data to localStorage
           localStorage.setItem('role', response.data.data.Role);
           localStorage.setItem('username', response.data.data.Username);
@@ -280,26 +311,21 @@ export default {
 
           console.log('Login response:', response);
           router.push({ name: 'home' });
-        } else if (response.data.code === 403) {
-          document.getElementById('my_modal_2').showModal();
-          console.log(response.data.message);
         }
 
       } catch (error) {
         console.error('Login error:', error);
         if (error.response.data.code === 403) {
           document.getElementById('my_modal_2').showModal();
-        } else if (error.response.data.code === 401) {
-          this.alertMessage = 'Password Salah';
+        } else {
+          this.alertMessage = error.response.data.message;
           this.alertType = true;
         }
       }
     },
 
     async handleRegister() {
-      console.log('Selected Role:', this.selectedRole); // Tambahkan ini untuk mencetak nilai selectedRole
       try {
-
         const response = await axios.post('https://chemicfest.site/api/register', {
           name: this.register.name,
           username: this.register.username,
@@ -317,7 +343,10 @@ export default {
       } catch (error) {
         // Handle errors, such as displaying error messages to the user
         console.log(this.selectedRole)
-        console.error('Register error:', error);
+        console.error('Register error:', error.response.data.message);
+
+        this.alertMessage = error.response.data.message;
+        this.alertType = true;
       }
     },
 
@@ -329,23 +358,24 @@ export default {
 
         if (response.data.code === 200) {
           console.log('Verify response:', response);
-          this.alertType = true;
-          this.alertMessage = 'Kode Berhasil Dikirim Silahkan Cek Email/Whatsapp Anda';
+          this.warningType = true;
+          this.warningMessage = 'Kode Berhasil Dikirim Silahkan Cek Email/Whatsapp Anda';
 
           this.verificationModal = false;
         }
 
       } catch (error) {
         // Handle errors, such as displaying error messages to the user
-        if (error.response.data.code === 400) {
-          this.alertType = true;
-          this.alertMessage = 'Mohon tunggu 5 menit sebelum meminta OTP lagi';
 
-          this.verificationModal = false;
-        }
+        this.warningType = true;
+        this.warningMessage = error.response.data.message;
+
+        this.verificationModal = false;
+
         console.error('Verify error:', error);
       }
     },
+
     async handleVerifyOTP() {
       try {
         const response = await axios.post('https://chemicfest.site/api/validation/giveotp', {
@@ -362,17 +392,12 @@ export default {
       } catch (error) {
         // Handle errors, such as displaying error messages to the user
         console.error('Verify OTP error:', error);
-        if (error.response.data.code === 400) {
-          this.alertMessage = 'OTP Kadaluwarsa Silahkan Coba Lagi';
-          this.alertType = true;
 
-          this.verificationModal = false;
-        } else if (error.response.data.code === 404) {
-          this.alertMessage = 'OTP Kadaluwarsa Silahkan Coba Lagi';
-          this.alertType = true;
+        this.warningMessage = error.response.data.message;
+        this.warningType = true;
 
-          this.verificationModal = false;
-        }
+        this.verificationModal = false;
+
       }
     }
   },
