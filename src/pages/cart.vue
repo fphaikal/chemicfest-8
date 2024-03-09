@@ -10,7 +10,7 @@ import formatNumber from "../utils/formatNumber";
         <h1 class="text-3xl font-black text-dark dark:text-white my-auto">Keranjang</h1>
       </div>
     </div>
-    <div class="flex flex-col sm:flex-row mx-10 xl:mx-36 mt-8 xl:mt-10 gap-10">
+    <div v-if="product.Cart" class="flex flex-col sm:flex-row mx-10 xl:mx-36 mt-8 xl:mt-10 gap-10">
       <div class="flex flex-col gap-3 text-dark dark:text-white w-full xl:w-3/5">
         <div v-for="c in product.Cart" class="flex flex-row gap-5">
           <img class="w-1/5 xl:w-[11%] rounded-xl my-auto" :src="c.Picture" alt="">
@@ -54,14 +54,20 @@ import formatNumber from "../utils/formatNumber";
         </div>
       </div>
     </div>
+    <div v-else class="flex flex-col items-center justify-center w-full h-96">
+        <h1 class="text-2xl font-bold etxt-dark dark:text-white">Keranjang Kosong</h1>
+        <p class="text-lg etxt-dark dark:text-white">Yuk, belanja sekarang!</p>
+        <RouterLink to="/shop" class="btn mt-5 bg-dark text-white hover:text-dark dark:text-dark dark:bg-white dark:hover:bg-dark dark:hover:text-white" >Pergi Ke Shop</RouterLink>
+    </div>
   </div>
 </template>
 
 <script>
 import { getAll } from "../utils/api/api";
 import axios from "axios";
+import { RouterLink } from "vue-router";
 
-export default {
+export default { 
   data() {
     return {
       product: null,
