@@ -42,6 +42,7 @@ const router = createRouter({
           path: 'shop',
           name: 'shop',
           component: ShopView
+          
         },
         {
           path: 'gallery',

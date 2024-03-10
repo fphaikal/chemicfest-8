@@ -21,7 +21,8 @@ import formatNumber from "../utils/formatNumber";
             </div>
             <form class="max-w-xs ms-auto">
               <div class="relative flex items-center">
-                <button @click="handleQty(c.ProductId, c.Qty - 1)" type="button" id="decrement-button" data-input-counter-decrement="counter-input"
+                <button @click="handleQty(c.ProductId, c.Qty - 1)" type="button" id="decrement-button"
+                  data-input-counter-decrement="counter-input"
                   class="flex-shrink-0 bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 inline-flex items-center justify-center border border-gray-300 rounded-md h-5 w-5 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
                   <svg class="w-2.5 h-2.5 text-gray-900 dark:text-white" aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
@@ -30,7 +31,8 @@ import formatNumber from "../utils/formatNumber";
                   </svg>
                 </button>
                 <p class="me-2 ms-2">{{ c.Qty }}</p>
-                <button @click="handleQty(c.ProductId, c.Qty + 1)" type="button" id="increment-button" data-input-counter-increment="counter-input"
+                <button @click="handleQty(c.ProductId, c.Qty + 1)" type="button" id="increment-button"
+                  data-input-counter-increment="counter-input"
                   class="flex-shrink-0 bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 inline-flex items-center justify-center border border-gray-300 rounded-md h-5 w-5 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
                   <svg class="w-2.5 h-2.5 text-gray-900 dark:text-white" aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
@@ -55,9 +57,11 @@ import formatNumber from "../utils/formatNumber";
       </div>
     </div>
     <div v-else class="flex flex-col items-center justify-center w-full h-96">
-        <h1 class="text-2xl font-bold etxt-dark dark:text-white">Keranjang Kosong</h1>
-        <p class="text-lg etxt-dark dark:text-white">Yuk, belanja sekarang!</p>
-        <RouterLink to="/shop" class="btn mt-5 bg-dark text-white hover:text-dark dark:text-dark dark:bg-white dark:hover:bg-dark dark:hover:text-white" >Pergi Ke Shop</RouterLink>
+      <h1 class="text-2xl font-bold etxt-dark dark:text-white">Keranjang Kosong</h1>
+      <p class="text-lg etxt-dark dark:text-white">Yuk, belanja sekarang!</p>
+      <RouterLink to="/shop"
+        class="btn mt-5 bg-dark text-white hover:text-dark dark:text-dark dark:bg-white dark:hover:bg-dark dark:hover:text-white">
+        Pergi Ke Shop</RouterLink>
     </div>
   </div>
 </template>
@@ -67,19 +71,30 @@ import { getAll } from "../utils/api/api";
 import axios from "axios";
 import { RouterLink } from "vue-router";
 
-export default { 
+export default {
   data() {
     return {
       product: null,
+      intervalId: null,
     };
   },
   async mounted() {
-    this.handleUpdateData();
-    setInterval(() => {
+    const isLoggedIn = !!localStorage.getItem('sessionId');
+
+    if (isLoggedIn) {
       this.handleUpdateData();
-    }, 500);
-    const uuid = parseInt(localStorage.getItem('uuid'));
-    console.log(uuid);
+      this.intervalId = setInterval(() => {
+        this.handleUpdateData();
+        console.log('update');
+      }, 1000);
+      this.$router.beforeEach((to, from, next) => { // Tambahkan event router Vue untuk menangani perpindahan halaman
+        clearInterval(this.intervalId); // Hentikan interval saat berpindah halaman
+        next(); // Lanjutkan navigasi ke halaman tujuan
+      });
+    }
+  },
+  beforeDestroy() { // Lifecycle hook untuk membersihkan interval sebelum komponen dihancurkan
+    clearInterval(this.intervalId); // Membersihkan interval saat komponen dihancurkan
   },
   methods: {
     async handleQty(id, qty) {
@@ -117,19 +132,19 @@ export default {
         });
 
         window.snap.pay(response.data.token, {
-          onSuccess: function(result){
+          onSuccess: function (result) {
             /* You may add your own implementation here */
             alert("payment success!"); console.log(result);
           },
-          onPending: function(result){
+          onPending: function (result) {
             /* You may add your own implementation here */
             alert("wating your payment!"); console.log(result);
           },
-          onError: function(result){
+          onError: function (result) {
             /* You may add your own implementation here */
             alert("payment failed!"); console.log(result);
           },
-          onClose: function(){
+          onClose: function () {
             /* You may add your own implementation here */
             alert('you closed the popup without finishing the payment');
           }

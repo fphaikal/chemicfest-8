@@ -15,7 +15,7 @@ export default {
       },
     },
   },
-  plugins: [require("@headlessui/vue"), require("daisyui")],
+  plugins: [require("@headlessui/vue"), require("daisyui"), require("@tailwindcss/aspect-ratio")],
   daisyui: {
     themes: [],
     daisyui: {
