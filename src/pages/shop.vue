@@ -10,9 +10,12 @@ const isLoggedIn = !!localStorage.getItem('sessionId');
         <h1 class="text-3xl font-black text-dark dark:text-white my-auto">Shop</h1>
         <RouterLink v-if="isLoggedIn" to="/cart" @mouseover="showCartData" @mouseleave="hideCartData"
           class="my-auto relative ms-auto">
-          <Icon icon="mingcute:shopping-cart-2-fill" class="text-dark dark:text-white" width="30" />
+          <div class="indicator">
+            <span v-if="cart" class="indicator-item badge text-dark bg-sky-500">{{ cart.TotalQty }}</span> 
+            <Icon icon="mingcute:shopping-cart-2-fill" class="text-dark dark:text-white" width="30" />
+          </div>
           <div v-if="isHovered"
-            class="absolute top-8 right-0 text-dark dark:text-white bg-gray-50 dark:bg-dark-1 p-4 shadow-md rounded-lg w-96">
+            class="absolute top-8 right-0 text-dark dark:text-white bg-gray-50 dark:bg-dark-1 p-4 shadow-md rounded-lg w-96 z-10">
             <!-- Display cart data here -->
             <div class="flex flex-col gap-3">
               <h2 class="text-xl font-bold me-auto">Keranjang</h2>
@@ -33,10 +36,10 @@ const isLoggedIn = !!localStorage.getItem('sessionId');
       </div>
 
     </div>
-    <div class="flex gap-3 p-5 ">
+    <div class="grid grid-cols-5 gap-3 p-5 ">
       <div v-for="p in product"
-        class="card card-compact w-1/6 bg-gray-50 dark:bg-dark-1 text-dark dark:text-white shadow-xl">
-        <figure><img :src="p.Picture" alt="Shoes" /></figure>
+        class="card card-compact  bg-gray-50 dark:bg-dark-1 text-dark dark:text-white shadow-xl">
+        <figure class="aspect-1"><img :src="p.Picture" class="object-cover" alt="Shoes" /></figure>
         <div class="card-body">
           <h2 class=" text-2xl font-bold">{{ p.Name }}</h2>
           <p class="text-lg">Rp. {{ formatNumber(p.Price) }}</p>
@@ -62,7 +65,8 @@ export default {
       isHovered: false,
       product: [],
       cart: null,
-      intervalId: null // Tambahkan variabel untuk menyimpan ID interval
+      intervalId: null, // Tambahkan variabel untuk menyimpan ID interval
+      DataQty: null,
     };
   },
   async mounted() {
@@ -72,10 +76,14 @@ export default {
 
       this.product = shop.Shop
 
+      
+      
       if (isLoggedIn) {
         this.handleGetCart()
+
         this.intervalId = setInterval(() => { // Simpan ID interval
           this.handleGetCart()
+
           console.log('fetching cart data')
         }, 1000)
         this.$router.beforeEach((to, from, next) => { // Tambahkan event router Vue untuk menangani perpindahan halaman

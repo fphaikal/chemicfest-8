@@ -1,6 +1,5 @@
 <script setup>
 import formatNumber from "../utils/formatNumber";
-
 </script>
 
 <template>
@@ -10,7 +9,7 @@ import formatNumber from "../utils/formatNumber";
         <h1 class="text-3xl font-black text-dark dark:text-white my-auto">Keranjang</h1>
       </div>
     </div>
-    <div v-if="product.Cart" class="flex flex-col sm:flex-row mx-10 xl:mx-36 mt-8 xl:mt-10 gap-10">
+    <div v-if="product.TotalQty > 0" class="flex flex-col sm:flex-row mx-10 xl:mx-36 mt-8 xl:mt-10 gap-10">
       <div class="flex flex-col gap-3 text-dark dark:text-white w-full xl:w-3/5">
         <div v-for="c in product.Cart" class="flex flex-row gap-5">
           <img class="w-1/5 xl:w-[11%] rounded-xl my-auto" :src="c.Picture" alt="">

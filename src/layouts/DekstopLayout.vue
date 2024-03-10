@@ -14,7 +14,7 @@ const isAdmin = getAdmin === 'admin';
 </script>
 
 <template>
-  <nav id="nav" class="sticky top-0 shrink-0 h-screen border-r 2xl:w-[275px] dark:border-zinc-700">
+  <nav id="nav" class="sticky top-0 shrink-0 h-screen border-r 2xl:w-[275px] dark:border-zinc-700" style="z-index: 999;" >
     <div class="flex flex-col h-full mx-3 justify-between">
       <div class="flex-1 flex flex-col gap-3">
         <RouterLink aria-current="page" :to="{name: 'home'}"
@@ -72,22 +72,20 @@ const isAdmin = getAdmin === 'admin';
           </div>
           <div class="ml-4 mr-4 text-base text-dark dark:text-white font-semibold max-2xl:hidden self-center ">Login</div>
         </router-link>
-
-        <div v-else class="flex my-auto bg-white-1 dark:bg-dark-1 w-full rounded-full p-3 dropdown dropdown-top" tabindex="0" role="button">
+        <div v-else class="flex my-auto bg-white-1 dark:bg-dark-1 w-full rounded-full p-3 dropdown dropdown-top " tabindex="0" role="button">
           <div class="rounded-full flex items-center 2xl:p-2 p-0 justify-center  text-white">
             <Icon icon="icon-park-solid:user"  width="30" />
           </div>
           <div class="ml-4 mr-4 text-base text-dark dark:text-white  font-semibold max-2xl:hidden self-center">{{ userName }}</div>
-          
-          <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow-lg bg-gray-50 dark:text-white dark:bg-dark-1 rounded-box w-56 mb-2">
+          <ul class=" relative dropdown-content z-10 menu p-2 shadow-lg bg-gray-50 dark:text-white dark:bg-dark-1 rounded-box w-56 mb-2">
             <li><RouterLink :to="{ name: 'profile' }">Profile</RouterLink></li>
-            <li><a @click="logout">Logout</a></li>
+            <li><a @click="logout">Logout</a></li> 
           </ul>
         </div>
       </div>
     </div>
   </nav>
-  <div class="min-w-0 flex-1 border-e-2 dark:border-zinc-700">
+  <div class="min-w-0 inset-0 flex-1 border-e-2 dark:border-zinc-700">
     <RouterView />
   </div>
 </template>
