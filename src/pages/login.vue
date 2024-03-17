@@ -309,7 +309,18 @@ export default {
           localStorage.setItem('sessionId', response.data.data.sessionId);
           console.log('User data saved to localStorage:', response.data.data.Role);
 
-          console.log('Login response:', response);
+
+          // Set timeout to delete localStorage when cookie expires
+          setTimeout(() => {
+            localStorage.removeItem('role');
+            localStorage.removeItem('username');
+            localStorage.removeItem('phone');
+            localStorage.removeItem('email');
+            localStorage.removeItem('uuid');
+            localStorage.removeItem('sessionId');
+            console.log('User data deleted from localStorage.');
+          }, expires - Date.now());
+
           router.push({ name: 'home' });
         }
 
@@ -323,6 +334,7 @@ export default {
         }
       }
     },
+
 
     async handleRegister() {
       try {

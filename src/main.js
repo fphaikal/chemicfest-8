@@ -5,6 +5,7 @@ import router from './router'
 import { Icon } from '@iconify/vue';
 import "video.js/dist/video-js.css"
 import { inject } from "@vercel/analytics"
+import 'flowbite';
 
 const app = createApp(App)
 app.use(router)

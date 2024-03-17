@@ -1,9 +1,9 @@
 <template>
-    <main class="flex mx-auto max-w-[1630px] dark:bg-dark">
-        <component :is="layoutComponent">
-            <RouterView />
-        </component>
-    </main>
+  <main class="flex mx-auto max-w-[1630px] dark:bg-dark">
+    <component :is="layoutComponent">
+      <RouterView />
+    </component>
+  </main>
 </template>
 
 <script>

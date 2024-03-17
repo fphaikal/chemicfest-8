@@ -34,17 +34,16 @@ const isLoggedIn = !!localStorage.getItem('sessionId');
           </div>
         </RouterLink>
       </div>
-
     </div>
-    <div class="grid grid-cols-5 gap-3 p-5 ">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-3 p-5 ">
       <div v-for="p in product"
         class="card card-compact  bg-gray-50 dark:bg-dark-1 text-dark dark:text-white shadow-xl">
-        <figure class="aspect-1"><img :src="p.Picture" class="object-cover" alt="Shoes" /></figure>
-        <div class="card-body">
-          <h2 class=" text-2xl font-bold">{{ p.Name }}</h2>
-          <p class="text-lg">Rp. {{ formatNumber(p.Price) }}</p>
+        <figure class="aspect-1"><img :src="p.Picture" class="object-cover" alt="" /></figure>
+        <div class="card-body gap-1">
+          <h2 class="text-xl font-normal">{{ p.Name }}</h2>
+          <h3 class="text-2xl font-semibold">Rp. {{ formatNumber(p.Price) }}</h3>
           <p>{{ p.Description }}</p>
-          <div class="card-actions ">
+          <div class="card-actions mt-2">
             <button @click.prevent="handleAddToCart(p)" class="btn btn-primary w-full rounded-xl">Add To Cart</button>
           </div>
         </div>

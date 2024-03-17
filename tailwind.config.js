@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{vue,js,ts,jsx,tsx}",
+    "./node_modules/flowbite/**/*.js",
+  ],
   darkMode: "class",
   theme: {
     extend: {
@@ -13,9 +17,23 @@ export default {
       fontFamily: {
         signika: ["Signika", "sans-serif"],
       },
+      animation: {
+        "infinite-scroll": "infinite-scroll 25s linear infinite",
+      },
+      keyframes: {
+        "infinite-scroll": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
+      },
     },
   },
-  plugins: [require("@headlessui/vue"), require("daisyui"), require("@tailwindcss/aspect-ratio")],
+  plugins: [
+    require("@headlessui/vue"),
+    require("daisyui"),
+    require("@tailwindcss/aspect-ratio"),
+    require("flowbite/plugin"),
+  ],
   daisyui: {
     themes: [],
     daisyui: {

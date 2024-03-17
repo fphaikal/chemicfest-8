@@ -2,9 +2,10 @@
 import VueCountdown from '@chenfengyuan/vue-countdown';
 import formatNumber from '../utils/formatNumber';
 </script>
+
 <template>
   <section>
-    <div class="relative min-h-screen min-w-0 flex-1 xl:pb-20 p-3 flex flex-col gap-5">
+    <div class="relative min-h-screen min-w-0 flex-1 xl:pb-24 p-3 flex flex-col gap-5">
       <div class="flex flex-col gap-3">
         <div class="w-full flex flex-col md:flex-row gap-3">
           <div
@@ -33,6 +34,7 @@ import formatNumber from '../utils/formatNumber';
               </div>
             </div>
           </div>
+          <!--
           <div class="w-full lg:w-1/4 bg-dark rounded-[30px] md:rounded-[50px] carousel ">
             <div class="carousel-item w-1/2 md:w-full">
               <img
@@ -44,34 +46,137 @@ import formatNumber from '../utils/formatNumber';
                 class="w-full object-cover" alt="Jogja Hip-Hop Foundation" />
             </div>
           </div>
+        -->
+        <div id="default-carousel" class="relative w-1/4 rounded-[50px]" data-carousel="slide">
+            <!-- Carousel wrapper -->
+            <div class="relative h-56 overflow-hidden rounded-lg md:h-96 aspect-w-1 aspect-h-1">
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="https://cdn.idntimes.com/content-images/post/20221006/240418040-898546650751755-6578874132596457644-n-5a78725fd5cba1052741be06216c28f3.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-[50px]" alt="...">
+              </div>
+              <div class="hidden duration-700 ease-in-out aspect-w-1 aspect-h-1" data-carousel-item>
+                <img src="https://lastfm.freetls.fastly.net/i/u/ar0/62f4cdc47aa7fc0650d14cfd70c66bb7.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-[50px] object-cover" alt="...">
+              </div>
+            </div>
+            <!-- Slider controls -->
+            <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                    </svg>
+                    <span class="sr-only">Previous</span>
+                </span>
+            </button>
+            <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                    </svg>
+                    <span class="sr-only">Next</span>
+                </span>
+            </button>
+        </div>
+
         </div>
       </div>
-      <div class="flex flex-col gap-2 mx-20">
-        <div class="flex flex-col gap-3">
-          <div class="flex flex-row">
-            <h1 class="text-3xl font-black text-dark dark:text-white my-auto">Shop</h1>
-            <RouterLink to="/shop" class="my-auto relative ms-auto">
-              <p>Lihat Selengkapnya ></p>
-            </RouterLink>
-          </div>
-          <div class="flex flex-row gap-3 carousel">
-            <div v-for="p in product"
-              class="carousel-item card card-compact w-1/5 bg-gray-50 dark:bg-dark-1 text-dark dark:text-white">
-              <figure class="aspect-w-1 aspect-h-1"><img :src="p.Picture" class="object-cover" alt="" /></figure>
-              <div class="card-body">
-                <h2 class=" text-2xl font-bold">{{ p.Name }}</h2>
-                <p class="text-lg">Rp. {{ formatNumber(p.Price) }}</p>
-                <p>{{ p.Description }}</p>
-                <div class="card-actions ">
-                  <button @click.prevent="handleAddToCart(p)" class="btn btn-primary w-full rounded-xl">Add To
-                    Cart</button>
-                </div>
-              </div>
+      <div class="flex flex-col gap-5 text-center text-dark dark:text-white">
+        <h2>Sponsored By:</h2>
+        <div x-data="{}" x-init="$nextTick(() => {
+        let ul = $refs.logos;
+        ul.insertAdjacentHTML('afterend', ul.outerHTML);
+        ul.nextSibling.setAttribute('aria-hidden', 'true');})"
+          class="w-full mx-auto inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+          <ul x-ref="logos"
+            class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
+            <li>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/J_Trust_Bank_logo.svg/2560px-J_Trust_Bank_logo.svg.png"
+                class="h-7 my-auto grayscale hover:grayscale-0" alt="">
+            </li>
+            <li>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Grab_Logo.svg/2560px-Grab_Logo.svg.png"
+                class="h-10 my-auto grayscale hover:grayscale-0" alt="">
+            </li>
+            <li>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/IDN_Media_Logo.png"
+                class="h-7 my-auto grayscale hover:grayscale-0" alt="">
+            </li>
+            <li>
+              <img src="https://upload.wikimedia.org/wikipedia/id/0/02/POP_MIE.png"
+                class="h-14 my-auto grayscale hover:grayscale-0" alt="">
+            </li>
+            <li>
+              <img src="https://seeklogo.com/images/N/nivea-men-logo-BD22C783FB-seeklogo.com.png"
+                class="h-16 my-auto grayscale hover:grayscale-0" alt="">
+            </li>
+            <li>
+              <img src="https://static.wikia.nocookie.net/logopedia/images/9/9a/Chitato.svg"
+                class="h-14 my-auto grayscale hover:grayscale-0" alt="">
+            </li>
+            <li>
+              <img src="../../public/svg/mandiri.svg" class="w-36 my-auto grayscale hover:grayscale-0" alt="">
+            </li>
+            <li>
+              <img src="https://upload.wikimedia.org/wikipedia/id/c/c2/Logo_Wafer_Tango.png" class="h-20 my-auto grayscale hover:grayscale-0" alt="">
+            </li>
+          </ul>
+          <ul
+            class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll"
+            aria-hidden="true">
+            <li>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/J_Trust_Bank_logo.svg/2560px-J_Trust_Bank_logo.svg.png"
+                class="h-7 my-auto grayscale hover:grayscale-0" alt="">
+            </li>
+            <li>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Grab_Logo.svg/2560px-Grab_Logo.svg.png"
+                class="h-10 my-auto grayscale hover:grayscale-0" alt="">
+            </li>
+            <li>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/IDN_Media_Logo.png"
+                class="h-7 my-auto grayscale hover:grayscale-0" alt="">
+            </li>
+            <li>
+              <img src="https://upload.wikimedia.org/wikipedia/id/0/02/POP_MIE.png"
+                class="h-14 my-auto grayscale hover:grayscale-0" alt="">
+            </li>
+            <li>
+              <img src="https://seeklogo.com/images/N/nivea-men-logo-BD22C783FB-seeklogo.com.png"
+                class="h-16 my-auto grayscale hover:grayscale-0" alt="">
+            </li>
+            <li>
+              <img src="https://static.wikia.nocookie.net/logopedia/images/9/9a/Chitato.svg"
+                class="h-14 my-auto grayscale hover:grayscale-0" alt="">
+            </li>
+            <li>
+              <img src="../../public/svg/mandiri.svg" class="w-36 my-auto grayscale hover:grayscale-0" alt="">
+            </li>
+            <li>
+              <img src="https://upload.wikimedia.org/wikipedia/id/c/c2/Logo_Wafer_Tango.png" class="h-20 my-auto grayscale hover:grayscale-0" alt="">
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex flex-col gap-3 ">
+        <div class="flex flex-row">
+          <h1 class="text-2xl md:text-3xl font-black text-dark dark:text-white my-auto">Shop</h1>
+          <RouterLink to="/shop" class="my-auto relative ms-auto text-dark dark:text-white">
+            <p>Lihat Selengkapnya ></p>
+          </RouterLink>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-7 gap-3">
+          <div v-for="p in product"
+            class="card card-compact  bg-gray-50 dark:bg-dark-1 text-dark dark:text-white shadow-xl">
+            <figure class="aspect-1"><img :src="p.Picture" class="object-cover" alt="" /></figure>
+            <div class="card-body gap-0">
+              <h2 class="text-lg md:text-2xl font-medium">{{ p.Name }}</h2>
+              <p class="text-lg md:text-lg font-bold">Rp. {{ formatNumber(p.Price) }}</p>
             </div>
           </div>
         </div>
-        
       </div>
+      
     </div>
   </section>
 </template>
