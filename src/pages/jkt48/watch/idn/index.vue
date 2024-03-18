@@ -1,7 +1,7 @@
 <template>
   <div v-if="data" class="relative min-h-screen min-w-0 flex-1 xl:pb-20">
-    <div class="flex flex-col gap-5 text-center">
-      <VideoPlayer class="mx-auto text-center " :options="videoOptions" />
+    <div class="flex aspect-video w-full gap-5 text-center">
+      <VideoPlayer :posterUrl="data.image" class="mx-auto" :options="videoOptions" />
     </div>
     <div class="flex flex-row p-5">
       <div class="mx-auto w-32 h-32 md:w-40 md:h-40 relative -mt-24 border-4 border-white dark:border-dark-1 rounded-full overflow-hidden">
@@ -40,7 +40,7 @@ export default {
   methods: {
     changeSource() {
       this.videoOptions.sources = [{
-        src: this.data.stream_url,
+        src: `https://stream.showroomjkt48.workers.dev/${this.data.stream_url}`,
         type: "application/x-mpegURL",
       }]
     }

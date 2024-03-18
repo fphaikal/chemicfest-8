@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full h-full flex justify-center items-center">
-    <video ref="videoPlayer" class="video-js"></video>
+  <div class="flex justify-center w-full h-full">
+    <video :poster="posterUrl" ref="videoPlayer" class="video-js aspect-video w-full"></video>
   </div>
 </template>
 
@@ -15,6 +15,10 @@ export default {
       default() {
         return {};
       }
+    },
+    posterUrl: {
+      type: String,
+      default: ''
     }
   },
   data() {
