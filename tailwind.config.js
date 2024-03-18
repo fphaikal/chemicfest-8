@@ -2,8 +2,7 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{vue,js,ts,jsx,tsx}",
-    "./node_modules/flowbite/**/*.js",
+    "./src/**/*.{vue,js,ts,jsx,tsx}" 
   ],
   darkMode: "class",
   theme: {
@@ -31,8 +30,7 @@ export default {
   plugins: [
     require("@headlessui/vue"),
     require("daisyui"),
-    require("@tailwindcss/aspect-ratio"),
-    require("flowbite/plugin"),
+    require("@tailwindcss/aspect-ratio") 
   ],
   daisyui: {
     themes: [],

@@ -105,6 +105,12 @@ const toggleDark = useToggle(isDark);
                           </svg>
                           <span>{{ alertMessage }}</span>
                         </div>
+                        <div v-if="alertSuccess" role="alert" class="alert alert-success bg-green-500 mb-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                           
+                          <span>{{ alertMessage }}</span>
+                        </div>
+
                         <div class="flex flex-col mx-auto" @submit.prevent="handleRegister">
                           <form class="w-full flex ">
                             <div class="relative w-1/2">
@@ -133,6 +139,17 @@ const toggleDark = useToggle(isDark);
                               <input :type="showPassword ? 'text' : 'password'" v-model="register.password"
                                 class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Password" required>
+                              <div class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5">
+                                <button type="button" @click="toggleShow"><span class="icon is-small is-right">
+                                    <Icon :icon="showPassword ? 'mdi:show' : 'mdi:hide'" width="20"></Icon>
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                            <div class="relative mt-3">
+                              <input :type="showPassword ? 'text' : 'password'" v-model="register.repassword"
+                                class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="Re-enter Password" required>
                               <div class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5">
                                 <button type="button" @click="toggleShow"><span class="icon is-small is-right">
                                     <Icon :icon="showPassword ? 'mdi:show' : 'mdi:hide'" width="20"></Icon>
@@ -259,8 +276,9 @@ export default {
         name: '',
         username: '',
         email: '',
-        phone: '',
+        phone: '62',
         password: '',
+        repassword: '',
       },
       verify: {
         user: '',
@@ -277,6 +295,8 @@ export default {
       warningMessage: '',
       warningType: false,
       showPassword: false,
+
+      alertSuccess: false,
 
     };
   },
@@ -306,8 +326,8 @@ export default {
           localStorage.setItem('phone', response.data.data.Phone);
           localStorage.setItem('email', response.data.data.Email);
           localStorage.setItem('uuid', response.data.data.UUID);
-          localStorage.setItem('sessionId', response.data.data.sessionId);
-          console.log('User data saved to localStorage:', response.data.data.Role);
+          localStorage.setItem('sessionId', response.data.sessionId);
+          console.log('User data saved to localStorage:', response);
 
 
           // Set timeout to delete localStorage when cookie expires
@@ -322,6 +342,8 @@ export default {
           }, expires - Date.now());
 
           router.push({ name: 'home' });
+
+          this.alertType = false;
         }
 
       } catch (error) {
@@ -344,12 +366,17 @@ export default {
           email: this.register.email,
           phone: this.register.phone.toString(),
           password: this.register.password,
+          repassword: this.register.repassword,
           role: this.selectedRole,
         });
 
         if (response.data.code === 200) {
           console.log('Register response:', response);
           router.push({ name: 'login' });
+
+          this.alertType = false;
+          this.alertSuccess = true;
+          this.alertMessage = response.data.message;
         }
 
       } catch (error) {
@@ -359,6 +386,7 @@ export default {
 
         this.alertMessage = error.response.data.message;
         this.alertType = true;
+        this.alertSuccess = false;
       }
     },
 
