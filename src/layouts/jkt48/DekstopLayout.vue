@@ -15,13 +15,13 @@ const toggleDark = useToggle(isDark);
           class="mt-4 mb-2.5 text-2xl text-center font-bold text-dark dark:text-white max-2xl:hidden">JKT48 SR</RouterLink>
         <RouterLink aria-current="page" :to="{name: 'jkt48'}"
           class="mt-4 mb-2.5 text-2xl text-center justify-center font-bold text-dark dark:text-white hidden max-2xl:flex">$*</RouterLink>
-        <router-link :to="{name: 'jkt48'}" :active-class="isHomeActive ? 'bg-white-1 dark:bg-dark-1 !font-black ' : ''  "
+        <router-link :to="{name: 'jkt48'}" :active-class="isHomeActive ? 'bg-white-1 dark:bg-dark-1 !font-black ' : ''  " aria-label="Home"
           class="inline-flex items-center overflow-hidden rounded-full p-3 transition-[background-color] group-hover:bg-hover">
           <Icon :icon="isHomeActive ? 'mingcute:home-5-fill' : 'mingcute:home-5-line'" width="28"
             class="dark:text-white" />
           <div class="ml-5 mr-4 text-xl text-dark dark:text-white max-2xl:hidden">Home</div>
         </router-link>
-        <router-link v-slot="{isActive}" :to="{name: 'member'}" active-class="bg-white-1 dark:bg-dark-1 !font-black"
+        <router-link v-slot="{isActive}" :to="{name: 'member'}" active-class="bg-white-1 dark:bg-dark-1 !font-black" aria-label="Member"
           class="inline-flex items-center overflow-hidden rounded-full p-3 transition-[background-color] group-hover:bg-hover">
           <Icon :icon="isActive ? 'mingcute:group-3-fill' : 'mingcute:group-3-line'"
             width="28" class="dark:text-white" />
@@ -29,12 +29,12 @@ const toggleDark = useToggle(isDark);
         </router-link>
       </div>
       <div class="justify-center my-3 flex flex-col gap-2">
-        <RouterLink :to="{ name:'home' }" class="py-2 rounded-full flex items-center p-2 justify-center dark:text-white text-dark shadow-lg  bg-slate-50 dark:bg-dark-1">
+        <RouterLink aria-label="BackToMain" :to="{ name:'home' }" class="py-2 rounded-full flex items-center p-2 justify-center dark:text-white text-dark shadow-lg  bg-slate-50 dark:bg-dark-1">
           <Icon icon="ion:chevron-back-circle" width="25"/>
           <span class="ms-2 max-2xl:hidden">Back To CF#8</span>
           
         </RouterLink>
-        <button @click="toggleDark()"
+        <button @click="toggleDark()" aria-label="Toggle Dark Mode" name="theme-toggle"
           class="py-2 rounded-full flex items-center p-2 justify-center dark:text-white text-dark shadow-lg  bg-slate-50 dark:bg-dark-1">
           <Icon icon="mingcute:sun-line" width="25" class="dark:!hidden" />
           <Icon icon="mingcute:moon-line" width="25" class="!hidden dark:!inline-block" />

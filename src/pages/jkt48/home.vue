@@ -11,37 +11,40 @@ import recentLive from '../../components/jkt48/recentLive.vue';
       <div class="flex flex-col w-full sm:w-2/3 gap-5">
         <div class="flex flex-col gap-2">
           <h1 class="text-2xl font-bold text-dark dark:text-white">LIVE</h1>
-          <div v-if="liveStatus" class="grid  grid-cols-2 md:grid-cols-4 bg-gray-50 dark:bg-dark-1 rounded-xl p-3 gap-3">
-            <div v-for="l in live" class="card bg-white dark:bg-dark dark:text-white text-dark shadow-xl h-72 rounded-xl" >
-              <figure><img :src="l.img" alt=""></figure>
-              <div class="card-body p-4 justify-between">
-                <div class="flex flex-col">
-                  <div class="card-title">{{ l.url }}</div>
-                  <div class="card-text">{{ formatDate(l.started_at) }}</div>
+          <div v-if="liveStatus" v-for="l in live" class="grid grid-cols-2 md:grid-cols-4 bg-gray-50 dark:bg-dark-1 rounded-xl p-3 gap-3">
+            <div v-if="l.type === 'showroom'" class="card bg-white dark:bg-dark dark:text-white text-dark shadow-xl h-72 rounded-xl">
+                <figure><img :src="l.img" :alt="l.img_alt"></figure>
+                <div class="card-body p-4 justify-between">
+                    <div class="flex flex-col">
+                        <div class="card-title">{{ l.url }}</div>
+                        <div class="card-text">{{ formatDate(l.started_at) }}</div>
+                    </div>
+                    <RouterLink :to="'jkt48/watch/' + l.url" class="btn bg-dark text-white hover:text-dark dark:hover:text-white dark:hover:bg-dark dark:bg-white dark:text-dark h-fit rounded-xl">Watch</RouterLink>
                 </div>
-                <RouterLink :to="'jkt48/watch/' + l.url" class="btn bg-dark text-white hover:text-dark dark:hover:text-white dark:hover:bg-dark dark:bg-white dark:text-dark h-fit rounded-xl">Watch</RouterLink>
-              </div>
             </div>
-            <RouterLink :to="'jkt48/watch/idn/'+ l.user.username " v-for="l in idnLive" class="transition ease-in-out delay-150 hover:-translate-y-0 hover:scale-105 hover:bg-indigo-500 duration-300 card bg-white shadow-xl h-72 bg-cover rounded-lg justify-center" :style="{ 'background-image': 'linear-gradient(to top, rgba(0,0,0,0.8) , rgba(255,255,255,0)), url(' + l.image + ')' }">
-              <figure><img class="p-4 w-28 mx-auto"  src="https://upload.wikimedia.org/wikipedia/commons/b/ba/IDN_Live.svg" alt=""></figure>
-
-              <div class="card-body p-4 justify-end gap-0 text-center text-white">
-                <div class="card-title text-xl font-bold justify-center">{{ l.user.name }}</div>
-                <div class="card-text">{{ formatDate(l.live_at) }}</div>
-              </div>
+            <RouterLink v-else-if="l.type === 'idn'" :to="'jkt48/watch/idn/'+ l.url_key" class="transition ease-in-out delay-150 hover:-translate-y-0 hover:scale-105 hover:bg-indigo-500 duration-300 card bg-white shadow-xl h-72 bg-cover rounded-lg justify-center" :style="{ 'background-image': 'linear-gradient(to top, rgba(0,0,0,0.8) , rgba(255,255,255,0)), url(' + l.img + ')' }">
+                <figure><img class="p-4 w-28 mx-auto"  src="https://upload.wikimedia.org/wikipedia/commons/b/ba/IDN_Live.svg" :alt="l.img_alt"></figure>
+        
+                <div class="card-body p-4 justify-end gap-0 text-center text-white">
+                    <div class="card-title text-xl font-bold justify-center">{{ l.name }}</div>
+                    <div class="card-text">{{ formatDate(l.started_at) }}</div>
+                </div>
             </RouterLink>
-          </div>
-          <div v-else class="bg-gray-50 dark:bg-dark-1 rounded-xl p-5">
-            <p class="text-lg font-semibold text-center text-dark dark:text-white">No live available</p>
-          </div>
+            <div v-else class="bg-gray-50 dark:bg-dark-1 rounded-xl p-5">
+                <p class="text-lg font-semibold text-center text-dark dark:text-white">No live available</p>
+            </div>
+        </div>
+        
         </div>
         <div class="flex flex-col gap-3">
           <h1 class="text-2xl font-bold text-dark dark:text-white">Jadwal Theater</h1>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <RouterLink :to="'jkt48/theater/' + s._id" v-for="s in scheduleJkt48" class="bg-gray-50 dark:bg-dark-1 p-4 flex-row flex gap-3 rounded-xl">
-              <img class="w-1/3 rounded-lg" :src="getSetlistImg(s.setlist.name)" alt="">
+              <div class="aspect-h-4   aspect-w-9 w-1/3 h-fit">
+                <img class=" object-cover rounded-lg" :src="getSetlistImg(s)" alt="">
+              </div>    
 
-              <div class="flex flex-col gap-1">
+              <div class="flex flex-col gap-1 w-fit">
                 <h1 class="text-dark dark:text-white font-base text-xl">{{ s.setlist.name }}</h1>
                 <p class="text-dark dark:text-white font-light text-md">{{ formatDate(s.showDate) }}</p>
               </div>
@@ -82,7 +85,6 @@ export default {
     const scheduleJkt48 = await getScheduleJKT48('schedules?isOnWeekSchedule=true');
     this.scheduleJkt48 = scheduleJkt48;
 
-    console.log(this.scheduleJkt48[0].setlist.name);
   },
   methods: {
     async loadLive() {
@@ -94,10 +96,10 @@ export default {
       this.liveStatus = this.live.length > 0 || this.idnLive.length > 0;
     },
     getSetlistImg(data) {
-      if(data in this.setlistImg) {
+      if(data.setlist.image in this.setlistImg) {
         return this.setlistImg[data];
       } else {
-        return data;
+        return data.setlist.image;
       }
     },
     
