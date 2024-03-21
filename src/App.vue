@@ -30,7 +30,7 @@ export default {
         const user  = localStorage.getItem('username')
         const isLoggedIn = !!localStorage.getItem('sessionId');
   
-        if (sessionId && user) {
+        if (isLoggedIn) {
           this.response = await axios.post('https://chemicfest.site/api/session/main/check', {
             sessionid: sessionId,
             users: user
@@ -39,7 +39,7 @@ export default {
         }
 
       } catch (error) {
-        if(error.response.status === 400) {
+        if(error.response.data.message === "Session not found") {
           document.cookie = 'sessionId=; expires=Thu, 01 Jan 1970 00:00:00 UTC;';
 
           localStorage.removeItem('sessionId');
@@ -51,7 +51,7 @@ export default {
           this.$router.push('/login')
           console.log('Session Expired')
         }
-        console.error(error.response.status);
+        console.error(error);
       }      
     }
   }

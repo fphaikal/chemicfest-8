@@ -200,7 +200,14 @@ export default {
         window.snap.pay(response.data, {
           onSuccess: function(result){
             /* You may add your own implementation here */
-            alert("payment success!"); console.log(result);
+            console.log(result);
+
+            const response = axios.post('https://chemicfest.site/api/verify/payment/ticket', {
+              users: uuid,
+              order_id: result.order_id,
+              transaction_status: 'on success'
+            });
+            console.log(response.data);
           },
           onPending: function(result){
             /* You may add your own implementation here */
