@@ -207,7 +207,7 @@ export default {
               order_id: result.order_id,
               transaction_status: 'on success'
             });
-            console.log(response.data);
+            console.log(response);
           },
           onPending: function(result){
             /* You may add your own implementation here */
