@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ticket Chemicfest#8</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/2.0.0/iconify-icon.min.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              white: "#f1f5f9",
+              "white-1": "#cbd5e1",
+              dark: "#1e2124",
+              "dark-1": "#282b30",
+            },
+            fontFamily: {
+              signika: ["Signika", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @font-face {
+        font-family: "Signika";
+        src: url("../public/fonts/Signika-VariableFont_GRAD,wght.ttf");
+      }
+
+      body {
+        @apply max-w-[1000px] mx-auto;
+      }
+
+      @media print {
+        body {
+          margin: 0;
+        }
+
+        .no-print {
+          display: none;
+        }
+
+        /* Enable background graphics */
+        html {
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+
+        /* Disable headers and footers */
+        @page {
+          size: auto;
+          margin: 0;
+        }
+      }
+    </style>
+  </head>
+  <body class="font-signika h-full">
+    <!--Header-->
+    <div class="flex bg-dark p-6" style="background-image: url(pattern.png); background-size: cover;">
+      <div class="mx-2 sm:mx-10 flex w-full">
+        <img src="osis.png" class="w-16 sm:w-20" alt="CF Logo">
+        <p class="ms-auto text-white">E-Ticket</p>
+      </div>
+    </div>
+
+    <!--Informasi Acara-->
+    <div class="text-5xl font-bold mt-5 mx-5 sm:mx-20">
+      <div class="flex flex-col border-2 p-4 rounded-xl">
+        <h5 class="text-2xl">Chemicfest #8 - Enjoy The Show Let The Retro Flow</h5>
+        <div class="flex flex-col sm:flex-row mt-4 gap-7">
+          <div class="w-full sm:w-1/3">
+            <!--Poster-->
+            <img class="w-full rounded-lg" src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit1440960gsm/events/2023/12/27/26f7e9fd-b5aa-4f6c-a3fb-cb12ed636c17-1703676912125-7c0ade6c962ab6022e890f4d7aea6229.jpg" class="w-44" alt="">
+          </div>
+          <div class="flex flex-col w-full sm:w-2/3 gap-2">
+            <div class="flex flex-row gap-3 w-full">
+              <iconify-icon class="my-auto text-dark md:w-fit" width="28" icon="heroicons-solid:badge-check" ></iconify-icon>
+              <p class="my-auto text-base lg:text-lg text-dark  font-semibold">OSIS SMK SMTI Yogyakarta</p>
+            </div>
+            <div class="flex flex-row gap-3 w-full">
+              <iconify-icon class="my-auto text-dark md:w-fit" width="28" icon="uil:schedule" ></iconify-icon>
+              <p class="my-auto text-base lg:text-lg text-dark  font-normal">14 Mei 2024</p>
+            </div>
+            <div class="flex flex-row gap-3 w-full">
+              <iconify-icon class="my-auto text-dark  md:w-fit" width="28" icon="carbon:location-filled" ></iconify-icon>
+              <p class="my-auto text-base lg:text-lg text-dark font-normal">Auditorium RRI, Jl. Affandi No.37, Mrican, Caturtunggal</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Informasi Pesanan-->
+      <div class="flex flex-col mt-5 gap-4">
+        <h5 class="text-xl">Informasi Pesanan</h5>
+        <div class="flex flex-col sm:flex-row gap-2">
+          <div class="flex flex-col w-full sm:w-2/3 border-2 rounded-xl p-4 gap-2">
+            <div class="flex flex-row gap-3 w-full">
+              <p class="my-auto text-base text-dark w-1/3 font-normal">Kode Pesanan</p>
+              <p class="my-auto text-base text-dark w-2/3 font-semibold">CF8-2024-0001</p>
+            </div>
+
+            <!--Nama Pemesan-->
+            <div class="flex flex-row gap-3 w-full">
+              <p class="my-auto text-base text-dark w-1/3 font-normal">Nama Pemesan</p>
+              <p class="my-auto text-base text-dark w-2/3 font-semibold">NATASHA CHRISTINA PUTRI</p>
+            </div>
+            <div class="flex flex-row gap-3 w-full">
+              <p class="my-auto text-base text-dark w-1/3 font-normal">Berlaku Untuk</p>
+              <p class="my-auto text-base text-dark w-2/3 font-semibold">1 Pax</p>
+            </div>
+            <div class="flex flex-row gap-3 w-full">
+              <p class="my-auto text-base text-dark w-1/3 font-normal">Validitas Voucher</p>
+              <p class="my-auto text-base text-dark w-2/3 font-semibold">14 Mei 2024</p>
+            </div>
+          </div>
+
+          <div class="flex flex-col w-full sm:w-1/3 border-2 rounded-xl p-4 gap-2 mx-auto text-center">
+            <p class="font-bold text-lg">IDR 40.000</p>
+            <img src="https://qrcg-free-editor.qr-code-generator.com/main/assets/images/websiteQRCode_noFrame.png" class="w-1/2 mx-auto" alt="">
+            <p class="font-light text-sm">Dibuat pada 17 Agustus 1945</p>
+          </div>
+        </div>
+      </div>
+
+      <!--Syarat dan Ketentuan-->
+      <div class="flex flex-col mt-5 gap-4">
+        <h5 class="text-xl">Syarat dan Ketentuan</h5>
+        <p class="leading-loose text-base font-normal">
+          - General Sales dimulai pada 20 April 2024 pukul 14.00 WIB <br>
+          - Maks. pembelian 1 tiket per akun/ID per show day. <br>
+          - Wajib login ke akun chemicfest.com untuk melakukan pembelian. <br>
+          - Selesaikan pembayaran maksimal 15 menit setelah melakukan pemesanan. E-tiket tidak akan terbit jika pembayaran
+          dilakukan setelah waktu pembayaran habis.<br>
+        </p>
+      </div>
+
+    </div>
+  </body>
+</html>

@@ -10,12 +10,9 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
     <div class="modal-box bg-gray-50 dark:bg-dark text-dark dark:text-white max-w-2xl">
       <h3 class="font-bold text-2xl">Info Penting</h3>
       <p class="py-4 leading-loose">
-        - General Sales dimulai pada 1 April 2024 pukul 14.00 WIB <br>
-        - Maks. pembelian 2 tiket per akun/ID per show day. <br>
-        - Wajib login ke akun tiket.com untuk melakukan pembelian. <br>
-        - Tiket Kategori Blue Soundcheck tidak dapat dipindahtangkan. Akan ada pemeriksaan kartu identitas dan pencocokan
-        wajah. <br>
-        - Semua penonton berusia 18 tahun ke atas wajib sudah mendapatkan vaksinasi booster. <br>
+        - General Sales dimulai pada 20 April 2024 pukul 14.00 WIB <br>
+        - Maks. pembelian 1 tiket per akun/ID per show day. <br>
+        - Wajib login ke akun chemicfest.com untuk melakukan pembelian. <br>
         - Selesaikan pembayaran maksimal 15 menit setelah melakukan pemesanan. E-tiket tidak akan terbit jika pembayaran
         dilakukan setelah waktu pembayaran habis.<br>
       </p>
