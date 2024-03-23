@@ -1,11 +1,15 @@
 <script setup>
 import VueCountdown from '@chenfengyuan/vue-countdown';
 import formatNumber from '../utils/formatNumber';
+
+const isLoggedIn = !!localStorage.getItem('sessionId');
+const getRole = isLoggedIn ? localStorage.getItem('role') : '';
+
 </script>
 
 <template>
   <section>
-    <div class="relative min-h-screen min-w-0 flex-1 xl:pb-24 p-3 flex flex-col gap-5">
+    <div v-if="getRole != 'admin'" class="relative min-h-screen min-w-0 flex-1 xl:pb-24 p-3 flex flex-col gap-5">
       <div class="flex flex-col gap-3">
         <div class="w-full flex flex-col md:flex-row gap-3">
           <div class="w-full p-9 md:p-20 antialiased self-center bg-dark dark:bg-dark-1 text-white dark:text-white rounded-[50px]">
@@ -32,7 +36,6 @@ import formatNumber from '../utils/formatNumber';
               </div>
             </div>
           </div>
-
         </div>
       </div>
       <div class="flex flex-col gap-5 text-center text-dark dark:text-white">
@@ -71,7 +74,7 @@ import formatNumber from '../utils/formatNumber';
                 class="h-14 my-auto grayscale hover:grayscale-0" alt="">
             </li>
             <li>
-              <img src="../../public/svg/mandiri.svg" class="w-36 my-auto grayscale hover:grayscale-0" alt="">
+              <img src="/svg/mandiri.svg" class="w-36 my-auto grayscale hover:grayscale-0" alt="">
             </li>
             <li>
               <img src="https://upload.wikimedia.org/wikipedia/id/c/c2/Logo_Wafer_Tango.png" class="h-20 my-auto grayscale hover:grayscale-0" alt="">
@@ -107,7 +110,7 @@ import formatNumber from '../utils/formatNumber';
                 class="h-14 my-auto grayscale hover:grayscale-0" alt="">
             </li>
             <li>
-              <img src="../../public/svg/mandiri.svg" class="w-36 my-auto grayscale hover:grayscale-0" alt="">
+              <img src="/svg/mandiri.svg" class="w-36 my-auto grayscale hover:grayscale-0" alt="">
             </li>
             <li>
               <img src="https://upload.wikimedia.org/wikipedia/id/c/c2/Logo_Wafer_Tango.png" class="h-20 my-auto grayscale hover:grayscale-0" alt="">
@@ -133,7 +136,40 @@ import formatNumber from '../utils/formatNumber';
           </div>
         </div>
       </div>
-      
+    </div>
+    <div v-else class="relative min-h-screen min-w-0 flex-1 xl:pb-24 p-3 flex flex-col gap-5">
+      <div class="flex flex-col gap-3">
+        <div class="w-full flex flex-col md:flex-row gap-3">
+          <div class="w-full p-9 md:p-20 antialiased self-center bg-dark dark:bg-dark-1 text-white dark:text-white rounded-[50px]">
+            <div class="flex flex-col-reverse md:flex-row justify-between">
+              <div class="flex flex-col gap-2 md:w-4/5 my-auto">
+                <div class="text-4xl sm:text-5xl lg:text-7xl font-bold mx-auto md:mx-0">Chemicfest #8</div>
+                <div class="text-lg sm :text-3xl lg:text-xl font-base mx-auto md:mx-0">Paduan Jiwa Harmoni</div>
+              </div>
+              <div
+                class="w-full md:w-1/5 antialiased self-center my-auto text-white dark:text-white rounded-[50px] mb-7 md:mb-0">
+                <div class="font-bold mx-auto">
+                  <VueCountdown :time="time" :interval="100" v-slot="{ days, hours, minutes, seconds }"
+                    class="gap-5 text-center">
+                    <div class="flex flex-col bg-neutral rounded-box text-neutral-content">
+                      <span class="text-7xl lg:text-9xl">
+                        <span>{{ days }}</span>
+                      </span>
+                      Hari
+                    </div>
+                  </VueCountdown>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col bg-gray-50 dark:bg-dark-1 w-fit rounded-3xl p-5 gap-5">
+        <h1 class="text-dark dark:text-white text-center text-xl font-semibold">Target Peserta</h1>
+        <div v-if="users" class="mx-5 radial-progress bg-white dark:bg-dark text-dark dark:text-white border-4 border-primary" :style="`--value:${(users.length / 1000) * 100}; --size:12rem;`" role="progressbar">
+          <p class="text-xl">{{ users.length }}</p>
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -151,11 +187,15 @@ export default {
       time: newYear - now,
       product: [],
       gallery: [],
+      users: []
     };
   },
   async mounted() {
     try {
       const shop = await getAll('get/pricelist');
+
+      this.users = await getAll('get/alluser');
+
       this.product = shop.Shop
 
       this.gallery = await getAll('get/gallery');
