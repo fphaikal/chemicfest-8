@@ -8,13 +8,11 @@ import formatNumber from '../utils/formatNumber';
     <div class="relative min-h-screen min-w-0 flex-1 xl:pb-24 p-3 flex flex-col gap-5">
       <div class="flex flex-col gap-3">
         <div class="w-full flex flex-col md:flex-row gap-3">
-          <div
-            class="w-full p-9 md:p-20 antialiased self-center bg-dark dark:bg-dark-1 text-white dark:text-white rounded-[50px]">
+          <div class="w-full p-9 md:p-20 antialiased self-center bg-dark dark:bg-dark-1 text-white dark:text-white rounded-[50px]">
             <div class="flex flex-col-reverse md:flex-row justify-between">
               <div class="flex flex-col gap-2 md:w-4/5">
                 <div class="text-4xl sm:text-5xl lg:text-7xl font-bold mx-auto md:mx-0">Chemicfest #8</div>
-                <div class="text-lg sm :text-3xl lg:text-xl font-base mx-auto md:mx-0">Enjoy The Show, Let The Retro
-                  Flow</div>
+                <div class="text-lg sm :text-3xl lg:text-xl font-base mx-auto md:mx-0">Paduan Jiwa Harmoni</div>
                 <RouterLink to="buyticket" class="btn mt-2 sm:mt-5 rounded-2xl w-fit mx-auto md:mx-0">Beli Tiket
                 </RouterLink>
               </div>
