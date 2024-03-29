@@ -8,7 +8,7 @@ import "video.js/dist/video-js.css"
 import 'flowbite';
 
 import { inject } from "@vercel/analytics"
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/vue"
 
 const app = createApp(App)
 app.use(router)
