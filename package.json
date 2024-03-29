@@ -17,6 +17,7 @@
     "@popperjs/core": "2.11.8",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@vercel/analytics": "^1.2.2",
+    "@vercel/speed-insights": "^1.0.10",
     "@videojs-player/vue": "^1.0.0",
     "@vueuse/core": "^10.7.2",
     "axios": "^1.6.7",
