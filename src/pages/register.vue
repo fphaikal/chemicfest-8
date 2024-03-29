@@ -18,17 +18,10 @@ const toggleDark = useToggle(isDark);
             <RouterLink :to="{ name: 'home' }"
               class="text-bold font-bold text-4xl text-center text-dark dark:text-white pt-5">Chemicfest #8</RouterLink>
             <div class="w-2/3 mx-auto">
-              <h1 class="text-center text-dark dark:text-white text-3xl font-bold mb-5">Login</h1>
+              <h1 class="text-center text-dark dark:text-white text-3xl font-bold mb-5">Register</h1>
               <ul>
                 <li class="relative rounded-md pt-3">
-                  <div v-if="verificationSuccess" role="alert" class="alert alert-success bg-green-500 mb-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none"
-                      viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <span>Akun Berhasil di Verifikasi</span>
-                  </div>
+                  
                   <div v-if="alertType" role="alert" class="alert alert-error bg-red-500 mb-2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none"
                       viewBox="0 0 24 24">
@@ -37,25 +30,43 @@ const toggleDark = useToggle(isDark);
                     </svg>
                     <span>{{ alertMessage }}</span>
                   </div>
-                  <div class="flex flex-col ">
-                    <form class="w-full mx-auto" @submit.prevent="handleLogin">
-                      <div class="relative">
-                        <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
-                          <Icon icon="ic:baseline-email" class="w-4 h-4 text-gray-500 dark:text-gray-400"
-                            aria-hidden="true" />
-                        </div>
+                  <div v-if="alertSuccess" role="alert" class="alert alert-success bg-green-500 mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none"
+                      viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
 
-                        <input name="user" type="username" v-model="login.user"
-                          class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    <span>{{ alertMessage }}</span>
+                  </div>
+
+                  <div class="flex flex-col mx-auto" @submit.prevent="handleRegister">
+                    <form class="w-full flex ">
+                      <div class="relative w-1/2">
+                        <input type="text" v-model="register.name"
+                          class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                          placeholder="Nama" required>
+                      </div>
+                      <div class="relative w-1/2 ml-2">
+                        <input type="text" v-model="register.username"
+                          class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                          placeholder="Username" required>
+                      </div>
+                    </form>
+                    <form class="w-full pt-3 mx-auto">
+                      <div class="relative ">
+                        <input type="email" v-model="register.email"
+                          class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                           placeholder="Email" required>
                       </div>
                       <div class="relative mt-3">
-                        <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
-                          <Icon icon="mingcute:lock-fill" class="w-4 h-4 text-gray-500 dark:text-gray-400"
-                            aria-hidden="true" />
-                        </div>
-                        <input :type="showPassword ? 'text' : 'password'" v-model="login.pass"
-                          class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        <input type="number" v-model="register.phone"
+                          class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                          placeholder="Nomor Telepon" required>
+                      </div>
+                      <div class="relative mt-3">
+                        <input :type="showPassword ? 'text' : 'password'" v-model="register.password"
+                          class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                           placeholder="Password" required>
                         <div class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5">
                           <button type="button" @click="toggleShow"><span class="icon is-small is-right">
@@ -64,9 +75,43 @@ const toggleDark = useToggle(isDark);
                           </button>
                         </div>
                       </div>
-                      <div class="flex flex-col mx-auto text-center pt-5 gap-4">
-                        <button type="submit" class="rounded-2xl py-3 px-10 inline-flex bg-dark-1 text-white hover:bg-dark w-full justify-center mx-auto">Login</button>
-                        <p class="texxt-dark dark:text-white">Belum Memiliki Akun? Silahkan Untuk <RouterLink to="/register" class="text-blue-500">Register</RouterLink></p>
+                      <div class="relative mt-3">
+                        <input :type="showPassword ? 'text' : 'password'" v-model="register.repassword"
+                          class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                          placeholder="Re-enter Password" required>
+                        <div class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5">
+                          <button type="button" @click="toggleShow"><span class="icon is-small is-right">
+                              <Icon :icon="showPassword ? 'mdi:show' : 'mdi:hide'" width="20"></Icon>
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="flex flex-row gap-5 mt-3 text-dark dark:text-white">
+                        <div class="form-control ">
+                          <label class="label cursor-pointer gap-2">
+                            <input v-model="selectedRole" value="siswa" type="radio" name="role"
+                              class="radio checked:bg-dark dark:checked:bg-white" />
+                            <span class="label-text">Siswa</span>
+                          </label>
+                        </div>
+                        <div class="form-control">
+                          <label class="label cursor-pointer gap-2">
+                            <input v-model="selectedRole" value="guru" type="radio" name="role"
+                              class="radio checked:bg-dark dark:checked:bg-white" />
+                            <span class="label-text">Guru</span>
+                          </label>
+                        </div>
+                        <div class="form-control">
+                          <label class="label cursor-pointer gap-2">
+                            <input v-model="selectedRole" value="alumni" type="radio" name="role"
+                              class="radio checked:bg-dark dark:checked:bg-white" />
+                            <span class="label-text">Alumni</span>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="flex flex-col mx-auto pt-5 text-center gap-3">
+                        <button type="submit" class="rounded-2xl py-3 px-10 inline-flex bg-dark-1 text-white hover:bg-dark w-full justify-center mx-auto">Register</button>
+                        <p class="text-dark dark:text-white">Sudah Memiliki Akun? Silahkan Untuk <RouterLink to="/login" class="text-blue-500">Login</RouterLink></p>
                       </div>
                     </form>
                   </div>

@@ -17,7 +17,9 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
               <div class="flex flex-col gap-2 md:w-4/5">
                 <div class="text-4xl sm:text-5xl lg:text-7xl font-bold mx-auto md:mx-0">Chemicfest #8</div>
                 <div class="text-lg sm :text-3xl lg:text-xl font-base mx-auto md:mx-0">Paduan Jiwa Harmoni</div>
-                <RouterLink to="buyticket" class="btn mt-2 sm:mt-5 rounded-2xl w-fit mx-auto md:mx-0">Beli Tiket
+                <RouterLink v-if="ticket && ticket.having !== true" to="buyticket" class="btn mt-2 sm:mt-5 rounded-2xl w-fit mx-auto md:mx-0">Beli Tiket
+                </RouterLink>
+                <RouterLink v-else to="buyticket" class="btn mt-2 sm:mt-5 rounded-2xl w-fit mx-auto md:mx-0">Beli Tiket
                 </RouterLink>
               </div>
               <div
@@ -137,7 +139,8 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
         </div>
       </div>
     </div>
-    <div v-else class="relative min-h-screen min-w-0 flex-1 xl:pb-24 p-3 flex flex-col gap-5">
+
+    <div v-else-if="getRole === 'admin' && isLoggedIn" class="relative min-h-screen min-w-0 flex-1 xl:pb-24 p-3 flex flex-col gap-5">
       <div class="flex flex-col gap-3">
         <div class="w-full flex flex-col md:flex-row gap-3">
           <div class="w-full p-9 md:p-20 antialiased self-center bg-dark dark:bg-dark-1 text-white dark:text-white rounded-[50px]">
@@ -176,6 +179,7 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
 
 <script>
 import { getAll } from "../utils/api/api";
+import axios from 'axios';
 
 export default {
   name: 'Home',
@@ -187,11 +191,16 @@ export default {
       time: newYear - now,
       product: [],
       gallery: [],
-      users: []
+      users: [],
+      ticket: null,
     };
   },
   async mounted() {
     try {
+      const isLoggedIn = !!localStorage.getItem('sessionId');
+
+      const uuid = parseInt(localStorage.getItem('uuid'));
+
       const shop = await getAll('get/pricelist');
 
       this.users = await getAll('get/alluser');
@@ -199,6 +208,14 @@ export default {
       this.product = shop.Shop
 
       this.gallery = await getAll('get/gallery');
+
+      if(isLoggedIn) {
+        const checkTicket = await axios.post('https://chemicfest.site/api/check/have/ticket', {
+          users: uuid
+        })
+  
+        this.ticket = checkTicket.data
+      }
 
     } catch (error) {
       console.error(error);

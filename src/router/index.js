@@ -4,11 +4,13 @@ import defaultLayout from '/layouts/default.vue'
 import HomeView from '../pages/home.vue'
 import AboutView from '../pages/about.vue'
 import LoginView from '../pages/login.vue'
+import RegisterView from '../pages/register.vue'
 import ShopView from '../pages/shop.vue'
 import GalleryView from '../pages/gallery.vue'
 import ProfileView from '../pages/profile.vue'
 import BuyTicketView from '../pages/buyTicket.vue'
 import CartView from '../pages/cart.vue'
+import TicketView from '../pages/eticket.vue'
 
 import WatchView from '../pages/watch/index.vue'
 
@@ -106,11 +108,15 @@ const router = createRouter({
           },
         },
         {
+          path: 'eticket',
+          name: 'eticket',
+          component: TicketView,
+        },
+        {
           path: 'watch',
           name: 'watch',
           component: WatchView,
         },
-        
         {
           path: 'profile',
           name: 'profile',
@@ -179,6 +185,11 @@ const router = createRouter({
           next()
         }
       }
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: RegisterView,
     },
   ]
 })
