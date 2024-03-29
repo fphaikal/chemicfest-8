@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invoice Chemicfest#8</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/2.0.0/iconify-icon.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            white: "#f1f5f9",
+            "white-1": "#cbd5e1",
+            dark: "#1e2124",
+            "dark-1": "#282b30",
+          },
+          fontFamily: {
+            signika: ["Signika", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+  <style type="text/tailwindcss">
+    @font-face {
+        font-family: "Signika";
+        src: url("/fonts/Signika-VariableFont_GRAD,wght.ttf");
+      }
+
+      body {
+        @apply max-w-[1000px] mx-auto;
+      }
+
+      @media print {
+        body {
+          margin: 0;
+        }
+
+        .no-print {
+          display: none;
+        }
+
+        /* Enable background graphics */
+        html {
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+
+        /* Disable headers and footers */
+        @page {
+          size: auto;
+          margin: 0;
+        }
+      }
+    </style>
+</head>
+
+<body class="font-signika h-[100vh] pt-10">
+  <div class="flex flex-col justify-between h-full">
+    <div class="flex flex-col p-5">
+      <!--Header-->
+      <div class="flex gap-2 justify-between">
+        <div class="w-1/2 my-auto">
+          <img src="osis.png" class="w-16 sm:w-28" alt="">
+        </div>
+        <div class="flex flex-col text-right w-1/2 my-auto">
+          <h1 class="text-2xl font-semibold">INVOICE</h1>
+          <h1 class="text-lg text-[#FC664E]">INV/1234/4567/MPL/3424</h1>
+        </div>
+      </div>
+  
+      <div class="flex justify-between gap-5">
+        <div class="flex flex-col w-1/2 my-auto mt-10 gap-1">
+          <h1 class="text-xl font-bold">DITERBITKAN OLEH</h1>
+          <h1 class="text-lg font-semibold">Chemicfest#8 | OSIS Chemicalistronic</h1>
+          <h1 class="text-base font-normal">Jl. Kusumanegara No.3, Yogyakarta 55166</h1>
+          <h1 class="text-base font-normal">noreply@chemicfest.com</h1>
+        </div>
+        <div class="flex flex-col w-1/2 my-auto mt-10 gap-1">
+          <h1 class="text-xl font-bold">UNTUK</h1>
+          <div class="flex flex-row gap-3 w-full">
+            <p class="my-auto text-base text-dark w-1/3 font-normal">Kode Pesanan</p>
+            <p class="my-auto text-base text-dark w-2/3 font-semibold">CF8-2024-0001</p>
+          </div>
+          <div class="flex flex-row gap-3 w-full">
+            <p class="my-auto text-base text-dark w-1/3 font-normal">Nama Pemesan</p>
+            <p class="my-auto text-base text-dark w-2/3 font-semibold">NATASHA CHRISTINA PUTRI</p>
+          </div>
+          <div class="flex flex-row gap-3 w-full">
+            <p class="my-auto text-base text-dark w-1/3 font-normal">Tanggal Pembelian</p>
+            <p class="my-auto text-base text-dark w-2/3 font-semibold">30 Mei 2024</p>
+          </div>
+        </div>
+      </div>
+  
+      <table class="table-auto w-full mt-10">
+        <thead class="border-t-2 border-b-2 text-left">
+          <tr>
+            <th>PRODUK</th>
+            <th>JUMLAH</th>
+            <th>HARGA SATUAN</th>
+            <th>TOTAL HARGA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hoodie</td>
+            <td>1</td>
+            <td>Rp300.000</td>
+            <td class="text-[#FC664E] font-semibold">Rp300.000</td>
+          </tr>
+          </tr>
+        </tbody>
+      </table>
+    </div>  
+
+    <div class="flex flex-col sm:flex-row gap-3 bg-[#F2F2E8]  p-16 justify-between rounded-t-3xl">
+      <div class="flex flex-col">
+        <h1 class="text-xl">TOTAL</h1>
+        <h1 class="text-3xl font-semibold text-[#FC664E]">Rp.300.000</h1>
+      </div>
+      <div class="flex flex-col">
+        <h1 class="text-xl">METODE PEMBAYARAN</h1>
+        <h1 class="text-3xl font-semibold">Qris</h1>
+      </div>
+      <div class="flex flex-col">
+        <h1 class="text-xl">STATUS</h1>
+        <h1 class="text-3xl font-semibold">LUNAS</h1>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
