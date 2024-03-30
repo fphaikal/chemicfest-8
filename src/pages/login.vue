@@ -44,7 +44,6 @@ const toggleDark = useToggle(isDark);
                           <Icon icon="ic:baseline-email" class="w-4 h-4 text-gray-500 dark:text-gray-400"
                             aria-hidden="true" />
                         </div>
-
                         <input name="user" type="username" v-model="login.user"
                           class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                           placeholder="Email" required>
