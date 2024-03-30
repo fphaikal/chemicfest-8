@@ -1,5 +1,6 @@
 <template>
     <RouterView/>
+    <SpeedInsight/> 
 </template>
 
 <script>
