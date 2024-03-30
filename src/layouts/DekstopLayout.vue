@@ -18,18 +18,18 @@ const isAdmin = getAdmin === 'admin';
     style="z-index: 999;">
     <div class="flex flex-col h-full mx-3 justify-between">
       <div class="flex-1 flex flex-col gap-3">
-        <RouterLink aria-current="page" :to="{ name: 'home' }"
-          class="mt-4 mb-2.5 text-2xl text-center font-bold text-dark dark:text-white max-2xl:hidden">Chemicfest #8
+        <RouterLink aria-current="page" :to="{ name: 'home' }" class="mt-4 text-2xl text-center font-bold text-dark dark:text-white max-2xl:hidden">
+          <img src="/text-logo.png" class="mx-auto w-3/4" alt="">
         </RouterLink>
-        <RouterLink aria-current="page" :to="{ name: 'home' }"
-          class="mt-4 mb-2.5 text-2xl text-center justify-center font-bold text-dark dark:text-white hidden max-2xl:flex">#8
+        <RouterLink aria-current="page" :to="{ name: 'home' }" class="mt-4 mb-2.5 text-2xl text-center justify-center font-bold text-dark dark:text-white hidden max-2xl:flex">
+          <img src="/8-logo.svg" class="mx-auto w-8" alt="">
         </RouterLink>
-        <router-link  aria-label="Home" :to="{ name: 'home' }" :active-class="isHomeActive ? 'bg-white-1 dark:bg-dark-1 !font-black ' : ''"
+        <RouterLink  aria-label="Home" :to="{ name: 'home' }" :active-class="isHomeActive ? 'bg-white-1 dark:bg-dark-1 !font-black ' : ''"
           class="inline-flex items-center overflow-hidden rounded-full p-3 transition-[background-color] group-hover:bg-hover">
           <Icon :icon="isHomeActive ? 'mingcute:home-5-fill' : 'mingcute:home-5-line'" width="28"
           class="dark:text-white" />
           <div class="ml-5 mr-4 text-xl text-dark dark:text-white max-2xl:hidden">Home</div>
-        </router-link>
+        </RouterLink>
       
         <router-link aria-label="Shop" v-slot="{ isActive }" v-if="!isAdmin" :to="{ name: 'shop' }"
           active-class="bg-white-1 dark:bg-dark-1 !font-black"
