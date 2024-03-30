@@ -111,6 +111,15 @@ const router = createRouter({
           path: 'eticket',
           name: 'eticket',
           component: TicketView,
+          beforeEnter: (to, from, next) => {
+            const sessionId = localStorage.getItem('sessionId')
+
+            if (sessionId) {
+              next()
+            } else {
+              next('/login')
+            }
+          },
         },
         {
           path: 'watch',

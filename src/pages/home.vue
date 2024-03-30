@@ -17,10 +17,10 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
               <div class="flex flex-col gap-2 md:w-4/5">
                 <div class="text-4xl sm:text-5xl lg:text-7xl font-bold mx-auto md:mx-0">Chemicfest #8</div>
                 <div class="text-lg sm :text-3xl lg:text-xl font-base mx-auto md:mx-0">Paduan Jiwa Harmoni</div>
-                <RouterLink v-if="ticket && ticket.having !== true" to="buyticket" class="btn mt-2 sm:mt-5 rounded-2xl w-fit mx-auto md:mx-0">Beli Tiket
+                <RouterLink v-if="ticket && ticket.having != true" to="buyticket" class="btn mt-2 sm:mt-5 rounded-2xl w-fit mx-auto md:mx-0">Beli Tiket
                 </RouterLink>
-                <RouterLink v-else to="buyticket" class="btn mt-2 sm:mt-5 rounded-2xl w-fit mx-auto md:mx-0">Beli Tiket
-                </RouterLink>
+                <RouterLink v-else-if="ticket && ticket.having === true" to="eticket" class="btn mt-2 sm:mt-5 rounded-2xl w-fit mx-auto md:mx-0">Lihat E-Ticket</RouterLink>
+                <RouterLink v-else to="buyticket" class="btn mt-2 sm:mt-5 rounded-2xl w-fit mx-auto md:mx-0">Buy Ticket</RouterLink>
               </div>
               <div
                 class="w-full md:w-1/5 antialiased self-center text-white dark:text-white rounded-[50px] mb-7 md:mb-0">
