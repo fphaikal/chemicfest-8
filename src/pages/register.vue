@@ -86,6 +86,7 @@ const toggleDark = useToggle(isDark);
                           </button>
                         </div>
                       </div>
+                      <input v-if="selectedRole === 'keluargasiswa'" :class="selectedRole === 'keluargasiswa' ? flex : hidden" type="file" class="file-input file-input-bordered file-input-primary w-full mt-3" />
                       <div class="flex flex-row gap-5 mt-3 text-dark dark:text-white">
                         <div class="form-control ">
                           <label class="label cursor-pointer gap-2">
@@ -106,6 +107,13 @@ const toggleDark = useToggle(isDark);
                             <input v-model="selectedRole" value="alumni" type="radio" name="role"
                               class="radio checked:bg-dark dark:checked:bg-white" />
                             <span class="label-text">Alumni</span>
+                          </label>
+                        </div>
+                        <div class="form-control">
+                          <label class="label cursor-pointer gap-2">
+                            <input v-model="selectedRole" value="keluargasiswa" type="radio" name="role"
+                              class="radio checked:bg-dark dark:checked:bg-white" />
+                            <span class="label-text">Keluarga Siswa</span>
                           </label>
                         </div>
                       </div>
@@ -235,54 +243,6 @@ export default {
     toggleShow() {
       this.showPassword = !this.showPassword;
     },
-    async handleLogin() {
-      try {
-        const response = await axios.post('https://chemicfest.site/api/login', {
-          user: this.login.user,
-          pass: this.login.pass,
-        });
-
-        if (response.data.code === 200) {
-          const expires = new Date(Date.now() + 1 * 24 * 60 * 60 * 1000); // One year from now
-          document.cookie = `sessionId=${response.data.sessionId}; expires=${expires.toUTCString()}; path=/`;
-
-          // Save user data to localStorage
-          localStorage.setItem('role', response.data.data.Role);
-          localStorage.setItem('username', response.data.data.Username);
-          localStorage.setItem('phone', response.data.data.Phone);
-          localStorage.setItem('email', response.data.data.Email);
-          localStorage.setItem('uuid', response.data.data.UUID);
-          localStorage.setItem('sessionId', response.data.sessionId);
-          console.log('User data saved to localStorage:', response);
-
-
-          // Set timeout to delete localStorage when cookie expires
-          setTimeout(() => {
-            localStorage.removeItem('role');
-            localStorage.removeItem('username');
-            localStorage.removeItem('phone');
-            localStorage.removeItem('email');
-            localStorage.removeItem('uuid');
-            localStorage.removeItem('sessionId');
-            console.log('User data deleted from localStorage.');
-          }, expires - Date.now());
-
-          router.push({ name: 'home' });
-
-          this.alertType = false;
-        }
-
-      } catch (error) {
-        console.error('Login error:', error);
-        if (error.response.data.code === 403) {
-          document.getElementById('my_modal_2').showModal();
-        } else {
-          this.alertMessage = error.response.data.message;
-          this.alertType = true;
-        }
-      }
-    },
-
 
     async handleRegister() {
       try {
