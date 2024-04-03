@@ -22,8 +22,7 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
     </form>
   </dialog>
 
-  <div
-    :class="isLoggedIn ? 'relative min-h-screen min-w-0 flex-1 xl:pb-20 overflow-hidden' : 'relative min-h-screen min-w-0 flex-1 '">
+  <div :class="isLoggedIn ? 'relative min-h-screen min-w-0 flex-1 xl:pb-20 overflow-hidden' : 'relative min-h-screen min-w-0 flex-1 '">
     <div id="thumbnail" class="bg-contain  bg-fixed" style="background-image: url(image.png);">
       <img class="w-full md:w-2/3 mx-auto"
         src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit1440960gsm/events/2023/12/27/26f7e9fd-b5aa-4f6c-a3fb-cb12ed636c17-1703676912125-7c0ade6c962ab6022e890f4d7aea6229.jpg"

@@ -14,6 +14,8 @@ import TicketView from '../pages/eticket.vue'
 
 import WatchView from '../pages/watch/index.vue'
 
+import UploadView from '../pages/upload.vue'
+
 // Admin Page
 import AdminView from '../pages/admin/admin.vue'
 import DatabaseView from '../pages/admin/database.vue'
@@ -55,6 +57,11 @@ const router = createRouter({
           path: 'about',
           name: 'about',
           component: AboutView
+        },
+        {
+          path: 'Upload',
+          name: 'Upload',
+          component: UploadView
         },
         {
           name: 'buyticket',

@@ -85,38 +85,116 @@ const toggleDark = useToggle(isDark);
                             </span>
                           </button>
                         </div>
-                      </div>
-                      <input v-if="selectedRole === 'keluargasiswa'" :class="selectedRole === 'keluargasiswa' ? flex : hidden" type="file" class="file-input file-input-bordered file-input-primary w-full mt-3" />
-                      <div class="flex flex-row gap-5 mt-3 text-dark dark:text-white">
-                        <div class="form-control ">
-                          <label class="label cursor-pointer gap-2">
-                            <input v-model="selectedRole" value="siswa" type="radio" name="role"
-                              class="radio checked:bg-dark dark:checked:bg-white" />
+                      </div> 
+                      
+                      <div class="flex flex-col gap-0 md:flex-row md:gap-5 mt-3 text-dark dark:text-white mx-auto mb-3">
+                        <div class="form-control my-auto">
+                          <label class="label cursor-pointer gap-2 justify-start">
+                            <input v-model="selectedRole" value="siswa" type="radio" name="role" class="radio checked:bg-dark dark:checked:bg-white" />
                             <span class="label-text">Siswa</span>
                           </label>
                         </div>
-                        <div class="form-control">
-                          <label class="label cursor-pointer gap-2">
+                        <div class="form-control my-auto">
+                          <label class="label cursor-pointer gap-2 justify-start">
                             <input v-model="selectedRole" value="guru" type="radio" name="role"
                               class="radio checked:bg-dark dark:checked:bg-white" />
                             <span class="label-text">Guru</span>
                           </label>
                         </div>
-                        <div class="form-control">
-                          <label class="label cursor-pointer gap-2">
+                        <div class="form-control my-auto">
+                          <label class="label cursor-pointer gap-2 justify-start">
                             <input v-model="selectedRole" value="alumni" type="radio" name="role"
                               class="radio checked:bg-dark dark:checked:bg-white" />
                             <span class="label-text">Alumni</span>
                           </label>
                         </div>
-                        <div class="form-control">
-                          <label class="label cursor-pointer gap-2">
+                        <div class="form-control my-auto">
+                          <label class="label cursor-pointer gap-2 justify-start">
                             <input v-model="selectedRole" value="keluargasiswa" type="radio" name="role"
                               class="radio checked:bg-dark dark:checked:bg-white" />
                             <span class="label-text">Keluarga Siswa</span>
                           </label>
                         </div>
+                        <div class="form-control my-auto">
+                          <label class="label cursor-pointer gap-2 justify-start">
+                            <input v-model="selectedRole" value="keluargaguru" type="radio" name="role"
+                              class="radio checked:bg-dark dark:checked:bg-white" />
+                            <span class="label-text">Keluarga Guru</span>
+                          </label>
+                        </div>
                       </div>
+
+                      <div v-if="selectedRole === 'alumni'">
+                        <hr>
+                        <label for="uploadFileAlumni" class="bg-white dark:bg-dark-1 text-center rounded w-full min-h-[160px] py-4 px-4 flex flex-col items-center justify-center cursor-pointer border-2 border-gray-300 mx-auto m-4">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 mb-6 fill-gray-400" viewBox="0 0 24 24">
+                            <path
+                              d="M22 13a1 1 0 0 0-1 1v4.213A2.79 2.79 0 0 1 18.213 21H5.787A2.79 2.79 0 0 1 3 18.213V14a1 1 0 0 0-2 0v4.213A4.792 4.792 0 0 0 5.787 23h12.426A4.792 4.792 0 0 0 23 18.213V14a1 1 0 0 0-1-1Z"
+                              data-original="#000000" />
+                            <path
+                              d="M6.707 8.707 11 4.414V17a1 1 0 0 0 2 0V4.414l4.293 4.293a1 1 0 0 0 1.414-1.414l-6-6a1 1 0 0 0-1.414 0l-6 6a1 1 0 0 0 1.414 1.414Z"
+                              data-original="#000000" />
+                          </svg>
+                          <p class="text-gray-400 font-semibold text-sm">Drag & Drop or <span class="text-[#007bff]">Choose file</span> to
+                            upload</p>
+                          <input type="file" id='uploadFileAlumni' class="hidden" />
+                          <p class="text-xs text-gray-400 mt-2">PNG, JPG SVG, WEBP, and GIF are Allowed.</p>
+                        </label>
+                        <p class="text-dark dark:text-white">Jenis Dokumen</p>
+                        <div class="flex flex-row gap-5  text-dark dark:text-white mx-auto">
+                          <div class="form-control my-auto ">
+                            <label class="label cursor-pointer gap-2">
+                              <input v-model="docType" value="ktp" type="radio" name="docType"
+                                class="radio checked:bg-dark dark:checked:bg-white" />
+                              <span class="label-text">KTP</span>
+                            </label>
+                          </div>
+                          <div class="form-control my-auto ">
+                            <label class="label cursor-pointer gap-2">
+                              <input v-model="docType" value="kartupelajar" type="radio" name="docType"
+                                class="radio checked:bg-dark dark:checked:bg-white" />
+                              <span class="label-text">Kartu Pelajar</span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div v-else-if="selectedRole === 'keluargasiswa' || selectedRole === 'keluargaguru'">
+                        <hr>
+                        <p class="mt-4 text-dark dark:text-white">Upload KTP</p>
+                        <label for="uploadFileKTP" class="bg-white dark:bg-dark-1 text-center rounded w-full min-h-[160px] py-4 px-4 flex flex-col items-center justify-center cursor-pointer border-2 border-gray-300 mx-auto m-4">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 mb-6 fill-gray-400" viewBox="0 0 24 24">
+                            <path
+                              d="M22 13a1 1 0 0 0-1 1v4.213A2.79 2.79 0 0 1 18.213 21H5.787A2.79 2.79 0 0 1 3 18.213V14a1 1 0 0 0-2 0v4.213A4.792 4.792 0 0 0 5.787 23h12.426A4.792 4.792 0 0 0 23 18.213V14a1 1 0 0 0-1-1Z"
+                              data-original="#000000" />
+                            <path
+                              d="M6.707 8.707 11 4.414V17a1 1 0 0 0 2 0V4.414l4.293 4.293a1 1 0 0 0 1.414-1.414l-6-6a1 1 0 0 0-1.414 0l-6 6a1 1 0 0 0 1.414 1.414Z"
+                              data-original="#000000" />
+                          </svg>
+                          <p class="text-gray-400 font-semibold text-sm">Drag & Drop or <span class="text-[#007bff]">Choose file</span> to
+                            upload</p>
+                          <input type="file" id='uploadFileKTP' class="hidden" />
+                          <p class="text-xs text-gray-400 mt-2">PNG, JPG SVG, WEBP, and GIF are Allowed.</p>
+                        </label>
+                        <p class="text-dark dark:text-white">Upload KK</p>
+                        <label for="uploadFileKK" class="bg-white dark:bg-dark-1 text-center rounded w-full min-h-[160px] py-4 px-4 flex flex-col items-center justify-center cursor-pointer border-2 border-gray-300 mx-auto m-4">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 mb-6 fill-gray-400" viewBox="0 0 24 24">
+                            <path
+                              d="M22 13a1 1 0 0 0-1 1v4.213A2.79 2.79 0 0 1 18.213 21H5.787A2.79 2.79 0 0 1 3 18.213V14a1 1 0 0 0-2 0v4.213A4.792 4.792 0 0 0 5.787 23h12.426A4.792 4.792 0 0 0 23 18.213V14a1 1 0 0 0-1-1Z"
+                              data-original="#000000" />
+                            <path
+                              d="M6.707 8.707 11 4.414V17a1 1 0 0 0 2 0V4.414l4.293 4.293a1 1 0 0 0 1.414-1.414l-6-6a1 1 0 0 0-1.414 0l-6 6a1 1 0 0 0 1.414 1.414Z"
+                              data-original="#000000" />
+                          </svg>
+                          <p class="text-gray-400 font-semibold text-sm">Drag & Drop or <span class="text-[#007bff]">Choose file</span> to
+                            upload</p>
+                          <input type="file" id='uploadFileKK' class="hidden" />
+                          <p class="text-xs text-gray-400 mt-2">PNG, JPG SVG, WEBP, and GIF are Allowed.</p>
+                        </label>
+
+                      </div>
+
+                      
                       <div class="flex flex-col mx-auto pt-5 text-center gap-3">
                         <button type="submit" class="rounded-2xl py-3 px-10 inline-flex bg-dark-1 text-white hover:bg-dark w-full justify-center mx-auto">Register</button>
                         <p class="text-dark dark:text-white">Sudah Memiliki Akun? Silahkan Untuk <RouterLink to="/login" class="text-blue-500">Login</RouterLink></p>
@@ -137,8 +215,7 @@ const toggleDark = useToggle(isDark);
             </div>
           </div>
         </div>
-        <div class="w-full  self-end hidden lg:flex">
-          <img src="../assets/BA.png" class="w-auto h-[600px] self-end mx-auto" alt="">
+        <div class="w-full hidden lg:flex bg-cover bg-center" style="background-image: url(https://chemicfest.site/file/gallery/80001.jpg);">
         </div>
       </div>
     </div>
@@ -202,6 +279,7 @@ export default {
   data() {
     return {
       selectedRole: null,
+      docType: null,
       login: {
         user: '',
         pass: '',
@@ -246,25 +324,29 @@ export default {
 
     async handleRegister() {
       try {
-        const response = await axios.post('https://chemicfest.site/api/register', {
-          name: this.register.name,
-          username: this.register.username,
-          email: this.register.email,
-          phone: this.register.phone.toString(),
-          password: this.register.password,
-          repassword: this.register.repassword,
-          role: this.selectedRole,
-        });
+        if(this.selectedRole === 'siswa' || this.selectedRole === 'guru'){
+          const response = await axios.post('https://chemicfest.site/api/register', {
+            name: this.register.name,
+            username: this.register.username,
+            email: this.register.email,
+            phone: this.register.phone.toString(),
+            password: this.register.password,
+            repassword: this.register.repassword,
+            role: this.selectedRole,
+          });
+  
+          if (response.data.code === 200) {
+            console.log('Register response:', response);
+            router.push({ name: 'login' });
+  
+            this.alertType = false;
+            this.alertSuccess = true;
+            this.alertMessage = response.data.message;
+          }
+        } 
+        else if(this.selectedRole === 'alumni') {
 
-        if (response.data.code === 200) {
-          console.log('Register response:', response);
-          router.push({ name: 'login' });
-
-          this.alertType = false;
-          this.alertSuccess = true;
-          this.alertMessage = response.data.message;
         }
-
       } catch (error) {
         // Handle errors, such as displaying error messages to the user
         console.log(this.selectedRole)
@@ -325,7 +407,7 @@ export default {
         this.verificationModal = false;
 
       }
-    }
+    },
   },
 }
 

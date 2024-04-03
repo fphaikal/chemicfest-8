@@ -4,7 +4,7 @@ import formatNumber from "../utils/formatNumber";
 const isLoggedIn = !!localStorage.getItem('sessionId');
 </script>
 <template>
-  <div v-if="product" class="realtive xl:pb-20 flex-1 min-h-screen min-w-0">
+  <div v-if="product" class="relative xl:pb-20 flex-1 min-h-screen min-w-0">
     <div class="flex flex-col gap-3 pt-4 pb-4 px-8 border-b-2 dark:border-zinc-700">
       <div class="w-full flex flex-row">
         <h1 class="text-3xl font-black text-dark dark:text-white my-auto">Shop</h1>

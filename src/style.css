@@ -13,7 +13,7 @@ body {
   /* for Firefox */
   overflow-y: scroll;
 
-  @apply max-w-[1630px] mx-auto dark:bg-dark bg-white overflow-auto
+  @apply max-w-[1630px] mx-auto dark:bg-dark bg-white overflow-auto font-signika
 }
 
 
