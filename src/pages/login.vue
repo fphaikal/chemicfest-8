@@ -152,14 +152,6 @@ export default {
         user: '',
         pass: '',
       },
-      register: {
-        name: '',
-        username: '',
-        email: '',
-        phone: '62',
-        password: '',
-        repassword: '',
-      },
       verify: {
         user: '',
         code: '',
@@ -228,45 +220,12 @@ export default {
 
       } catch (error) {
         console.error('Login error:', error);
-        if (error.response.data.code === 403) {
+        if (error.response.data.code === 403 ) {
           document.getElementById('my_modal_2').showModal();
         } else {
           this.alertMessage = error.response.data.message;
           this.alertType = true;
         }
-      }
-    },
-
-
-    async handleRegister() {
-      try {
-        const response = await axios.post('https://chemicfest.site/api/register', {
-          name: this.register.name,
-          username: this.register.username,
-          email: this.register.email,
-          phone: this.register.phone.toString(),
-          password: this.register.password,
-          repassword: this.register.repassword,
-          role: this.selectedRole,
-        });
-
-        if (response.data.code === 200) {
-          console.log('Register response:', response);
-          router.push({ name: 'login' });
-
-          this.alertType = false;
-          this.alertSuccess = true;
-          this.alertMessage = response.data.message;
-        }
-
-      } catch (error) {
-        // Handle errors, such as displaying error messages to the user
-        console.log(this.selectedRole)
-        console.error('Register error:', error.response.data.message);
-
-        this.alertMessage = error.response.data.message;
-        this.alertType = true;
-        this.alertSuccess = false;
       }
     },
 

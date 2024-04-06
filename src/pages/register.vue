@@ -20,8 +20,44 @@ const toggleDark = useToggle(isDark);
             <div class="w-2/3 mx-auto">
               <h1 class="text-center text-dark dark:text-white text-3xl font-bold mb-5">Register</h1>
               <ul>
+                <div class="flex flex-col gap-0 md:flex-row md:gap-5 mt-3 text-dark dark:text-white mx-auto ">
+                  <div class="form-control my-auto">
+                    <label class="label cursor-pointer gap-2 justify-start">
+                      <input v-model="selectedRole" value="siswa" type="radio" name="role"
+                        class="radio checked:bg-dark dark:checked:bg-white" />
+                      <span class="label-text">Siswa</span>
+                    </label>
+                  </div>
+                  <div class="form-control my-auto">
+                    <label class="label cursor-pointer gap-2 justify-start">
+                      <input v-model="selectedRole" value="guru" type="radio" name="role"
+                        class="radio checked:bg-dark dark:checked:bg-white" />
+                      <span class="label-text">Guru</span>
+                    </label>
+                  </div>
+                  <div class="form-control my-auto">
+                    <label class="label cursor-pointer gap-2 justify-start">
+                      <input v-model="selectedRole" value="alumni" type="radio" name="role"
+                        class="radio checked:bg-dark dark:checked:bg-white" />
+                      <span class="label-text">Alumni</span>
+                    </label>
+                  </div>
+                  <div class="form-control my-auto">
+                    <label class="label cursor-pointer gap-2 justify-start">
+                      <input v-model="selectedRole" value="keluargasiswa" type="radio" name="role"
+                        class="radio checked:bg-dark dark:checked:bg-white" />
+                      <span class="label-text">Keluarga Siswa</span>
+                    </label>
+                  </div>
+                  <div class="form-control my-auto">
+                    <label class="label cursor-pointer gap-2 justify-start">
+                      <input v-model="selectedRole" value="keluargaguru" type="radio" name="role"
+                        class="radio checked:bg-dark dark:checked:bg-white" />
+                      <span class="label-text">Keluarga Guru</span>
+                    </label>
+                  </div>
+                </div>
                 <li class="relative rounded-md pt-3">
-                  
                   <div v-if="alertType" role="alert" class="alert alert-error bg-red-500 mb-2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none"
                       viewBox="0 0 24 24">
@@ -85,119 +121,70 @@ const toggleDark = useToggle(isDark);
                             </span>
                           </button>
                         </div>
-                      </div> 
-                      
-                      <div class="flex flex-col gap-0 md:flex-row md:gap-5 mt-3 text-dark dark:text-white mx-auto mb-3">
-                        <div class="form-control my-auto">
-                          <label class="label cursor-pointer gap-2 justify-start">
-                            <input v-model="selectedRole" value="siswa" type="radio" name="role" class="radio checked:bg-dark dark:checked:bg-white" />
-                            <span class="label-text">Siswa</span>
-                          </label>
-                        </div>
-                        <div class="form-control my-auto">
-                          <label class="label cursor-pointer gap-2 justify-start">
-                            <input v-model="selectedRole" value="guru" type="radio" name="role"
-                              class="radio checked:bg-dark dark:checked:bg-white" />
-                            <span class="label-text">Guru</span>
-                          </label>
-                        </div>
-                        <div class="form-control my-auto">
-                          <label class="label cursor-pointer gap-2 justify-start">
-                            <input v-model="selectedRole" value="alumni" type="radio" name="role"
-                              class="radio checked:bg-dark dark:checked:bg-white" />
-                            <span class="label-text">Alumni</span>
-                          </label>
-                        </div>
-                        <div class="form-control my-auto">
-                          <label class="label cursor-pointer gap-2 justify-start">
-                            <input v-model="selectedRole" value="keluargasiswa" type="radio" name="role"
-                              class="radio checked:bg-dark dark:checked:bg-white" />
-                            <span class="label-text">Keluarga Siswa</span>
-                          </label>
-                        </div>
-                        <div class="form-control my-auto">
-                          <label class="label cursor-pointer gap-2 justify-start">
-                            <input v-model="selectedRole" value="keluargaguru" type="radio" name="role"
-                              class="radio checked:bg-dark dark:checked:bg-white" />
-                            <span class="label-text">Keluarga Guru</span>
-                          </label>
-                        </div>
                       </div>
 
-                      <div v-if="selectedRole === 'alumni'">
+                      <div v-if="selectedRole === 'alumni'" class="mt-3">
                         <hr>
-                        <label for="uploadFileAlumni" class="bg-white dark:bg-dark-1 text-center rounded w-full min-h-[160px] py-4 px-4 flex flex-col items-center justify-center cursor-pointer border-2 border-gray-300 mx-auto m-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 mb-6 fill-gray-400" viewBox="0 0 24 24">
-                            <path
-                              d="M22 13a1 1 0 0 0-1 1v4.213A2.79 2.79 0 0 1 18.213 21H5.787A2.79 2.79 0 0 1 3 18.213V14a1 1 0 0 0-2 0v4.213A4.792 4.792 0 0 0 5.787 23h12.426A4.792 4.792 0 0 0 23 18.213V14a1 1 0 0 0-1-1Z"
-                              data-original="#000000" />
-                            <path
-                              d="M6.707 8.707 11 4.414V17a1 1 0 0 0 2 0V4.414l4.293 4.293a1 1 0 0 0 1.414-1.414l-6-6a1 1 0 0 0-1.414 0l-6 6a1 1 0 0 0 1.414 1.414Z"
-                              data-original="#000000" />
-                          </svg>
-                          <p class="text-gray-400 font-semibold text-sm">Drag & Drop or <span class="text-[#007bff]">Choose file</span> to
-                            upload</p>
-                          <input type="file" id='uploadFileAlumni' class="hidden" />
-                          <p class="text-xs text-gray-400 mt-2">PNG, JPG SVG, WEBP, and GIF are Allowed.</p>
-                        </label>
-                        <p class="text-dark dark:text-white">Jenis Dokumen</p>
-                        <div class="flex flex-row gap-5  text-dark dark:text-white mx-auto">
+                        <p class="text-dark dark:text-white mt-3">Jenis Dokumen</p>
+                        <div class="flex flex-row gap-5  text-dark dark:text-white mx-auto mb-1">
                           <div class="form-control my-auto ">
                             <label class="label cursor-pointer gap-2">
-                              <input v-model="docType" value="ktp" type="radio" name="docType"
+                              <input v-model="docType" value="1" type="radio" name="docType"
                                 class="radio checked:bg-dark dark:checked:bg-white" />
                               <span class="label-text">KTP</span>
                             </label>
                           </div>
                           <div class="form-control my-auto ">
                             <label class="label cursor-pointer gap-2">
-                              <input v-model="docType" value="kartupelajar" type="radio" name="docType"
+                              <input v-model="docType" value="2" type="radio" name="docType"
                                 class="radio checked:bg-dark dark:checked:bg-white" />
                               <span class="label-text">Kartu Pelajar</span>
                             </label>
                           </div>
                         </div>
+
+                        <div class="w-full">
+                          <!-- Area unggahan pertama -->
+                          <div class="mx-auto mt-1">
+                            <input type="file" @change="handleFileUpload('tandaPengenal', $event)"
+                              class="w-full text-dark dark:text-white text-sm bg-gray-700 border border-gray-600 file:cursor-pointer cursor-pointer file:border-0 file:py-2.5 file:px-4 file:bg-gray-800 file:hover:brightness-150 file:text-black dark:file:text-white rounded-lg" />
+                          </div>
+
+                          <!-- Area unggahan kedua -->
+                          <p class="m-3 ms-0 text-dark dark:text-white">Upload Ijazah</p>
+                          <div class="mx-auto">
+                            <input id="ijazah" type="file" @change="handleFileUpload('ijazah', $event)"
+                              class="w-full text-dark dark:text-white text-sm bg-gray-700 border border-gray-600 file:cursor-pointer cursor-pointer file:border-0 file:py-2.5 file:px-4 file:bg-gray-800 file:hover:brightness-150 file:text-black dark:file:text-white rounded-lg" />
+                          </div>
+                        </div>
                       </div>
-                      
-                      <div v-else-if="selectedRole === 'keluargasiswa' || selectedRole === 'keluargaguru'">
+
+
+                      <div v-else-if="selectedRole === 'keluargasiswa' || selectedRole === 'keluargaguru'" class="mt-4">
                         <hr>
+                        <!-- Area unggahan pertama -->
                         <p class="mt-4 text-dark dark:text-white">Upload KTP</p>
-                        <label for="uploadFileKTP" class="bg-white dark:bg-dark-1 text-center rounded w-full min-h-[160px] py-4 px-4 flex flex-col items-center justify-center cursor-pointer border-2 border-gray-300 mx-auto m-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 mb-6 fill-gray-400" viewBox="0 0 24 24">
-                            <path
-                              d="M22 13a1 1 0 0 0-1 1v4.213A2.79 2.79 0 0 1 18.213 21H5.787A2.79 2.79 0 0 1 3 18.213V14a1 1 0 0 0-2 0v4.213A4.792 4.792 0 0 0 5.787 23h12.426A4.792 4.792 0 0 0 23 18.213V14a1 1 0 0 0-1-1Z"
-                              data-original="#000000" />
-                            <path
-                              d="M6.707 8.707 11 4.414V17a1 1 0 0 0 2 0V4.414l4.293 4.293a1 1 0 0 0 1.414-1.414l-6-6a1 1 0 0 0-1.414 0l-6 6a1 1 0 0 0 1.414 1.414Z"
-                              data-original="#000000" />
-                          </svg>
-                          <p class="text-gray-400 font-semibold text-sm">Drag & Drop or <span class="text-[#007bff]">Choose file</span> to
-                            upload</p>
-                          <input type="file" id='uploadFileKTP' class="hidden" />
-                          <p class="text-xs text-gray-400 mt-2">PNG, JPG SVG, WEBP, and GIF are Allowed.</p>
-                        </label>
-                        <p class="text-dark dark:text-white">Upload KK</p>
-                        <label for="uploadFileKK" class="bg-white dark:bg-dark-1 text-center rounded w-full min-h-[160px] py-4 px-4 flex flex-col items-center justify-center cursor-pointer border-2 border-gray-300 mx-auto m-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 mb-6 fill-gray-400" viewBox="0 0 24 24">
-                            <path
-                              d="M22 13a1 1 0 0 0-1 1v4.213A2.79 2.79 0 0 1 18.213 21H5.787A2.79 2.79 0 0 1 3 18.213V14a1 1 0 0 0-2 0v4.213A4.792 4.792 0 0 0 5.787 23h12.426A4.792 4.792 0 0 0 23 18.213V14a1 1 0 0 0-1-1Z"
-                              data-original="#000000" />
-                            <path
-                              d="M6.707 8.707 11 4.414V17a1 1 0 0 0 2 0V4.414l4.293 4.293a1 1 0 0 0 1.414-1.414l-6-6a1 1 0 0 0-1.414 0l-6 6a1 1 0 0 0 1.414 1.414Z"
-                              data-original="#000000" />
-                          </svg>
-                          <p class="text-gray-400 font-semibold text-sm">Drag & Drop or <span class="text-[#007bff]">Choose file</span> to
-                            upload</p>
-                          <input type="file" id='uploadFileKK' class="hidden" />
-                          <p class="text-xs text-gray-400 mt-2">PNG, JPG SVG, WEBP, and GIF are Allowed.</p>
-                        </label>
+                        <div class="mx-auto mt-1">
+                          <input type="file" @change="handleFileUpload('tandaPengenal', $event)"
+                            class="w-full text-dark dark:text-white text-sm bg-gray-700 border border-gray-600 file:cursor-pointer cursor-pointer file:border-0 file:py-2.5 file:px-4 file:bg-gray-800 file:hover:brightness-150 file:text-black dark:file:text-white rounded-lg" />
+                        </div>
+
+                        <!-- Area unggahan kedua -->
+                        <p class="m-3 ms-0 text-dark dark:text-white">Upload KK</p>
+                        <div class="mx-auto">
+                          <input id="ijazah" type="file" @change="handleFileUpload('ijazah', $event)"
+                            class="w-full text-dark dark:text-white text-sm bg-gray-700 border border-gray-600 file:cursor-pointer cursor-pointer file:border-0 file:py-2.5 file:px-4 file:bg-gray-800 file:hover:brightness-150 file:text-black dark:file:text-white rounded-lg" />
+                        </div>
 
                       </div>
 
-                      
+
                       <div class="flex flex-col mx-auto pt-5 text-center gap-3">
-                        <button type="submit" class="rounded-2xl py-3 px-10 inline-flex bg-dark-1 text-white hover:bg-dark w-full justify-center mx-auto">Register</button>
-                        <p class="text-dark dark:text-white">Sudah Memiliki Akun? Silahkan Untuk <RouterLink to="/login" class="text-blue-500">Login</RouterLink></p>
+                        <button type="submit" @click.prevent="handleRegister"
+                          class="rounded-2xl py-3 px-10 inline-flex bg-dark-1 text-white hover:bg-dark w-full justify-center mx-auto">Register</button>
+                        <p class="text-dark dark:text-white">Sudah Memiliki Akun? Silahkan Untuk <RouterLink to="/login"
+                            class="text-blue-500">Login</RouterLink>
+                        </p>
                       </div>
                     </form>
                   </div>
@@ -215,10 +202,15 @@ const toggleDark = useToggle(isDark);
             </div>
           </div>
         </div>
-        <div class="w-full hidden lg:flex bg-cover bg-center" style="background-image: url(https://chemicfest.site/file/gallery/80001.jpg);">
+
+        <!--Asset-->
+        <div class="w-full hidden lg:flex bg-cover bg-center"
+          style="background-image: url(https://chemicfest.site/file/gallery/80001.jpg);">
         </div>
       </div>
     </div>
+
+    <!--Alert Modal-->
     <dialog id="my_modal_2" class="modal">
       <div class="modal-box bg-white text-dark dark:bg-dark dark:text-white">
         <h3 class="font-bold text-lg">Verifikasi</h3>
@@ -280,6 +272,7 @@ export default {
     return {
       selectedRole: null,
       docType: null,
+      selectedFile: null,
       login: {
         user: '',
         pass: '',
@@ -310,6 +303,11 @@ export default {
 
       alertSuccess: false,
 
+      isDragging: false,
+
+      //Alumni
+      tandaPengenal: null,
+      ijazah: null,
     };
   },
   computed: {
@@ -321,10 +319,18 @@ export default {
     toggleShow() {
       this.showPassword = !this.showPassword;
     },
+    handleFileUpload(type, event) {
+      if (type === 'ijazah') {
+        this.ijazah = event.target.files[0];
+      } else if (type === 'tandaPengenal') {
+        this.tandaPengenal = event.target.files[0];
+      } 
+    },
 
     async handleRegister() {
       try {
-        if(this.selectedRole === 'siswa' || this.selectedRole === 'guru'){
+        if (this.selectedRole === 'siswa' || this.selectedRole === 'guru') {
+          // Proses registrasi untuk siswa atau guru
           const response = await axios.post('https://chemicfest.site/api/register', {
             name: this.register.name,
             username: this.register.username,
@@ -334,80 +340,103 @@ export default {
             repassword: this.register.repassword,
             role: this.selectedRole,
           });
-  
+
           if (response.data.code === 200) {
             console.log('Register response:', response);
             router.push({ name: 'login' });
-  
+
             this.alertType = false;
             this.alertSuccess = true;
             this.alertMessage = response.data.message;
           }
-        } 
-        else if(this.selectedRole === 'alumni') {
+        } else if (this.selectedRole === 'alumni') {
+          const tandaPengenal = new FormData();
+          tandaPengenal.append('image', this.tandaPengenal);
 
+          const ijazah = new FormData();
+          ijazah.append('image', this.ijazah);
+
+          // Upload the Base64 strings to imgBB   
+          const URL_API = 'https://api.imgbb.com/1/upload?expiration=600&key=fdd88c025c946ca1dbd38d8b743f183a';
+
+          const response1 = await axios.post(URL_API, tandaPengenal);
+          const response2 = await axios.post(URL_API, ijazah);
+
+          // Lakukan pemeriksaan jika upload kedua foto berhasil
+          if (response1.status === 200 && response2.status === 200) {
+            // Mendapatkan URL foto dari respons API imgbb
+            const imgUrl1 = response1.data.data.url;
+            const imgUrl2 = response2.data.data.url;
+
+            // Registrasi ke API chemicfest.site dengan URL foto dari API imgbb
+            const registerResponse = await axios.post('https://chemicfest.site/api/register', {
+              name: this.register.name,
+              username: this.register.username,
+              email: this.register.email,
+              phone: this.register.phone.toString(),
+              password: this.register.password,
+              repassword: this.register.repassword,
+              role: this.selectedRole,
+              type_image_1: parseInt(this.docType),
+              image_1: imgUrl1,
+              type_image_2: 4,
+              image_2: imgUrl2,
+            });
+
+            // Lakukan penanganan respons dari API chemicfest.site
+            if (registerResponse.data.code === 200) {
+              console.log('Register response:', registerResponse);
+              router.push({ name: 'login' });
+
+              this.alertType = false;
+              this.alertSuccess = true;
+              this.alertMessage = registerResponse.data.message;
+            }
+          }
         }
       } catch (error) {
         // Handle errors, such as displaying error messages to the user
-        console.log(this.selectedRole)
-        console.error('Register error:', error.response.data.message);
+        console.error('Register error:', error);
 
-        this.alertMessage = error.response.data.message;
+        this.alertMessage = error.response.data.message || error.response.data.error.message;
         this.alertType = true;
         this.alertSuccess = false;
       }
     },
 
-    async handleVerify() {
-      try {
-        const response = await axios.post('https://chemicfest.site/api/validation/getotp', {
-          users: this.verify.user,
-        });
-
-        if (response.data.code === 200) {
-          console.log('Verify response:', response);
-          this.warningType = true;
-          this.warningMessage = 'Kode Berhasil Dikirim Silahkan Cek Email/Whatsapp Anda';
-
-          this.verificationModal = false;
-        }
-
-      } catch (error) {
-        // Handle errors, such as displaying error messages to the user
-
-        this.warningType = true;
-        this.warningMessage = error.response.data.message;
-
-        this.verificationModal = false;
-
-        console.error('Verify error:', error);
-      }
+    dragOver(event) {
+      event.preventDefault();
     },
-
-    async handleVerifyOTP() {
-      try {
-        const response = await axios.post('https://chemicfest.site/api/validation/giveotp', {
-          users: this.verify.user,
-          code: this.verify.code,
-        });
-
-        if (response.data.code === 200) {
-          console.log('Verify OTP response:', response);
-          document.getElementById('my_modal_2').close();
-          this.verificationSuccess = true;
-        }
-
-      } catch (error) {
-        // Handle errors, such as displaying error messages to the user
-        console.error('Verify OTP error:', error);
-
-        this.warningMessage = error.response.data.message;
-        this.warningType = true;
-
-        this.verificationModal = false;
-
-      }
+    dragEnter(event) {
+      event.preventDefault();
+      this.isDragging = true;
     },
+    dragLeave(event) {
+      event.preventDefault();
+      this.isDragging = false;
+    },
+    dropFile(id, event) {
+      event.preventDefault();
+      this.isDragging = false;
+
+      const file = event.dataTransfer.files[0];
+      this.previewFile(id, file);
+    },
+    handleFileChange(id, event) {
+      const file = event.target.files[0];
+      this.previewFile(id, file);
+    },
+    previewFile(id, file) {
+      const reader = new FileReader();
+
+      reader.onload = () => {
+        const preview = document.getElementById(id);
+        preview.src = reader.result;
+        preview.classList.remove('hidden');
+      };
+
+      reader.readAsDataURL(file);
+    }
   },
 }
 
