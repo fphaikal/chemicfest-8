@@ -1,11 +1,19 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue'
 import { Icon } from '@iconify/vue';
-import { TabGroup, TabList, Tab, TabPanels, TabPanel } from '@headlessui/vue'
+import {
+  Combobox,
+  ComboboxInput,
+  ComboboxButton,
+  ComboboxOptions,
+  ComboboxOption,
+  TransitionRoot,
+} from '@headlessui/vue'
 
 import { useDark, useToggle } from "@vueuse/core";
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
+
 
 </script>
 
@@ -76,14 +84,62 @@ const toggleDark = useToggle(isDark);
                     <span>{{ alertMessage }}</span>
                   </div>
 
-                  <div class="flex flex-col mx-auto" @submit.prevent="handleRegister">
-                    <form class="w-full flex ">
-                      <div class="relative w-1/2">
+                  <!-- Form Register -->
+                  <div v-if="selectedRole" class="flex flex-col mx-auto" @submit.prevent="handleRegister">
+                    <form v-if="selectedRole === 'siswa'" class="w-full mx-auto">
+                      <div class="relative">
+                        <select v-model="register.name"
+                          class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                          required>
+                          <option value="" disabled>Pilih Nama Anda</option>
+                          <option v-for="siswa in siswa2Options" :key="siswa.NIS" :value="siswa.Nama" class="text-justify">
+                            {{ siswa.Kelas }} - {{ siswa.Nama }}
+                          </option>
+                        </select>
+                      </div>
+                    </form>
+                    <form v-else-if="selectedRole === 'guru'" class="w-full mx-auto">
+                      <div class="relative">
+                        <select v-model="register.name"
+                          class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                          required>
+                          <option value="" disabled>Pilih Nama Anda</option>
+                          <option v-for="guru in guruOptions" :key="guru.NIP" :value="guru.Nama">{{ guru.Nama }}</option>
+                        </select>
+                      </div>
+                    </form>
+                    <form v-else-if="selectedRole === 'keluargasiswa'" class="w-full mx-auto">
+                      <div class="relative">
+                        <select v-model="register.part_name"
+                          class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                          required>
+                          <option value="" disabled>Pilih Nama Siswa</option>
+                          <option v-for="siswa in siswaOptions" :key="siswa.NIS" :value="siswa.Nama" class="text-justify">
+                            {{ siswa.Kelas }} - {{ siswa.Nama }}
+                          </option>
+                        </select>
+                      </div>
+                    </form>
+                    <form v-else-if="selectedRole === 'keluargaguru'" class="w-full mx-auto">
+                      <div class="relative">
+                        <select v-model="register.part_name"
+                          class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                          required>
+                          <option value="" disabled>Pilih Nama Guru</option>
+                          <option v-for="guru in guruOptions" :key="guru.NIP" :value="guru.Nama">{{ guru.Nama }}</option>
+                        </select>
+                      </div>
+                    </form>
+
+                    
+
+                    <form class="w-full flex pt-3">
+                      <div v-if="selectedRole === 'keluargasiswa' || selectedRole === 'keluargaguru' || selectedRole === 'alumni'" class="relative w-1/2">
                         <input type="text" v-model="register.name"
                           class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                           placeholder="Nama" required>
                       </div>
-                      <div class="relative w-1/2 ml-2">
+                      <div :class="selectedRole === 'siswa' || selectedRole === 'guru' ? 'relative w-full ' : 'relative w-1/2 ml-2'">
                         <input type="text" v-model="register.username"
                           class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                           placeholder="Username" required>
@@ -170,12 +226,11 @@ const toggleDark = useToggle(isDark);
                         </div>
 
                         <!-- Area unggahan kedua -->
-                        <p class="m-3 ms-0 text-dark dark:text-white">Upload KK</p>
+                        <p class="m-3 ms-0 text-dark dark:text-white">Upload Kartu Keluarga</p>
                         <div class="mx-auto">
-                          <input id="ijazah" type="file" @change="handleFileUpload('ijazah', $event)"
+                          <input id="kk" type="file" @change="handleFileUpload('kk', $event)"
                             class="w-full text-dark dark:text-white text-sm bg-gray-700 border border-gray-600 file:cursor-pointer cursor-pointer file:border-0 file:py-2.5 file:px-4 file:bg-gray-800 file:hover:brightness-150 file:text-black dark:file:text-white rounded-lg" />
                         </div>
-
                       </div>
 
 
@@ -259,6 +314,10 @@ const toggleDark = useToggle(isDark);
         <button>close</button>
       </form>
     </dialog>
+
+    <div v-if="loading">
+      <span class="loading loading-ring loading-lg"></span>
+    </div>
   </section>
 </template>
 
@@ -266,18 +325,19 @@ const toggleDark = useToggle(isDark);
 import axios from 'axios';
 import router from '../router';
 
+
 export default {
   name: 'Login',
   data() {
     return {
       selectedRole: null,
       docType: null,
-      selectedFile: null,
       login: {
         user: '',
         pass: '',
       },
       register: {
+        part_name: '',
         name: '',
         username: '',
         email: '',
@@ -289,6 +349,7 @@ export default {
         user: '',
         code: '',
       },
+      loading: false,
       alertMessage: '',
       alertType: false,
       verificationSuccess: false,
@@ -305,15 +366,34 @@ export default {
 
       isDragging: false,
 
-      //Alumni
+      //Docummnet Upload
       tandaPengenal: null,
       ijazah: null,
+      kk: null,
+
+      siswaOptions: [], // Opsi nama siswa dari API
+      siswa2Options: [], // Opsi nama siswa dari API
+      guruOptions: [], // Opsi nama guru dari API
     };
+  },
+  async mounted() {
+    try {
+      const siswaData = await axios.get('https://chemicfest.site/api/get/storage/json/siswa/all/false/false');
+      this.siswaOptions = siswaData.data
+
+      const siswa2Data = await axios.get('https://chemicfest.site/api/get/storage/json/siswa/2/true/false');
+      this.siswa2Options = siswa2Data.data
+
+      const guruData = await axios.get('https://chemicfest.site/api/get/storage/json/guru');
+      this.guruOptions = guruData.data
+    } catch (error) {
+      console.error('Error fetching siswa data:', error);
+    }
   },
   computed: {
     buttonLabel() {
       return (this.showPassword) ? "Hide" : "Show";
-    }
+    },
   },
   methods: {
     toggleShow() {
@@ -324,7 +404,9 @@ export default {
         this.ijazah = event.target.files[0];
       } else if (type === 'tandaPengenal') {
         this.tandaPengenal = event.target.files[0];
-      } 
+      } else {
+        this.kk = event.target.files[0];
+      }
     },
 
     async handleRegister() {
@@ -393,50 +475,65 @@ export default {
               this.alertMessage = registerResponse.data.message;
             }
           }
+        } else if (this.selectedRole === 'keluargasiswa' || this.selectedRole === 'keluargaguru') {
+          const tandaPengenal = new FormData();
+          tandaPengenal.append('image', this.tandaPengenal);
+
+          const kk = new FormData();
+          kk.append('image', this.kk);
+
+          // Upload the Base64 strings to imgBB   
+          const URL_API = 'https://api.imgbb.com/1/upload?expiration=600&key=fdd88c025c946ca1dbd38d8b743f183a';
+
+          const response1 = await axios.post(URL_API, tandaPengenal);
+          const response2 = await axios.post(URL_API, kk);
+
+          // Lakukan pemeriksaan jika upload kedua foto berhasil
+          if (response1.status === 200 && response2.status === 200) {
+            // Mendapatkan URL foto dari respons API imgbb
+            const imgUrl1 = response1.data.data.url;
+            const imgUrl2 = response2.data.data.url;
+
+            // Registrasi ke API chemicfest.site dengan URL foto dari API imgbb
+            const registerResponse = await axios.post('https://chemicfest.site/api/register', {
+              part_name: this.register.part_name,
+              name: this.register.name,
+              username: this.register.username,
+              email: this.register.email,
+              phone: this.register.phone.toString(),
+              password: this.register.password,
+              repassword: this.register.repassword,
+              role: this.selectedRole,
+              type_image_1: 1,
+              image_1: imgUrl1,
+              type_image_2: 3,
+              image_2: imgUrl2,
+            });
+
+            // Lakukan penanganan respons dari API chemicfest.site
+            if (registerResponse.data.code === 200) {
+              console.log('Register response:', registerResponse);
+              router.push({ name: 'login' });
+
+              this.alertType = false;
+              this.alertSuccess = true;
+              this.alertMessage = registerResponse.data.message;
+            }
+          }
         }
+
+        this.loading = true;
       } catch (error) {
         // Handle errors, such as displaying error messages to the user
         console.error('Register error:', error);
 
+        this.loading = false;
         this.alertMessage = error.response.data.message || error.response.data.error.message;
         this.alertType = true;
         this.alertSuccess = false;
       }
     },
 
-    dragOver(event) {
-      event.preventDefault();
-    },
-    dragEnter(event) {
-      event.preventDefault();
-      this.isDragging = true;
-    },
-    dragLeave(event) {
-      event.preventDefault();
-      this.isDragging = false;
-    },
-    dropFile(id, event) {
-      event.preventDefault();
-      this.isDragging = false;
-
-      const file = event.dataTransfer.files[0];
-      this.previewFile(id, file);
-    },
-    handleFileChange(id, event) {
-      const file = event.target.files[0];
-      this.previewFile(id, file);
-    },
-    previewFile(id, file) {
-      const reader = new FileReader();
-
-      reader.onload = () => {
-        const preview = document.getElementById(id);
-        preview.src = reader.result;
-        preview.classList.remove('hidden');
-      };
-
-      reader.readAsDataURL(file);
-    }
   },
 }
 
