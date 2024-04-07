@@ -12,28 +12,28 @@ import { Icon } from "@iconify/vue";
       </div>
       <div class="flex mt-6 mx-8 ">
         <div class="overflow-x-auto w-full">
-            <table v-if="users" class="table dark:text-white text-dark">
-              <!-- head -->
-              <thead>
-                <tr>
-                  <th></th>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Phone</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody v-for="(user, index) in users">
-                <tr>
-                  <th>{{ index+1 }} </th>
-                  <td>{{ user.Name }} </td>
-                  <td>{{ user.Email }} </td>
-                  <td>{{ user.Phone }} </td>
-                  <td>{{ user.Status }} </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <table v-if="users" class="table dark:text-white text-dark">
+            <!-- head -->
+            <thead>
+              <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody v-for="(user, index) in users">
+              <tr>
+                <th>{{ index + 1 }} </th>
+                <td>{{ user.Name }} </td>
+                <td>{{ user.Email }} </td>
+                <td>{{ user.Phone }} </td>
+                <td>{{ user.Status }} </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </section>

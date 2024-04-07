@@ -19,6 +19,7 @@ import UploadView from '../pages/upload.vue'
 // Admin Page
 import AdminView from '../pages/admin/admin.vue'
 import DatabaseView from '../pages/admin/database.vue'
+import VerifView from '../pages/admin/verifikasi.vue'
 
 //JKT48
 import JKT48Layout from '/layouts/jkt48.vue'
@@ -103,6 +104,21 @@ const router = createRouter({
           path: 'database',
           name: 'database',
           component: DatabaseView,
+          beforeEnter: (to, from, next) => {
+            const sessionId = document.cookie.match(/sessionId=([^;]+)/i)[1];
+            const role = localStorage.getItem('role')
+
+            if (sessionId && role !== 'admin') {
+              next('/login')
+            } else {
+              next()
+            }
+          },
+        },
+        {
+          path: 'verifikasi',
+          name: 'verifikasi',
+          component: VerifView,
           beforeEnter: (to, from, next) => {
             const sessionId = document.cookie.match(/sessionId=([^;]+)/i)[1];
             const role = localStorage.getItem('role')

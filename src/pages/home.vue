@@ -170,7 +170,7 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
       <div class="flex flex-col bg-gray-50 dark:bg-dark-1 w-fit rounded-3xl p-5 gap-5">
         <h1 class="text-dark dark:text-white text-center text-xl font-semibold">Target Peserta</h1>
         <div v-if="users" class="mx-5 radial-progress bg-white dark:bg-dark text-dark dark:text-white border-4 border-primary" :style="`--value:${(users.length / 1000) * 100}; --size:12rem;`" role="progressbar">
-          <p class="text-xl">{{ users.length }}</p>
+          <p class="text-xl">{{ users.length }}/1000</p>
         </div>
       </div>
     </div>

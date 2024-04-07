@@ -10,9 +10,11 @@ import { Icon } from "@iconify/vue";
             <h1 class="text-2xl font-black text-dark dark:text-white">Profile</h1>
         </div>
       </div>
-      <div class="flex  mt-6 mx-8">
-        <img class="rounded-full shadow-xl" src="https://twirpz.files.wordpress.com/2015/06/twitter-avi-gender-balanced-figure.png" width="150" alt="">
-        <div v-if="user" class="flex flex-col ms-5">
+      <div class="flex flex-col sm:flex-row mt-6 mx-8 gap-5">
+        <div class="aspect-h-2 aspect-w-4 w-1/2 sm:aspect-h-2 sm:aspect-w-12 sm:w-1/6 h-fit">
+          <img class="object-cover rounded-full" :src="user.Picture" width="150" alt="">
+        </div>
+        <div v-if="user" class="flex flex-col">
           <h1 class="text-3xl font-bold mt-4 flex text-dark dark:text-white">{{ user.Name }}</h1>
           <p class="text-xl font-base flex text-[#536471]">{{ user.Username }}</p>
           <p class="text-lg font-base flex mt-6 text-[#536471] my-auto"><Icon class="my-auto me-2" width="22" icon="lets-icons:date-fill" />Bergabung {{ formatDate(user.Created_At) }}</p>

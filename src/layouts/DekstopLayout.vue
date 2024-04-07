@@ -45,6 +45,12 @@ const isAdmin = getAdmin === 'admin';
             class="dark:text-white" />
           <div class="ml-5 mr-4 text-xl text-dark dark:text-white max-2xl:hidden">Gallery</div>
         </router-link>
+        <router-link v-slot="{ isActive }" v-if="isAdmin" :to="{ name: 'verifikasi' }"
+          active-class="bg-white-1 dark:bg-dark-1 !font-black"
+          class="inline-flex items-center overflow-hidden rounded-full p-3 transition-[background-color] group-hover:bg-hover">
+          <Icon :icon="isActive ? 'heroicons-solid:badge-check' : 'heroicons-outline:badge-check'" width="28" class="dark:text-white" />
+          <div class="ml-5 mr-4 text-xl text-dark dark:text-white max-2xl:hidden">Verifikasi </div>
+        </router-link>
         <router-link v-slot="{ isActive }" v-if="isAdmin" :to="{ name: 'database' }"
           active-class="bg-white-1 dark:bg-dark-1 !font-black"
           class="inline-flex items-center overflow-hidden rounded-full p-3 transition-[background-color] group-hover:bg-hover">

@@ -6,9 +6,7 @@ const isDark = useDark();
 const toggleDark = useToggle(isDark);
 
 const isLoggedIn = !!localStorage.getItem('sessionId');
-
 const getAdmin = isLoggedIn ? localStorage.getItem('role') : '';
-
 const isAdmin = getAdmin === 'admin';
 </script>
 
@@ -31,20 +29,24 @@ const isAdmin = getAdmin === 'admin';
         <li v-if="isAdmin"><RouterLink :to="{name: 'admin'}" 
             class="text-lg font-semibold dark:text-white hover:bg-white-1 dark:hover:bg-dark-1 dark:hover:text-white">Admin</RouterLink>
         </li>
-        <li v-if="isAdmin"><RouterLink :to="{name: 'database'}" 
-            class="text-lg font-semibold dark:text-white hover:bg-white-1 dark:hover:bg-dark-1 dark:hover:text-white">Database</RouterLink>
-        </li>
         <li v-if="isAdmin"><RouterLink :to="{name: 'about'}" 
             class="text-lg font-semibold dark:text-white hover:bg-white-1 dark:hover:bg-dark-1 dark:hover:text-white">About</RouterLink>
         </li>
-        <div class="border-t-2 dark:border-zinc-700"></div>
+        <div class="border-t-2 dark:border-zinc-700 m-1"></div>
+        <li v-if="isLoggedIn">
+          <RouterLink :to="{name: 'profile'}" class="text-lg font-semibold dark:text-white hover:bg-white-1 dark:hover:bg-dark-1 dark:hover:text-white">Profil</RouterLink>
+        </li>
         <li v-if="isLoggedIn"><a @click.prevent="logout"
             class="text-lg font-semibold dark:text-white hover:bg-white-1 dark:hover:bg-dark-1 dark:hover:text-white">Logout</a>
         </li>
-        <li><a><button @click="toggleDark()" class="  dark:text-white text-dark justify-between">
+        <li>
+          <a>
+            <button @click="toggleDark()" class="  dark:text-white text-dark justify-between">
               <Icon icon="mingcute:sun-line" width="25" class="dark:!hidden" />
               <Icon icon="mingcute:moon-line" width="25" class="!hidden dark:!inline-block" />
-            </button></a></li>
+            </button>
+          </a>
+        </li>
       </ul>
     </div>
   </div>

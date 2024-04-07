@@ -1,4 +1,6 @@
 <script setup>
+import formatNumber from "../utils/formatNumber";
+
 const isLoggedIn = !!localStorage.getItem('sessionId');
 const getRole = isLoggedIn ? localStorage.getItem('role') : '';
 
@@ -31,10 +33,10 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
     <section id="title" class="flex flex-col gap-3">
       <div class="flex mx-10 mt-8 gap-3 border-b-2 dark:border-zinc-700">
         <div class="w-full sm:w-3/4 flex flex-col gap-3">
-          <h1 class=" text-3xl lg:text-5xl font-bold text-dark dark:text-white antialiased">CHEMICFEST #8 | ENJOY THE
+          <h1 class=" text-3xl xl:text-5xl font-bold text-dark dark:text-white antialiased">CHEMICFEST #8 | ENJOY THE
             SHOW, LET THE RETRO FLOW</h1>
           <div class="flex flex-row gap-3 w-full">
-            <Icon class="my-auto text-dark dark:text-white w-1/6 md:w-fit" width="28" icon="carbon:location-filled" />
+            <Icon class="my-auto text-dark dark:text-white mx-1 md:mx-0 md:w-fit" width="28" icon="carbon:location-filled" />
             <div class="my-auto text-md lg:text-lg text-gray-500 w-5/4 md:w-fit">Auditorium RRI, Jl. Affandi No.37,
               Mrican, Caturtunggal</div>
           </div>
@@ -56,9 +58,9 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
         <div class="w-1/4 sm:flex flex-col hidden">
           <p class="text-xl text-right font-base text-dark dark:text-white antialiased">Mulai Dari</p>
           <h1 v-if="getRole === 'guru' || getRole === 'alumni'"
-            class="text-4xl text-right font-bold text-dark dark:text-white  antialiased">IDR {{ priceOnline }} </h1>
-          <h1 v-else class="text-4xl text-right font-bold text-dark dark:text-white  antialiased">IDR {{ priceOffline ||
-            25000 }} </h1>
+            class="text-4xl text-right font-bold text-dark dark:text-white  antialiased">IDR {{ formatNumber(priceOnline) }} </h1>
+          <h1 v-else class="text-4xl text-right font-bold text-dark dark:text-white  antialiased">IDR {{ formatNumber(priceOffline) ||
+            21.000 }} </h1>
           <a href="#detail"
             class="btn ms-auto mt-3 rounded-2xl bg-dark text-white hover:text-dark dark:text-dark dark:bg-white dark:hover:bg-dark dark:hover:text-white w-1/2">Beli
             Tiket</a>
@@ -76,7 +78,7 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
               <p class="text-gray-500">Tidak Bisa Refund | Konfirmasi Instan</p>
               <div class="border-b-2 mt-4 mb-4 dark:border-zinc-700"></div>
               <div class="flex">
-                <h2 class="text-3xl font-bold my-auto">IDR {{ priceOffline }} </h2>
+                <h2 class="text-3xl font-bold my-auto">IDR {{ formatNumber(priceOffline) }} </h2>
                 <button @click="handleBuyTicketOffline"
                   class="btn my-auto ms-auto bg-dark text-white rounded-2xl hover:text-dark dark:text-dark dark:bg-white dark:hover:bg-dark dark:hover:text-white">Pesan</button>
               </div>
@@ -88,7 +90,7 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
               <div class="border-b-2 mt-4 mb-4 dark:border-zinc-700"></div>
               <div class="flex">
                 <h2 v-if="getRole === 'guru' || getRole === 'alumni'" class="text-3xl font-bold my-auto">IDR {{
-                  priceOnline }}</h2>
+                  formatNumber(priceOnline) }}</h2>
                 <button @click="handleBuyTicketOnline"
                   class="btn my-auto ms-auto bg-dark text-white rounded-2xl hover:text-dark dark:text-dark dark:bg-white dark:hover:bg-dark dark:hover:text-white">Pesan</button>
               </div>
@@ -117,7 +119,7 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
       <div role="alert" class="alert shadow-lg bg-white dark:bg-dark dark:text-white flex mb-20 sm:mb-0">
         <div>
           <h3 class="font-base text-left">Mulai Dari</h3>
-          <div class="text-2xl text-left font-bold">IDR {{ priceOnline || 35000 }}</div>
+          <div class="text-2xl text-left font-bold">IDR {{ formatNumber(priceOnline) || 21.000 }}</div>
         </div>
         <a href="#detail" class="btn btn-md rounded-lg ms-auto">Beli Tiket</a>
       </div>
@@ -207,11 +209,19 @@ export default {
           },
           onPending: function(result){
             /* You may add your own implementation here */
-            alert("wating your payment!"); console.log(result);
+            const response = axios.post('https://chemicfest.site/api/verify/payment/ticket', {
+              users: uuid,
+              order_id: result.order_id,
+              transaction_status: 'on pending'
+            });
           },
           onError: function(result){
             /* You may add your own implementation here */
-            alert("payment failed!"); console.log(result);
+            const response = axios.post('https://chemicfest.site/api/verify/payment/ticket', {
+              users: uuid,
+              order_id: result.order_id,
+              transaction_status: 'on error'
+            });
           },
           onClose: function(){
             /* You may add your own implementation here */
