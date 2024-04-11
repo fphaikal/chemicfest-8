@@ -203,14 +203,14 @@ const toggleDark = useToggle(isDark);
                           <!-- Area unggahan pertama -->
                           <div class="mx-auto mt-1">
                             <input type="file" @change="handleFileUpload('tandaPengenal', $event)"
-                              class="w-full text-dark dark:text-white text-sm bg-gray-700 border border-gray-600 file:cursor-pointer cursor-pointer file:border-0 file:py-2.5 file:px-4 file:bg-gray-800 file:hover:brightness-150 file:text-black dark:file:text-white rounded-lg" />
+                              class="w-full text-dark dark:text-white text-sm bg-white dark:bg-gray-700 border  dark:border-gray-600 file:cursor-pointer cursor-pointer file:border-0 file:py-2.5 file:px-4 file:bg-white-1 dark:file:bg-gray-800 file:hover:brightness-150 file:text-black dark:file:text-white rounded-lg" />
                           </div>
 
                           <!-- Area unggahan kedua -->
                           <p class="m-3 ms-0 text-dark dark:text-white">Upload Ijazah</p>
                           <div class="mx-auto">
                             <input id="ijazah" type="file" @change="handleFileUpload('ijazah', $event)"
-                              class="w-full text-dark dark:text-white text-sm bg-gray-700 border border-gray-600 file:cursor-pointer cursor-pointer file:border-0 file:py-2.5 file:px-4 file:bg-gray-800 file:hover:brightness-150 file:text-black dark:file:text-white rounded-lg" />
+                              class="w-full text-dark dark:text-white text-sm bg-white dark:bg-gray-700 border  dark:border-gray-600 file:cursor-pointer cursor-pointer file:border-0 file:py-2.5 file:px-4 file:bg-white-1 dark:file:bg-gray-800 file:hover:brightness-150 file:text-black dark:file:text-white rounded-lg" />
                           </div>
                         </div>
                       </div>
@@ -222,14 +222,14 @@ const toggleDark = useToggle(isDark);
                         <p class="mt-4 text-dark dark:text-white">Upload KTP</p>
                         <div class="mx-auto mt-1">
                           <input type="file" @change="handleFileUpload('tandaPengenal', $event)"
-                            class="w-full text-dark dark:text-white text-sm bg-gray-700 border border-gray-600 file:cursor-pointer cursor-pointer file:border-0 file:py-2.5 file:px-4 file:bg-gray-800 file:hover:brightness-150 file:text-black dark:file:text-white rounded-lg" />
+                            class="w-full text-dark dark:text-white text-sm bg-white dark:bg-gray-700 border  dark:border-gray-600 file:cursor-pointer cursor-pointer file:border-0 file:py-2.5 file:px-4 file:bg-white-1 dark:file:bg-gray-800 file:hover:brightness-150 file:text-black dark:file:text-white rounded-lg" />
                         </div>
 
                         <!-- Area unggahan kedua -->
                         <p class="m-3 ms-0 text-dark dark:text-white">Upload Kartu Keluarga</p>
                         <div class="mx-auto">
                           <input id="kk" type="file" @change="handleFileUpload('kk', $event)"
-                            class="w-full text-dark dark:text-white text-sm bg-gray-700 border border-gray-600 file:cursor-pointer cursor-pointer file:border-0 file:py-2.5 file:px-4 file:bg-gray-800 file:hover:brightness-150 file:text-black dark:file:text-white rounded-lg" />
+                            class="w-full text-dark dark:text-white text-sm bg-white dark:bg-gray-700 border  dark:border-gray-600 file:cursor-pointer cursor-pointer file:border-0 file:py-2.5 file:px-4 file:bg-white-1 dark:file:bg-gray-800 file:hover:brightness-150 file:text-black dark:file:text-white rounded-lg" />
                         </div>
                       </div>
 

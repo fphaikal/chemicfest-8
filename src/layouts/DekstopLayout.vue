@@ -14,8 +14,7 @@ const isAdmin = getAdmin === 'admin';
 </script>
 
 <template>
-  <nav id="nav" class="sticky top-0 shrink-0 h-screen border-r 2xl:w-[275px] dark:border-zinc-700"
-    style="z-index: 999;">
+  <nav id="nav" class="sticky top-0 shrink-0 h-screen border-r 2xl:w-[275px] dark:border-zinc-700" style="z-index: 999;">
     <div class="flex flex-col h-full mx-3 justify-between">
       <div class="flex-1 flex flex-col gap-3">
         <RouterLink aria-current="page" :to="{ name: 'home' }" class="mt-4 text-2xl text-center font-bold text-dark dark:text-white max-2xl:hidden">

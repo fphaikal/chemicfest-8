@@ -40,7 +40,6 @@ export default {
             sessionid: sessionId,
             users: user
           })
-          console.log(this.response.data)
         }
 
       } catch (error) {
@@ -56,7 +55,6 @@ export default {
           this.$router.push('/login')
           console.log('Session Expired')
         }
-        console.error(error);
       }      
     }
   }

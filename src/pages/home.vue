@@ -12,15 +12,19 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
     <div v-if="getRole != 'admin'" class="relative min-h-screen min-w-0 flex-1 xl:pb-24 p-3 flex flex-col gap-5">
       <div class="flex flex-col gap-3">
         <div class="w-full flex flex-col md:flex-row gap-3">
-          <div class="w-full p-9 md:p-20 antialiased self-center bg-dark dark:bg-dark-1 text-white dark:text-white rounded-[50px]">
+          <div
+            class="w-full p-9 md:p-20 antialiased self-center bg-dark dark:bg-dark-1 text-white dark:text-white rounded-[50px]">
             <div class="flex flex-col-reverse md:flex-row justify-between">
               <div class="flex flex-col gap-2 md:w-4/5">
-                <div class="text-4xl sm:text-5xl lg:text-7xl font-bold mx-auto md:mx-0">Chemicfest #8</div>
+                <div class="text-4xl sm:text-5xl lg:text-6xl font-bold mx-auto md:mx-0">Chemicfest #8</div>
                 <div class="text-lg sm :text-3xl lg:text-xl font-base mx-auto md:mx-0">Paduan Jiwa Harmoni</div>
-                <RouterLink v-if="ticket && ticket.having != true" to="buyticket" class="btn mt-2 sm:mt-5 rounded-2xl w-fit mx-auto md:mx-0">Beli Tiket
+                <RouterLink v-if="ticket && ticket.having != true" to="buyticket"
+                  class="btn mt-2 sm:mt-5 rounded-2xl w-fit mx-auto md:mx-0">Beli Tiket
                 </RouterLink>
-                <RouterLink v-else-if="ticket && ticket.having === true" to="eticket" class="btn mt-2 sm:mt-5 rounded-2xl w-fit mx-auto md:mx-0">Lihat E-Ticket</RouterLink>
-                <RouterLink v-else to="buyticket" class="btn mt-2 sm:mt-5 rounded-2xl w-fit mx-auto md:mx-0">Buy Ticket</RouterLink>
+                <RouterLink v-else-if="ticket && ticket.having === true" to="eticket"
+                  class="btn mt-2 sm:mt-5 rounded-2xl w-fit mx-auto md:mx-0">Lihat E-Ticket</RouterLink>
+                <RouterLink v-else to="buyticket" class="btn mt-2 sm:mt-5 rounded-2xl w-fit mx-auto md:mx-0">Buy Ticket
+                </RouterLink>
               </div>
               <div
                 class="w-full md:w-1/5 antialiased self-center text-white dark:text-white rounded-[50px] mb-7 md:mb-0">
@@ -79,7 +83,8 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
               <img src="/svg/mandiri.svg" class="w-36 my-auto grayscale hover:grayscale-0" alt="">
             </li>
             <li>
-              <img src="https://upload.wikimedia.org/wikipedia/id/c/c2/Logo_Wafer_Tango.png" class="h-20 my-auto grayscale hover:grayscale-0" alt="">
+              <img src="https://upload.wikimedia.org/wikipedia/id/c/c2/Logo_Wafer_Tango.png"
+                class="h-20 my-auto grayscale hover:grayscale-0" alt="">
             </li>
           </ul>
           <ul
@@ -115,7 +120,8 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
               <img src="/svg/mandiri.svg" class="w-36 my-auto grayscale hover:grayscale-0" alt="">
             </li>
             <li>
-              <img src="https://upload.wikimedia.org/wikipedia/id/c/c2/Logo_Wafer_Tango.png" class="h-20 my-auto grayscale hover:grayscale-0" alt="">
+              <img src="https://upload.wikimedia.org/wikipedia/id/c/c2/Logo_Wafer_Tango.png"
+                class="h-20 my-auto grayscale hover:grayscale-0" alt="">
             </li>
           </ul>
         </div>
@@ -140,13 +146,15 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
       </div>
     </div>
 
-    <div v-else-if="getRole === 'admin' && isLoggedIn" class="relative min-h-screen min-w-0 flex-1 xl:pb-24 p-3 flex flex-col gap-5">
-      <div class="flex flex-col gap-3">
+    <div v-else-if="getRole === 'admin' && isLoggedIn"
+      class="relative min-h-screen min-w-0 flex-1 xl:pb-24 p-3 flex flex-col gap-5">
+      <div class="flex flex-col lg:flex-row gap-3">
         <div class="w-full flex flex-col md:flex-row gap-3">
-          <div class="w-full p-9 md:p-20 antialiased self-center bg-dark dark:bg-dark-1 text-white dark:text-white rounded-[50px]">
+          <div
+            class="w-full p-9 md:p-20 antialiased self-center bg-dark dark:bg-dark-1 text-white dark:text-white rounded-[50px]">
             <div class="flex flex-col-reverse md:flex-row justify-between">
               <div class="flex flex-col gap-2 md:w-4/5 my-auto">
-                <div class="text-4xl sm:text-5xl lg:text-7xl font-bold mx-auto md:mx-0">Chemicfest #8</div>
+                <div class="text-4xl sm:text-5xl lg:text-6xl font-bold mx-auto md:mx-0">Chemicfest #8</div>
                 <div class="text-lg sm :text-3xl lg:text-xl font-base mx-auto md:mx-0">Paduan Jiwa Harmoni</div>
               </div>
               <div
@@ -166,19 +174,29 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
             </div>
           </div>
         </div>
-      </div>
-      <div class="flex flex-col bg-gray-50 dark:bg-dark-1 w-fit rounded-3xl p-5 gap-5">
-        <h1 class="text-dark dark:text-white text-center text-xl font-semibold">Target Peserta</h1>
-        <div v-if="users" class="mx-5 radial-progress bg-white dark:bg-dark text-dark dark:text-white border-4 border-primary" :style="`--value:${(users.length / 1000) * 100}; --size:12rem;`" role="progressbar">
-          <p class="text-xl">{{ users.length }}/1000</p>
+        <div class="flex flex-col bg-gray-50 dark:bg-dark-1 w-full md:w-fit rounded-3xl p-5 gap-5">
+          <h1 class="text-dark dark:text-white text-center text-xl font-semibold">Target Peserta</h1>
+          <div v-if="users"
+            class="radial-progress bg-white dark:bg-dark text-dark dark:text-white border-4 border-primary mx-auto"
+            :style="`--value:${(users.length / 1000) * 100}; --size:12rem;`" role="progressbar">
+            <p class="text-xl">{{ users.length }}/1000</p>
+          </div>
         </div>
+      </div>
+      <div v-if="latestDeploy" class="flex flex-col gap-3">
+        <h1 class="font-semibold text-2xl">Analytics</h1>
+        <p>{{ latestDeploy }}</p>
+      </div>
+      <div v-if="visitor" class="flex flex-col gap-3">
+        <h1 class="font-semibold text-2xl">Analytics</h1>
+        <p>{{ visitor }}</p>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import { getAll } from "../utils/api/api";
+import { getAll, getAnalytics } from "../utils/api/api";
 import axios from 'axios';
 
 export default {
@@ -193,28 +211,27 @@ export default {
       gallery: [],
       users: [],
       ticket: null,
+      visitor: null,
+      latestDeploy: null,
     };
   },
   async mounted() {
     try {
-      const isLoggedIn = !!localStorage.getItem('sessionId');
 
+      const isLoggedIn = !!localStorage.getItem('sessionId');
       const uuid = parseInt(localStorage.getItem('uuid'));
 
       const shop = await getAll('get/pricelist');
+      this.product = shop.Shop;
 
       this.users = await getAll('get/alluser');
-
-      this.product = shop.Shop
-
       this.gallery = await getAll('get/gallery');
 
-      if(isLoggedIn) {
+      if (isLoggedIn) {
         const checkTicket = await axios.post('https://chemicfest.site/api/check/have/ticket', {
           users: uuid
-        })
-  
-        this.ticket = checkTicket.data
+        });
+        this.ticket = checkTicket.data;
       }
 
     } catch (error) {
@@ -222,4 +239,5 @@ export default {
     }
   },
 };
+
 </script>

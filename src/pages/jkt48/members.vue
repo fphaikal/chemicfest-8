@@ -46,7 +46,7 @@ export default {
         this.member = allMembers.filter(m => !m.is_graduate && m.name !== 'JKT48' && m.name !== 'Freya Jayawardana');
     },
     computed: {
-        filteredMembers() {
+        filteredMembers() { 
             return this.members;
         }
     },

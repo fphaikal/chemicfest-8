@@ -4,6 +4,10 @@ const apiCf = axios.create({
   baseURL: "https://chemicfest.site/api/",
 });
 
+const vercelApi = axios.create({
+  baseURL: "https://api.vercel.com/",
+});
+
 //JKT48 API
 const jkt48Api = axios.create({
   baseURL: "https://api.crstlnz.my.id/api/",
@@ -18,6 +22,23 @@ const getAll = async (endpoint) => {
     return response.data;
   } catch (error) {
     console.error("Gagal mengambil data dari API:", error);
+    return null;
+  }
+};
+
+const getAnalytics = async (endpoint) => {
+  try {
+    const response = await vercelApi.get(endpoint, {
+      headers: {
+        Authorization: 'Bearer lEAgQvGAR762coWfHppaiHGI',
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+    });
+    return response.data;
+
+  } catch (error) {
+    console.error("Gagal mengambil data vercel dari API:", error);
     return null;
   }
 };
@@ -51,4 +72,4 @@ const getScheduleJKT48 = async (endpoint) => {
     return null;
   }
 };
-export { getUser, getAll, getJKT48, getScheduleJKT48 };
+export { getUser, getAll, getAnalytics, getJKT48, getScheduleJKT48 };
