@@ -1,6 +1,6 @@
-  <template>
-  <div class="w-3/4 ">
-    <video ref="videoPlayer" class="video-js w-full h-auto aspect-video text-center mx-auto my-auto"></video>
+<template>
+  <div class="w-full">
+    <video ref="videoPlayer" class="video-js "></video>
   </div>
 </template>
 
