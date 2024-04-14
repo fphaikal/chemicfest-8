@@ -1,10 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+import LoginView from '../pages/login.vue'
+import RegisterView from '../pages/register.vue'
+import forgotPassword from '../pages/forgot-password.vue'
+import changePassword from '../pages/change-password.vue'
+
 import defaultLayout from '/layouts/default.vue'
 import HomeView from '../pages/home.vue'
 import AboutView from '../pages/about.vue'
-import LoginView from '../pages/login.vue'
-import RegisterView from '../pages/register.vue'
 import ShopView from '../pages/shop.vue'
 import GalleryView from '../pages/gallery.vue'
 import ProfileView from '../pages/profile.vue'
@@ -148,6 +151,16 @@ const router = createRouter({
           path: 'watch',
           name: 'watch',
           component: WatchView,
+          beforeEnter: (to, from, next) => {
+            const sessionId = localStorage.getItem('sessionId')
+            const ticket = localStorage.getItem('ticket')
+            
+            if (sessionId && ticket > 0) {
+              next()
+            } else {
+              next('/login')
+            }
+          },
         },
         {
           path: 'profile',
@@ -222,6 +235,16 @@ const router = createRouter({
       path: '/register',
       name: 'register',
       component: RegisterView,
+    },
+    {
+      name: 'forgotPassword',
+      path: '/forgot-password',
+      component: forgotPassword,
+    },
+    {
+      name: 'changePassword',
+      path: '/reset-password/:uuid',
+      component: changePassword,
     },
   ]
 })

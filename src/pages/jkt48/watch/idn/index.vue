@@ -24,6 +24,7 @@ export default {
       videoOptions: {
         autoplay: true,
         controls: true,
+        fluid: true,
         sources: []
       },
       data: null,

@@ -48,7 +48,7 @@ const toggleDark = useToggle(isDark);
                           class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                           placeholder="Email" required>
                       </div>
-                      <div class="relative mt-3">
+                      <div class="relative mt-3 mb-2">
                         <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
                           <Icon icon="mingcute:lock-fill" class="w-4 h-4 text-gray-500 dark:text-gray-400"
                             aria-hidden="true" />
@@ -63,6 +63,7 @@ const toggleDark = useToggle(isDark);
                           </button>
                         </div>
                       </div>
+                      <RouterLink to="/forgot-password" class="text-blue-500 text-sm">Lupa Password?</RouterLink>
                       <div class="flex flex-col mx-auto text-center pt-5 gap-4">
                         <button type="submit" class="rounded-2xl py-3 px-10 inline-flex bg-dark-1 text-white hover:bg-dark w-full justify-center mx-auto">Login</button>
                         <p class="texxt-dark dark:text-white">Belum Memiliki Akun? Silahkan Untuk <RouterLink to="/register" class="text-blue-500">Register</RouterLink></p>
@@ -142,6 +143,7 @@ const toggleDark = useToggle(isDark);
 <script>
 import axios from 'axios';
 import router from '../router';
+import { RouterLink } from 'vue-router';
 
 export default {
   name: 'Login',
@@ -210,6 +212,7 @@ export default {
             localStorage.removeItem('email');
             localStorage.removeItem('uuid');
             localStorage.removeItem('sessionId');
+            localStorage.removeItem('ticket');
             console.log('User data deleted from localStorage.');
           }, expires - Date.now());
 

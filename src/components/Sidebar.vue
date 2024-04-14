@@ -76,7 +76,7 @@ export default {
           localStorage.removeItem('phone');
           localStorage.removeItem('email');
           localStorage.removeItem('uuid');
-
+          localStorage.removeItem('ticket');
           this.$router.push({ name: 'login' });
         }
       } catch (error) {

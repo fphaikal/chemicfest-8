@@ -203,7 +203,8 @@ export default {
             const response = axios.post('https://chemicfest.site/api/verify/payment/ticket', {
               users: uuid,
               order_id: result.order_id,
-              transaction_status: 'on success'
+              transaction_status: 'on success',
+              payment_method: result.payment_type
             });
             console.log(response);
           },
@@ -212,7 +213,9 @@ export default {
             const response = axios.post('https://chemicfest.site/api/verify/payment/ticket', {
               users: uuid,
               order_id: result.order_id,
-              transaction_status: 'on pending'
+              transaction_status: 'on pending',
+              payment_method: result.payment_type
+
             });
           },
           onError: function(result){
@@ -220,7 +223,9 @@ export default {
             const response = axios.post('https://chemicfest.site/api/verify/payment/ticket', {
               users: uuid,
               order_id: result.order_id,
-              transaction_status: 'on error'
+              transaction_status: 'on error',
+              payment_method: result.payment_type
+
             });
           },
           onClose: function(){
@@ -253,21 +258,42 @@ export default {
         window.snap.pay(response.data, {
           onSuccess: function(result){
             /* You may add your own implementation here */
-            alert("payment success!"); console.log(result);
+            console.log(result);
+
+            const response = axios.post('https://chemicfest.site/api/verify/payment/ticket', {
+              users: uuid,
+              order_id: result.order_id,
+              transaction_status: 'on success',
+              payment_method: result.payment_type
+
+            });
+            console.log(response);
           },
           onPending: function(result){
             /* You may add your own implementation here */
-            alert("wating your payment!"); console.log(result);
+            const response = axios.post('https://chemicfest.site/api/verify/payment/ticket', {
+              users: uuid,
+              order_id: result.order_id,
+              transaction_status: 'on pending',
+              payment_method: result.payment_type
+
+            });
           },
           onError: function(result){
             /* You may add your own implementation here */
-            alert("payment failed!"); console.log(result);
+            const response = axios.post('https://chemicfest.site/api/verify/payment/ticket', {
+              users: uuid,
+              order_id: result.order_id,
+              transaction_status: 'on error',
+              payment_method: result.payment_type
+
+            });
           },
           onClose: function(){
             /* You may add your own implementation here */
             alert('you closed the popup without finishing the payment');
           }
-        })``
+        })
         console.log(response.data);
       } catch (error) {
         console.error(error);

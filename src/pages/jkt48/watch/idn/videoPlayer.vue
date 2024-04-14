@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-center w-full h-full">
-    <video :poster="posterUrl" ref="videoPlayer" class="video-js aspect-video w-full"></video>
+    <video :poster="posterUrl" ref="videoPlayer" class="video-js vjs-lime aspect-video w-full"></video>
   </div>
 </template>
 

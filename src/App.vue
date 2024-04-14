@@ -52,6 +52,7 @@ export default {
           localStorage.removeItem('phone');
           localStorage.removeItem('email');
           localStorage.removeItem('uuid');
+          localStorage.removeItem('ticket');
           this.$router.push('/login')
           console.log('Session Expired')
         }

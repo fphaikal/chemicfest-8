@@ -1,6 +1,10 @@
+<script setup>
+import '../../skins.scss'
+</script>
+
 <template>
   <div class="w-full">
-    <video ref="videoPlayer" class="video-js "></video>
+    <video ref="videoPlayer" class="video-js vjs-lime"></video>
   </div>
 </template>
 
