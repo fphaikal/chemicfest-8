@@ -11,6 +11,7 @@ import 'flowbite';
 import { inject } from "@vercel/analytics"
 import { SpeedInsights } from "@vercel/speed-insights/vue"
 
+
 const app = createApp(App)
 app.use(router)
 app.component('icon', Icon)

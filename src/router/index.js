@@ -18,6 +18,7 @@ import TicketView from '../pages/eticket.vue'
 import WatchView from '../pages/watch/index.vue'
 
 import UploadView from '../pages/upload.vue'
+import scanQR from '../pages/scanQR.vue'
 
 // Admin Page
 import AdminView from '../pages/admin/admin.vue'
@@ -71,6 +72,11 @@ const router = createRouter({
           name: 'buyticket',
           path: 'buyticket',
           component: BuyTicketView,
+        },
+        {
+          name: 'scanQr',
+          path: 'scanQr',
+          component: scanQR,
         },
         {
           name: 'cart',
