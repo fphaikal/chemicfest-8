@@ -6,7 +6,7 @@
   <p>Last result: <b>{{ result }}</b></p>
 
   <div style="border: 2px solid black">
-    <qrcode-stream :torch="true"  @camera-on="onInit" :track="paintBoundingBox" @detect="onDetect" @error="onError"></qrcode-stream>
+    <qrcode-stream :track="paintBoundingBox" @detect="onDetect" @error="onError"></qrcode-stream>
   </div>
 </template>
 
