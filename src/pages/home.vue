@@ -48,10 +48,11 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
       </div>
       <div class="flex flex-col gap-5 text-center text-dark dark:text-white">
         <h2>Sponsored By:</h2>
-        <div x-data="{}" x-init="$nextTick(() => {
-        let ul = $refs.logos;
-        ul.insertAdjacentHTML('afterend', ul.outerHTML);
-        ul.nextSibling.setAttribute('aria-hidden', 'true');})"
+        <h2 class="font-bold text-xl">We Need Sponsorship!!!</h2>
+        <!--<div x-data="{}" x-init="$nextTick(() => {
+          let ul = $refs.logos;
+          ul.insertAdjacentHTML('afterend', ul.outerHTML);
+          ul.nextSibling.setAttribute('aria-hidden', 'true');})"
           class="w-full mx-auto inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
           <ul x-ref="logos"
             class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
@@ -126,9 +127,9 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
                 class="h-20 my-auto grayscale hover:grayscale-0" alt="">
             </li>
           </ul>
-        </div>
+        </div> -->
       </div>
-      <div class="flex flex-col gap-3 ">
+      <!-- <div class="flex flex-col gap-3 ">
         <div class="flex flex-row">
           <h1 class="text-2xl md:text-3xl font-black text-dark dark:text-white my-auto">Shop</h1>
           <RouterLink to="/shop" class="my-auto relative ms-auto text-dark dark:text-white">
@@ -145,7 +146,7 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <div v-else-if="getRole === 'admin' && isLoggedIn"
@@ -184,14 +185,6 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
             <p class="text-xl">{{ users.length }}/1000</p>
           </div>
         </div>
-      </div>
-      <div v-if="latestDeploy" class="flex flex-col gap-3">
-        <h1 class="font-semibold text-2xl">Analytics</h1>
-        <p>{{ latestDeploy }}</p>
-      </div>
-      <div v-if="visitor" class="flex flex-col gap-3">
-        <h1 class="font-semibold text-2xl">Analytics</h1>
-        <p>{{ visitor }}</p>
       </div>
     </div>
   </section>

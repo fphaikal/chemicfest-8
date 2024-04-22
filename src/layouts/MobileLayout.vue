@@ -60,8 +60,7 @@ const isAdmin = getAdmin === 'admin';
             </div>
           </router-link>
         </div>
-
-        <!--
+        
         <div class="flex flex-1 flex-col relative min-w-0 items-center">
           <router-link v-slot="{isActive}" v-if="!isLoggedIn" :to="{ name:'login' }" active-class="active !font-semibold"
             class="relative top-1/2 h-20 w-20 shrink-0 -translate-y-1/2 rounded-full">
@@ -84,7 +83,6 @@ const isAdmin = getAdmin === 'admin';
             </div>
           </router-link>
         </div>
-        -->
         <div class="flex flex-1 flex-col relative min-w-0 items-center drawer drawer-end">
           <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
           <label for="my-drawer-4"

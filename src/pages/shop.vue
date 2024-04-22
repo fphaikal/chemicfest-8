@@ -11,7 +11,7 @@ const isLoggedIn = !!localStorage.getItem('sessionId');
         <RouterLink v-if="isLoggedIn" to="/cart" @mouseover="showCartData" @mouseleave="hideCartData"
           class="my-auto relative ms-auto">
           <div class="indicator">
-            <span v-if="cart" class="indicator-item badge text-dark bg-sky-500">{{ cart.TotalQty }}</span> 
+            <span v-if="cart" class="indicator-item badge text-dark bg-sky-500">{{ cart.TotalQty }}</span>
             <Icon icon="mingcute:shopping-cart-2-fill" class="text-dark dark:text-white" width="30" />
           </div>
           <div v-if="isHovered"
@@ -36,9 +36,15 @@ const isLoggedIn = !!localStorage.getItem('sessionId');
       </div>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-5 gap-3 p-5 ">
-      <div v-for="p in product"
+      <div v-for="p in uniqueProducts" :key="p.ProductId"
         class="card card-compact  bg-gray-50 dark:bg-dark-1 text-dark dark:text-white shadow-xl">
-        <figure class="aspect-1"><img :src="p.Picture" class="object-cover" alt="" /></figure>
+        <!-- <figure class="aspect-1"><img :src="p.Picture[0]" class="object-cover" alt="" /></figure> -->
+        <div class="w-64 carousel rounded-box ">
+          <div class="carousel-item w-full" v-for="pic in p.Picture">
+            <img :src="pic" class="w-full"
+              alt="" />
+          </div>
+        </div>
         <div class="card-body gap-1">
           <h2 class="text-xl font-normal">{{ p.Name }}</h2>
           <h3 class="text-2xl font-semibold">Rp. {{ formatNumber(p.Price) }}</h3>
@@ -68,6 +74,18 @@ export default {
       DataQty: null,
     };
   },
+  computed: {
+    uniqueProducts() {
+      const seen = new Set();
+      return this.products.filter(product => {
+        if (!seen.has(product.Name)) {
+          seen.add(product.Name);
+          return true;
+        }
+        return false;
+      });
+    }
+  },  
   async mounted() {
     try {
       const isLoggedIn = !!localStorage.getItem('sessionId');
@@ -75,8 +93,8 @@ export default {
 
       this.product = shop.Shop
 
-      
-      
+
+
       if (isLoggedIn) {
         this.handleGetCart()
 
@@ -132,6 +150,3 @@ export default {
   components: { Icon }
 }
 </script>
-
-
-

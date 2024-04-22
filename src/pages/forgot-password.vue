@@ -26,8 +26,6 @@
       </div>
     </div>
   </section>
-  <!-- Open the modal using ID.showModal() method -->
-  <button class="btn" onclick="my_modal_1.showModal()">open modal</button>
   <dialog id="my_modal_1" class="modal">
     <div class="modal-box bg-white dark:bg-dark text-dark dark:text-white">
       <h3 class="font-bold text-lg">Email Sent</h3>
