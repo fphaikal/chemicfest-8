@@ -36,7 +36,7 @@ const isLoggedIn = !!localStorage.getItem('sessionId');
       </div>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-5 gap-3 p-5 ">
-      <div v-for="p in uniqueProducts" :key="p.ProductId"
+      <div v-for="p in product"
         class="card card-compact  bg-gray-50 dark:bg-dark-1 text-dark dark:text-white shadow-xl">
         <!-- <figure class="aspect-1"><img :src="p.Picture[0]" class="object-cover" alt="" /></figure> -->
         <div class="w-64 carousel rounded-box ">
