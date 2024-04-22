@@ -72,6 +72,15 @@ const router = createRouter({
           name: 'buyticket',
           path: 'buyticket',
           component: BuyTicketView,
+          beforeEnter: (to, from, next) => {
+            const haveTicket = localStorage.getItem('have_ticket')
+
+            if (haveTicket) {
+              next('')
+            } else {
+              next()
+            }
+          }
         },
         {
           name: 'scanQr',

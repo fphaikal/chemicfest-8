@@ -44,15 +44,25 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
             <Icon class="my-auto text-dark dark:text-white mx-1 md:mx-0" width="28" icon="uil:schedule" />
             <div class="my-auto text-md lg:text-lg text-gray-500">14 Mei 2024</div>
           </div>
-          <div class="flex flex-col gap-3 p-4 bg-gray-50 dark:bg-dark-1 dark:text-white rounded-2xl mb-5">
-            <h1 class="text-2xl font-semibold ">Info Penting</h1>
-            <p>
-              - General Sales dimulai pada 1 April 2024 pukul 14.00 WIB
-            </p>
-            <p class="truncate w-68 md:w-80 ">
-              - Maks. pembelian 1 tiket per akun/ID per show day.
-            </p>
-            <button class="w-fit text-blue-500" onclick="info.showModal()">Baca Selengkapnya</button>
+          <div class="collapse bg-gray-50 dark:bg-dark-1 text-dark dark:text-white mb-5">
+            <input type="checkbox" /> 
+            <div class="collapse-title text-xl font-medium">
+              Info Penting
+            </div>
+            <div class="collapse-content"> 
+              <ol class="list-decimal ml-5">
+                <li>Pembelian tiket hanya bisa dilakukan di platform resmi chemicfest #8</li>
+                <li>Peserta akan mendapatkan e ticket melalui email saat pembayaran lunas</li>
+                <li>Kehilangan tiket bukan urusan panitia</li>
+                <li>Tiket hanya bisa di gunakan satu orang dan satu kali masuk acara</li>
+                <li>Jika tiket tidak terdeteksi oleh sistem maka ya tidak boleh masuk</li>
+                <li>Infomasi pribadi akan di jaga kerahasiannya sesuai dengan kebijakan penyelenggara</li>
+                <li>Pembeli tiket adalah hanya untuk siswa aktif serta keluarga guru, guru, alumni, dan keluarga siswa SMK SMTI YOGYAKARTA </li>
+                <li>Maksimal pembelian hanya 1 tiket untuk 1 akun</li>
+                <li>Ikuti ig chemicevent secara berkala untuk mengetahui info terkait</li>
+                <li>Pembelian tiket sudah termasuk pajak</li>
+              </ol>
+            </div>
           </div>
         </div>
         <div class="w-1/4 sm:flex flex-col hidden">

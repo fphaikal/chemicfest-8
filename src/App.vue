@@ -40,6 +40,7 @@ export default {
             sessionid: sessionId,
             users: user
           })
+          console.log(this.response.data)
         }
 
       } catch (error) {
@@ -53,6 +54,7 @@ export default {
           localStorage.removeItem('email');
           localStorage.removeItem('uuid');
           localStorage.removeItem('ticket');
+          localStorage.removeItem('have_ticket');
           this.$router.push('/login')
           console.log('Session Expired')
         }

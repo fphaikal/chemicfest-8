@@ -234,6 +234,7 @@ export default {
         });
         this.ticket = checkTicket.data;
         localStorage.setItem('ticket', checkTicket.data.data.Online_Ticket);
+        localStorage.setItem('have_ticket', checkTicket.data.having);
       }
 
     } catch (error) {
