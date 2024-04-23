@@ -45,16 +45,22 @@ export default {
 
       } catch (error) {
         if(error.response.data.message === "Session not found") {
-          document.cookie = 'sessionId=; expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+          document.cookie.split(";").forEach((c) => {
+            document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/");
+          });
+          
+          // Menghapus semua item localStorage
+          localStorage.clear();
+          // document.cookie = 'sessionId=; expires=Thu, 01 Jan 1970 00:00:00 UTC;';
 
-          localStorage.removeItem('sessionId');
-          localStorage.removeItem('username');
-          localStorage.removeItem('role');
-          localStorage.removeItem('phone');
-          localStorage.removeItem('email');
-          localStorage.removeItem('uuid');
-          localStorage.removeItem('ticket');
-          localStorage.removeItem('have_ticket');
+          // localStorage.removeItem('sessionId');
+          // localStorage.removeItem('username');
+          // localStorage.removeItem('role');
+          // localStorage.removeItem('phone');
+          // localStorage.removeItem('email');
+          // localStorage.removeItem('uuid');
+          // localStorage.removeItem('ticket');
+          // localStorage.removeItem('have_ticket');
           this.$router.push('/login')
           console.log('Session Expired')
         }

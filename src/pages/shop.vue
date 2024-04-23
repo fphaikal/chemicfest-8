@@ -93,8 +93,6 @@ export default {
 
       this.product = shop.Shop
 
-
-
       if (isLoggedIn) {
         this.handleGetCart()
 
