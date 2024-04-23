@@ -36,7 +36,7 @@ import formatNumber from '../utils/formatNumber'
         <div class="flex flex-col sm:flex-row mt-4 gap-7">
           <div class="w-full sm:w-1/3">
             <!--Poster-->
-            <img class="w-full rounded-lg" src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit1440960gsm/events/2023/12/27/26f7e9fd-b5aa-4f6c-a3fb-cb12ed636c17-1703676912125-7c0ade6c962ab6022e890f4d7aea6229.jpg" alt="">
+            <img class="w-full rounded-lg" src="https://chemicfest.site/file/assets/banner.jpg" alt="">
           </div>
           <div class="flex flex-col w-full sm:w-2/3 gap-2">
             <div class="flex flex-row gap-3 w-full">

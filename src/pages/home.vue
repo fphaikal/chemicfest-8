@@ -21,8 +21,8 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
                 <RouterLink v-if="ticket && ticket.having !== true" to="buyticket"
                   class="btn mt-2 sm:mt-5 rounded-2xl w-fit mx-auto md:mx-0">Beli Tiket
                 </RouterLink>
-                <!-- <RouterLink v-else-if="ticket && ticket.data.Offline_Ticket > 0" to="eticket"
-                  class="btn mt-2 sm:mt-5 rounded-2xl w-fit mx-auto md:mx-0">Lihat E-Ticket</RouterLink> -->
+                <RouterLink v-else-if="ticket && ticket.data.Offline_Ticket > 0" to="eticket"
+                  class="btn mt-2 sm:mt-5 rounded-2xl w-fit mx-auto md:mx-0">Lihat E-Ticket</RouterLink>
                 <RouterLink v-else-if="ticket && ticket.data.Online_Ticket > 0" to="watch"
                   class="btn mt-2 sm:mt-5 rounded-2xl w-fit mx-auto md:mx-0">Lihat Streaming</RouterLink>
                 <RouterLink v-else to="buyticket" class="btn mt-2 sm:mt-5 rounded-2xl w-fit mx-auto md:mx-0">Buy Ticket
