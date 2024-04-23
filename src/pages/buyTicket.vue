@@ -33,8 +33,7 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
     <section id="title" class="flex flex-col gap-3">
       <div class="flex mx-10 mt-8 gap-3 border-b-2 dark:border-zinc-700">
         <div class="w-full sm:w-3/4 flex flex-col gap-3">
-          <h1 class=" text-3xl xl:text-5xl font-bold text-dark dark:text-white antialiased">CHEMICFEST #8 | ENJOY THE
-            SHOW, LET THE RETRO FLOW</h1>
+          <h1 class=" text-3xl xl:text-5xl font-bold text-dark dark:text-white antialiased">CHEMICFEST #8 | Paduan Jiwa Harmoni</h1>
           <div class="flex flex-row gap-3 w-full">
             <Icon class="my-auto text-dark dark:text-white mx-1 md:mx-0 md:w-fit" width="28" icon="carbon:location-filled" />
             <div class="my-auto text-md lg:text-lg text-gray-500 w-5/4 md:w-fit">Auditorium RRI, Jl. Affandi No.37,
