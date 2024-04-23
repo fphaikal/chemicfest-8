@@ -25,9 +25,9 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
   </dialog>
 
   <div :class="isLoggedIn ? 'relative min-h-screen min-w-0 flex-1 xl:pb-20 overflow-hidden' : 'relative min-h-screen min-w-0 flex-1 '">
-    <div id="thumbnail" class="bg-contain  bg-fixed" style="background-image: url(image.png);">
-      <img class="w-full md:w-2/3 mx-auto"
-        src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit1440960gsm/events/2023/12/27/26f7e9fd-b5aa-4f6c-a3fb-cb12ed636c17-1703676912125-7c0ade6c962ab6022e890f4d7aea6229.jpg"
+    <div id="thumbnail" class="bg-cover bg-fixed" style="background-image: url(posterdark.jpg);">
+      <img class="w-full md:w-2/6 mx-auto"
+        src="/public/poster.jpg"
         alt="">
     </div>
     <section id="title" class="flex flex-col gap-3">
@@ -178,7 +178,7 @@ export default {
       const script = document.createElement('script');
       script.src = 'https://app.sandbox.midtrans.com/snap/snap.js';
       script.type = 'text/javascript';
-      script.setAttribute('data-client-key', import.meta.env.MIDTRANS_CLIENT_KEY); // Menggunakan setAttribute() untuk mengatur atribut data
+      script.setAttribute('data-client-key', 'Mid-client-RE6DmaCD9JsF11Mu'); // Menggunakan setAttribute() untuk mengatur atribut data
       document.head.appendChild(script);
     }
     catch (error) {
