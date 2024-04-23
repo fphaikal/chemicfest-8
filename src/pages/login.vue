@@ -84,8 +84,8 @@ const toggleDark = useToggle(isDark);
             </div>
           </div>
         </div>
-        <div class="w-full  self-end hidden lg:flex">
-          <img src="../assets/BA.png" class="w-auto h-[600px] self-end mx-auto" alt="">
+        <div class="w-full hidden lg:flex bg-cover bg-center"
+          style="background-image: url(https://chemicfest.site/file/gallery/80001.jpg);">
         </div>
       </div>
     </div>
