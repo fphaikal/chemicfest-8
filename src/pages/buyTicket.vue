@@ -175,7 +175,7 @@ export default {
       }
 
       const script = document.createElement('script');
-      script.src = 'https://app.sandbox.midtrans.com/snap/snap.js';
+      script.src = 'https://app.midtrans.com/snap/v1/transactions';
       script.type = 'text/javascript';
       script.setAttribute('data-client-key', 'Mid-client-RE6DmaCD9JsF11Mu'); // Menggunakan setAttribute() untuk mengatur atribut data
       document.head.appendChild(script);
