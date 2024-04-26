@@ -21,14 +21,14 @@ const toggleDark = useToggle(isDark);
   <section>
     <div class="relative max-h-fit min-w-0 flex-1">
       <div class="flex gap-3 min-h-[97vh] sm:min-h-[100vh] self-end">
-        <div class="w-full  ">
+        <div class="w-full">
           <div class="flex flex-col h-full justify-between">
             <RouterLink :to="{ name: 'home' }"
-              class="text-bold font-bold text-4xl text-center text-dark dark:text-white pt-5">Chemicfest #8</RouterLink>
+              class="text-bold font-bold text-2xl text-center text-dark dark:text-white pt-5">Chemicfest #8</RouterLink>
             <div class="w-2/3 mx-auto">
-              <h1 class="text-center text-dark dark:text-white text-3xl font-bold mb-5">Register</h1>
+              <h1 class="text-center text-dark dark:text-white text-xl font-bold mb-5">Register</h1>
               <ul>
-                <div class="flex flex-col gap-0 md:flex-row md:gap-5 mt-3 text-dark dark:text-white mx-auto ">
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-0 mt-3 text-dark dark:text-white mx-auto ">
                   <div class="form-control my-auto">
                     <label class="label cursor-pointer gap-2 justify-start">
                       <input v-model="selectedRole" value="siswa" type="radio" name="role"
@@ -64,7 +64,16 @@ const toggleDark = useToggle(isDark);
                       <span class="label-text">Keluarga Guru</span>
                     </label>
                   </div>
+                  <div class="form-control my-auto">
+                    <label class="label cursor-pointer gap-2 justify-start">
+                      <input v-model="selectedRole" value="public" type="radio" name="role"
+                        class="radio checked:bg-dark dark:checked:bg-white" />
+                      <span class="label-text">Publik</span>
+                    </label>
+                  </div>
                 </div>
+
+
                 <li class="relative rounded-md pt-3">
                   <div v-if="alertType" role="alert" class="alert alert-error bg-red-500 mb-2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none"
@@ -92,7 +101,8 @@ const toggleDark = useToggle(isDark);
                           class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                           required>
                           <option value="" disabled>Pilih Nama Anda</option>
-                          <option v-for="siswa in siswa2Options" :key="siswa.NIS" :value="siswa.Nama" class="text-justify">
+                          <option v-for="siswa in siswa2Options" :key="siswa.NIS" :value="siswa.Nama"
+                            class="text-justify">
                             {{ siswa.Kelas }} - {{ siswa.Nama }}
                           </option>
                         </select>
@@ -104,7 +114,8 @@ const toggleDark = useToggle(isDark);
                           class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                           required>
                           <option value="" disabled>Pilih Nama Anda</option>
-                          <option v-for="guru in guruOptions" :key="guru.NIP" :value="guru.Nama">{{ guru.Nama }}</option>
+                          <option v-for="guru in guruOptions" :key="guru.NIP" :value="guru.Nama">{{ guru.Nama }}
+                          </option>
                         </select>
                       </div>
                     </form>
@@ -114,7 +125,8 @@ const toggleDark = useToggle(isDark);
                           class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                           required>
                           <option value="" disabled>Pilih Nama Siswa</option>
-                          <option v-for="siswa in siswaOptions" :key="siswa.NIS" :value="siswa.Nama" class="text-justify">
+                          <option v-for="siswa in siswaOptions" :key="siswa.NIS" :value="siswa.Nama"
+                            class="text-justify">
                             {{ siswa.Kelas }} - {{ siswa.Nama }}
                           </option>
                         </select>
@@ -126,20 +138,24 @@ const toggleDark = useToggle(isDark);
                           class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                           required>
                           <option value="" disabled>Pilih Nama Guru</option>
-                          <option v-for="guru in guruOptions" :key="guru.NIP" :value="guru.Nama">{{ guru.Nama }}</option>
+                          <option v-for="guru in guruOptions" :key="guru.NIP" :value="guru.Nama">{{ guru.Nama }}
+                          </option>
                         </select>
                       </div>
                     </form>
 
-                    
+
 
                     <form class="w-full flex pt-3">
-                      <div v-if="selectedRole === 'keluargasiswa' || selectedRole === 'keluargaguru' || selectedRole === 'alumni'" class="relative w-1/2">
+                      <div
+                        v-if="selectedRole === 'keluargasiswa' || selectedRole === 'keluargaguru' || selectedRole === 'alumni' || selectedRole === 'public'"
+                        class="relative w-1/2">
                         <input type="text" v-model="register.name"
                           class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                           placeholder="Nama" required>
                       </div>
-                      <div :class="selectedRole === 'siswa' || selectedRole === 'guru' ? 'relative w-full ' : 'relative w-1/2 ml-2'">
+                      <div
+                        :class="selectedRole === 'siswa' || selectedRole === 'guru' ? 'relative w-full ' : 'relative w-1/2 ml-2'">
                         <input type="text" v-model="register.username"
                           class="bg-white-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                           placeholder="Username" required>
@@ -477,6 +493,25 @@ export default {
               this.alertSuccess = true;
               this.alertMessage = registerResponse.data.message;
             }
+          }
+        } else if (this.selectedRole === 'public') {
+          const response = await axios.post('https://chemicfest.site/api/register', {
+            name: this.register.name,
+            username: this.register.username,
+            email: this.register.email,
+            phone: this.register.phone.toString(),
+            password: this.register.password,
+            repassword: this.register.repassword,
+            role: this.selectedRole,
+          });
+
+          if (response.data.code === 200) {
+            console.log('Register response:', response);
+            router.push({ name: 'login' });
+
+            this.alertType = false;
+            this.alertSuccess = true;
+            this.alertMessage = response.data.message;
           }
         }
 
