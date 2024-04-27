@@ -30,26 +30,26 @@ import formatNumber from '../utils/formatNumber'
       </div>
     </div>
 
-    <div class="text-5xl font-bold mt-3">
+    <div class="text-5xl font-bold mt-3 text-dark dark:text-white">
       <div class="flex flex-col border-2 p-4 rounded-xl">
-        <h5 class="text-2xl">Chemicfest #8 - Enjoy The Show Let The Retro Flow</h5>
-        <div class="flex flex-col sm:flex-row mt-4 gap-7">
+        <h5 class="text-2xl">Chemicfest #8 - Paduan Jiwa Harmoni</h5>
+        <div class="flex flex-col sm:flex-row mt-4 gap-7 ">
           <div class="w-full sm:w-1/3">
             <!--Poster-->
             <img class="w-full rounded-lg" src="https://chemicfest.site/file/assets/banner.jpg" alt="">
           </div>
-          <div class="flex flex-col w-full sm:w-2/3 gap-2">
-            <div class="flex flex-row gap-3 w-full">
-              <Icon class="my-auto text-dark md:w-fit" width="28" icon="heroicons-solid:badge-check" ></Icon>
-              <p class="my-auto text-base lg:text-lg text-dark  font-semibold">OSIS SMK SMTI Yogyakarta</p>
+          <div class="flex flex-col w-full sm:w-2/3 gap-2 ">
+            <div class="flex flex-row gap-3 w-full text-dark dark:text-white">
+              <Icon class="my-auto md:w-fit text-dark dark:text-white" width="28" icon="heroicons-solid:badge-check" ></Icon>
+              <p class="my-auto text-base lg:text-lg font-semibold text-dark dark:text-white">OSIS SMK SMTI Yogyakarta</p>
             </div>
-            <div class="flex flex-row gap-3 w-full">
-              <Icon class="my-auto text-dark md:w-fit" width="28" icon="uil:schedule" ></Icon>
-              <p class="my-auto text-base lg:text-lg text-dark  font-normal">14 Mei 2024</p>
+            <div class="flex flex-row gap-3 w-full text-dark dark:text-white">
+              <Icon class="my-auto md:w-fit text-dark dark:text-white" width="28" icon="uil:schedule" ></Icon>
+              <p class="my-auto text-base lg:text-lg font-normal text-dark dark:text-white">14 Mei 2024</p>
             </div>
-            <div class="flex flex-row gap-3 w-full">
-              <Icon class="my-auto text-dark  md:w-fit" width="28" icon="carbon:location-filled" ></Icon>
-              <p class="my-auto text-base lg:text-lg text-dark font-normal">Auditorium RRI, Jl. Affandi No.37, Mrican, Caturtunggal</p>
+            <div class="flex flex-row gap-3 w-full text-dark dark:text-white">
+              <Icon class="my-auto  md:w-fit text-dark dark:text-white" width="28" icon="carbon:location-filled" ></Icon>
+              <p class="my-auto text-base lg:text-lg font-normal text-dark dark:text-white">Auditorium RRI, Jl. Affandi No.37, Mrican, Caturtunggal</p>
             </div>
           </div>
         </div>

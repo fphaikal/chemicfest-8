@@ -92,13 +92,13 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
                   class="btn my-auto ms-auto bg-dark text-white rounded-2xl hover:text-dark dark:text-dark dark:bg-white dark:hover:bg-dark dark:hover:text-white">Pesan</button>
               </div>
             </div>
-            <div v-if="getRole === 'guru' || getRole === 'alumni'"
+            <div v-if="getRole === 'guru' || getRole === 'alumni' || getRole === 'public' || getRole === 'keluargasiswa' || getRole === 'keluargaguru'"
               class="flex flex-col p-5 bg-white dark:bg-dark dark:text-white text-dark rounded-2xl w-full">
               <h1 class="text-xl font-semibold">Tiket Online</h1>
               <p class="text-gray-500">Tidak Bisa Refund | Konfirmasi Instan</p>
               <div class="border-b-2 mt-4 mb-4 dark:border-zinc-700"></div>
               <div class="flex">
-                <h2 v-if="getRole === 'guru' || getRole === 'alumni'" class="text-3xl font-bold my-auto">IDR {{
+                <h2 v-if="getRole === 'guru' || getRole === 'alumni' || getRole === 'public' || getRole === 'keluargasiswa' || getRole === 'keluargaguru'" class="text-3xl font-bold my-auto">IDR {{
                   formatNumber(priceOnline) }}</h2>
                 <button @click="handleBuyTicketOnline"
                   class="btn my-auto ms-auto bg-dark text-white rounded-2xl hover:text-dark dark:text-dark dark:bg-white dark:hover:bg-dark dark:hover:text-white">Pesan</button>
@@ -172,6 +172,22 @@ export default {
       } else if (getRole === 'siswa') {
         const siswaOffline = this.data.TicketOffline.find(ticket => ticket.Role === 'Siswa');
         this.priceOffline = siswaOffline.Price;
+      } else if(getRole === 'public') {
+        const publicOnline = this.data.TicketOnline.find(ticket => ticket.Role === 'Public');
+        this.priceOnline = publicOnline.Price;
+      } else if (getRole === 'keluargasiswa') {
+        const keluargaSiswa = this.data.TicketOffline.find(ticket => ticket.Role === 'KeluargaSiswa');
+        this.priceOffline = keluargaSiswa.Price;
+
+        const keluargaSiswaOnline = this.data.TicketOnline.find(ticket => ticket.Role === 'KeluargaSiswa');
+        this.priceOnline = keluargaSiswaOnline.Price;
+
+      } else if (getRole === 'keluargaguru') {
+        const keluargaGuru = this.data.TicketOffline.find(ticket => ticket.Role === 'KeluargaGuru');
+        this.priceOffline = keluargaGuru.Price;
+
+        const keluargaGuruOnline = this.data.TicketOnline.find(ticket => ticket.Role === 'KeluargaGuru');
+        this.priceOnline = keluargaGuruOnline.Price;
       }
 
       const script = document.createElement('script');
@@ -196,6 +212,10 @@ export default {
           this.ticketid = this.data.TicketOffline.find(ticket => ticket.Role === 'Guru' || ticket.Role === 'Alumni').ProductId;
         } else if (getRole === 'alumni') {
           this.ticketid = this.data.TicketOffline.find(ticket => ticket.Role === 'Alumni').ProductId;
+        }  else if (getRole === 'keluargasiswa') {
+          this.ticketid = this.data.TicketOffline.find(ticket => ticket.Role === 'KeluargaSiswa').ProductId;
+        } else if (getRole === 'keluargaguru') {
+          this.ticketid = this.data.TicketOffline.find(ticket => ticket.Role === 'KeluargaGuru').ProductId;
         }
 
         const response = await axios.post('https://chemicfest.site/api/buyticket', {
@@ -256,6 +276,12 @@ export default {
           this.ticketid = this.data.TicketOnline.find(ticket => ticket.Role === 'Guru').ProductId;
         } else if (getRole === 'alumni')  {
           this.ticketid = this.data.TicketOnline.find(ticket => ticket.Role === 'Alumni').ProductId;
+        } else if (getRole === 'public') {
+          this.ticketid = this.data.TicketOnline.find(ticket => ticket.Role === 'Public').ProductId;
+        } else if (getRole === 'keluargasiswa') {
+          this.ticketid = this.data.TicketOnline.find(ticket => ticket.Role === 'KeluargaSiswa').ProductId;
+        } else if (getRole === 'keluargaguru') {
+          this.ticketid = this.data.TicketOnline.find(ticket => ticket.Role === 'KeluargaGuru').ProductId;
         }
 
         console.log(this.ticketid)
