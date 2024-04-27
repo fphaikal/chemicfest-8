@@ -82,7 +82,7 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
         <div class="flex flex-col w-full md:w-3/4 gap-3">
           <h2 class="font-semibold text-3xl dark:text-white">Paket</h2>
           <div class="flex flex-col gap-3 bg-gray-50 dark:bg-dark-1 rounded-3xl p-3">
-            <div class="flex flex-col p-5 bg-white dark:bg-dark rounded-2xl w-full dark:text-white">
+            <div v-if="getRole === 'siswa' || getRole === 'guru' || getRole === 'alumni' || getRole === 'keluargasiswa' || getRole === 'keluargaguru'" class="flex flex-col p-5 bg-white dark:bg-dark rounded-2xl w-full dark:text-white">
               <h1 class="text-xl font-semibold">Tiket Offline</h1>
               <p class="text-gray-500">Tidak Bisa Refund | Konfirmasi Instan</p>
               <div class="border-b-2 mt-4 mb-4 dark:border-zinc-700"></div>
