@@ -27,7 +27,7 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
   <div :class="isLoggedIn ? 'relative min-h-screen min-w-0 flex-1 xl:pb-20 overflow-hidden' : 'relative min-h-screen min-w-0 flex-1 '">
     <div id="thumbnail" class="bg-cover bg-fixed" style="background-image: url(posterdark.jpg);">
       <img class="w-full md:w-2/6 mx-auto"
-        src="/public/poster.jpg"
+        src="https://chemicfest.site/file/assets/banner.jpg"
         alt="">
     </div>
     <section id="title" class="flex flex-col gap-3">

@@ -1,8 +1,4 @@
 <template>
-  <p style="color: red">Error: {{ error }}</p>
-
-  <p>Last result: <b>{{ result }}</b></p>
-
   <div style="border: 2px solid black">
     <qrcode-stream :track="paintBoundingBox" @detect="onDetect" @error="onError"
       :active="isScannerActive"></qrcode-stream>
@@ -22,7 +18,7 @@
       <div class="modal-action">
         <form method="dialog">
           <!-- if there is a button in form, it will close the modal -->
-          <button class="btn">Close</button>
+          <button class="btn" @click="closeModal">Scan Kembali</button>
         </form>
       </div>
     </div>
@@ -32,7 +28,7 @@
       <div class="modal-action">
         <form method="dialog">
           <!-- if there is a button in form, it will close the modal -->
-          <button class="btn">Close</button>
+          <button class="btn" @click="closeModal">Scan Kembali</button>
         </form>
       </div>
     </div>

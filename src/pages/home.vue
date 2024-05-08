@@ -15,7 +15,7 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
           <div
             class="w-full p-9 md:p-20 antialiased self-center bg-dark dark:bg-dark-1 text-white dark:text-white rounded-[50px]">
             <div class="flex flex-col-reverse md:flex-row justify-between">
-              <div class="flex flex-col gap-2 md:w-4/5">
+              <div class="flex flex-col gap-2 md:w-33/5">
                 <div class="text-4xl sm:text-5xl lg:text-6xl font-bold mx-auto md:mx-0">Chemicfest #8</div>
                 <div class="text-lg sm :text-3xl lg:text-xl font-base mx-auto md:mx-0">Paduan Jiwa Harmoni</div>
                 <RouterLink v-if="ticket && ticket.having !== true" to="buyticket"
@@ -29,15 +29,35 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
                 </RouterLink>
               </div>
               <div
-                class="w-full md:w-1/5 antialiased self-center text-white dark:text-white rounded-[50px] mb-7 md:mb-0">
+                class="w-full md:w-2/5 antialiased self-center text-white dark:text-white rounded-[50px] mb-7 md:mb-0">
                 <div class="font-bold mx-auto">
                   <VueCountdown :time="time" :interval="100" v-slot="{ days, hours, minutes, seconds }"
-                    class="gap-5 text-center">
-                    <div class="flex flex-col bg-neutral rounded-box text-neutral-content">
-                      <span class="text-7xl lg:text-9xl">
-                        <span>{{ days }}</span>
-                      </span>
-                      Hari
+                    class="gap-5 text-center ">
+                    <div class="grid grid-flow-col gap-5 text-center auto-cols-max justify-center">
+                      <div class="flex flex-col">
+                        <span class="countdown font-mono text-4xl lg:text-7xl">
+                          <span :style="`--value:${days};`"></span>
+                        </span>
+                        Hari
+                      </div>
+                      <div class="flex flex-col">
+                        <span class="countdown font-mono text-4xl lg:text-7xl">
+                          <span :style="`--value:${hours};`"></span>
+                        </span>
+                        Jam
+                      </div>
+                      <div class="flex flex-col">
+                        <span class="countdown font-mono text-4xl lg:text-7xl">
+                          <span :style="`--value:${minutes};`"></span>
+                        </span>
+                        Menit
+                      </div>
+                      <div class="flex flex-col">
+                        <span class="countdown font-mono text-4xl lg:text-7xl">
+                          <span :style="`--value:${seconds};`"></span>
+                        </span>
+                        Detik
+                      </div>
                     </div>
                   </VueCountdown>
                 </div>
@@ -48,7 +68,7 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
       </div>
       <div class="flex flex-col gap-5 text-center text-dark dark:text-white">
         <h2>Sponsored By:</h2>
-        <div class="flex gap-9 justify-center" >
+        <div class="flex gap-9 justify-center">
           <img v-for="i in sponsor" :src="i.Picture" class="h-14 my-auto grayscale hover:grayscale-0" alt="">
         </div>
         <!--<div x-data="{}" x-init="$nextTick(() => {
