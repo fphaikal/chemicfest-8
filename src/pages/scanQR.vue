@@ -1,16 +1,46 @@
 <template>
-  <h1>Simple Demo</h1>
-
   <p style="color: red">Error: {{ error }}</p>
 
   <p>Last result: <b>{{ result }}</b></p>
 
   <div style="border: 2px solid black">
-    <qrcode-stream :track="paintBoundingBox" @detect="onDetect" @error="onError"></qrcode-stream>
+    <qrcode-stream :track="paintBoundingBox" @detect="onDetect" @error="onError"
+      :active="isScannerActive"></qrcode-stream>
   </div>
+  <dialog id="my_modal_1" class="modal">
+    <div v-if="value" class="modal-box bg-white dark:bg-dark dark:text-white">
+      <h3 class="font-bold text-lg">Sukses Verifikasi Data</h3>
+      <div class="flex flex-col">
+        <p class="">Nama: {{ value.data.Name }}</p>
+        <p class="">Kelas: {{ value.data.Details.Kelas || '' }}</p>
+        <p class="">Email: {{ value.data.Email }}</p>
+        <p class="">No. HP: {{ value.data.Phone }}</p>
+      </div>
+      <div class="flex flex-col">
+        <p class="">Tiket: {{ value.data.TypeTicket }}</p>
+      </div>
+      <div class="modal-action">
+        <form method="dialog">
+          <!-- if there is a button in form, it will close the modal -->
+          <button class="btn">Close</button>
+        </form>
+      </div>
+    </div>
+    <div v-else class="modal-box bg-white dark:bg-dark dark:text-white">
+      <h3 class="font-bold text-lg mb-5">Gagal Verifikasi Data</h3>
+      <p>User/Tiket Tidak Ditemukan</p>
+      <div class="modal-action">
+        <form method="dialog">
+          <!-- if there is a button in form, it will close the modal -->
+          <button class="btn">Close</button>
+        </form>
+      </div>
+    </div>
+  </dialog>
 </template>
 
 <script>
+import axios from 'axios'
 import { QrcodeStream, QrcodeDropZone, QrcodeCapture } from 'vue-qrcode-reader'
 
 export default {
@@ -22,10 +52,27 @@ export default {
   data() {
     return {
       result: '',
-      error: ''
+      error: '',
+      value: null,
+      isScannerActive: true, // Start the scanner active
+
     }
   },
+  async mounted() {
+  },
   methods: {
+    async sendValue() {
+      try {
+        const response = await axios.post('https://chemicfest.site/api/validate/ticket', {
+          bookingCode: this.result[0].rawValue
+        })
+        this.value = response.data
+        console.log(response.data)
+      } catch (error) {
+        this.value = 'User/Tiket Tidak Ditemukan'
+        console.error(error)
+      }
+    },
     paintBoundingBox(detectedCodes, ctx) {
       for (const detectedCode of detectedCodes) {
         const {
@@ -61,6 +108,21 @@ export default {
     onDetect(detectedCodes) {
       this.result = detectedCodes
       console.log(detectedCodes)
+      document.getElementById('my_modal_1').showModal();
+      this.sendValue()
+    },
+    closeModal() {
+      document.getElementById('my_modal_1').close();
+
+      // Reset the scanner 
+      this.isScannerActive = false; // Pause the stream (if the component supports it)
+      this.result = '';           // Clear the previous result
+      this.value = null;          // Reset the result data
+
+      // Short delay to allow the camera to shut down (might be needed)
+      setTimeout(() => {undefined
+        this.isScannerActive = true; // Reactivate the stream
+      }, 500);
     },
   },
 }

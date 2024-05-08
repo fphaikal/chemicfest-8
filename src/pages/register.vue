@@ -29,7 +29,7 @@ const toggleDark = useToggle(isDark);
               <h1 class="text-center text-dark dark:text-white text-xl font-bold mb-5">Register</h1>
               <ul>
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-0 mt-3 text-dark dark:text-white mx-auto ">
-                  <div class="form-control my-auto">
+                  <!-- <div class="form-control my-auto">
                     <label class="label cursor-pointer gap-2 justify-start">
                       <input v-model="selectedRole" value="siswa" type="radio" name="role"
                         class="radio checked:bg-dark dark:checked:bg-white" />
@@ -63,7 +63,7 @@ const toggleDark = useToggle(isDark);
                         class="radio checked:bg-dark dark:checked:bg-white" />
                       <span class="label-text">Keluarga Guru</span>
                     </label>
-                  </div>
+                  </div> -->
                   <div class="form-control my-auto">
                     <label class="label cursor-pointer gap-2 justify-start">
                       <input v-model="selectedRole" value="public" type="radio" name="role"

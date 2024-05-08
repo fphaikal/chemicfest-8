@@ -48,7 +48,9 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
       </div>
       <div class="flex flex-col gap-5 text-center text-dark dark:text-white">
         <h2>Sponsored By:</h2>
-        <h2 class="font-bold text-xl">We Need Sponsorship!!!</h2>
+        <div class="flex gap-9 justify-center" >
+          <img v-for="i in sponsor" :src="i.Picture" class="h-14 my-auto grayscale hover:grayscale-0" alt="">
+        </div>
         <!--<div x-data="{}" x-init="$nextTick(() => {
           let ul = $refs.logos;
           ul.insertAdjacentHTML('afterend', ul.outerHTML);
@@ -208,6 +210,7 @@ export default {
       ticket: null,
       visitor: null,
       latestDeploy: null,
+      sponsor: null,
     };
   },
   async mounted() {
@@ -229,6 +232,8 @@ export default {
         localStorage.setItem('ticket', checkTicket.data.data.Online_Ticket);
         localStorage.setItem('have_ticket', checkTicket.data.having);
       }
+
+      this.sponsor = await getAll('get/storage/json/sponsor');
 
     } catch (error) {
       console.error(error);

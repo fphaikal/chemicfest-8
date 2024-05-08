@@ -41,8 +41,8 @@ export default {
   methods: {
     changeSource() {
       this.videoOptions.sources = [{
-        src: `https://stream.showroomjkt48.workers.dev/${this.data.stream_url}`,
-        type: "application/x-mpegURL",
+        src: `https://api.crstlnz.my.id/api/stream?url=${this.data.stream_url}`,
+        type: "application/vnd.apple.mpegurl",
       }]
     }
   } 
