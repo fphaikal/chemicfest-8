@@ -86,6 +86,16 @@ const router = createRouter({
           name: 'scanQr',
           path: 'scanQr',
           component: scanQR,
+          beforeEnter: (to, from, next) => {
+            const sessionId = document.cookie.match(/sessionId=([^;]+)/i)[1];
+            const role = localStorage.getItem('role')
+
+            if (sessionId && role !== 'admin') {
+              next('/login')
+            } else {
+              next()
+            }
+          },
         },
         {
           name: 'cart',

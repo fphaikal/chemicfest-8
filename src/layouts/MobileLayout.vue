@@ -35,15 +35,15 @@ const isAdmin = getAdmin === 'admin';
           </router-link>
         </div>
         <div v-if="isAdmin" class="flex flex-1 flex-col relative min-w-0 items-center">
-          <router-link v-slot="{isActive}"  to="verifikasi" active-class="active !font-semibold"
+          <router-link v-slot="{isActive}"  to="scanQr" active-class="active !font-semibold"
             class="relative top-1/2 h-20 w-20 shrink-0 -translate-y-1/2 rounded-full">
             <div
               class="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center">
               <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full p-1 bg-hover">
-                <Icon :icon="isActive ? 'heroicons-solid:badge-check' : 'heroicons-outline:badge-check'"
+                <Icon :icon="isActive ? 'mingcute:qrcode-2-fill' : 'mingcute:qrcode-2-line'"
                   class="text-dark dark:text-white h-full w-full" />
               </div>
-              <div class="shrink-0 text-xs dark:text-white">Verifikasi</div>
+              <div class="shrink-0 text-xs dark:text-white">Registrasi</div>
             </div>
           </router-link>
         </div>
