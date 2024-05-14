@@ -27,6 +27,42 @@ const getRole = isLoggedIn ? localStorage.getItem('role') : '';
                   class="btn mt-2 sm:mt-5 rounded-2xl w-fit mx-auto md:mx-0">Lihat Streaming</RouterLink>
                 <RouterLink v-else to="buyticket" class="btn mt-2 sm:mt-5 rounded-2xl w-fit mx-auto md:mx-0">Buy Ticket
                 </RouterLink>
+                <!-- Open the modal using ID.showModal() method -->
+                <button class="btn w-fit rounded-2xl" onclick="my_modal_1.showModal()">Sinopsis Theater</button>
+                <dialog id="my_modal_1" class="modal ">
+                  <div class="modal-box dark:bg-dark bg-white">
+                    <p class="py-4">
+                      Hiduplah seorang pribumi yang bernama
+Raden Mas Sinyo, ia bertemu Annabeth, gadis
+keturunan Eropa yang merupakan adik dari
+temannya Suurhof yaitu Petter. Sejak pertama
+kali bertemu, Sinyo dan Annabeth telah saling
+jatuh cinta. Hari demi hari mereka jalani dengan
+saling mencintai sampai akhirnya mereka
+menjalin hubungan kasih lalu menikah secara
+hukum agama. <br><br>
+Namun, hidup manis mereka seketika
+berubah ketika Herman Mellema, ayah dari
+Annabeth dan Petter ditemukan meninggal dunia.
+Kasus meninggalnya Herman Mellema tersebut
+lalu dibawa ke pengadilan dan menjadi berita
+mengejutkan bagi masyarakat. Hukum Eropa
+yang kejam dan masih berlaku pada masa itu
+menyeret hubungan antara Sinyo dan Annabeth
+dalam persidangan. <br><br>
+Hasil dari persidangan pun keluar dan
+menyatakan bahwa Annabeth harus dibawa ke
+Amsterdam dan harus dipisahkan dari keluarga
+Mellema yang ada di Nusantara
+                    </p>
+                    <div class="modal-action">
+                      <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn">Close</button>
+                      </form>
+                    </div>
+                  </div>
+                </dialog>
               </div>
               <div
                 class="w-full md:w-2/5 antialiased self-center text-white dark:text-white rounded-[50px] mb-7 md:mb-0">
