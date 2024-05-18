@@ -1,7 +1,11 @@
-# Vue 3 + Vite
+# Chemicfest #8
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Chemicalistronic Festival (CHEMICFEST) #8 Merupakan Festival tahunan sebagai sarana hiburan terutama untuk Warga SMK-SMTI Yogyakarta dari padatnya rutinitas pembelajaran. Kegiatan ini sebagai wadah untuk menampilkan bakat-bakat dari siswa-siswi SMK-SMTI Yogyakarta. Chemicfest juga menjadi ajang bagi siswa-siswi yang mengikuti ekstrakurikuler untuk memamerkan kreativitas yang mereka miliki. Beberapa Guest Star juga turut diundang guna memeriahkan CHEMICFEST #8. Pada tahun ini Chemicfest #8 menggunakan website untuk pembelian tiket dan digunakan untuk melakukann live streaming 
 
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+##Technology Used
+<div align="center">
+  <img src="https://img.shields.io/badge/Tailwind CSS-06B6D4?logo=tailwindcss&logoColor=black&style=for-the-badge" height="30" alt="tailwindcss logo"  />
+  <img src="https://img.shields.io/badge/Vue.js-4FC08D?logo=vuedotjs&logoColor=black&style=for-the-badge" height="30" alt="vuejs logo"  />
+  <img src="https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white&style=for-the-badge" height="30" alt="vercel logo"  />
+  <img src="https://img.shields.io/badge/Visual Studio Code-007ACC?logo=visualstudiocode&logoColor=white&style=for-the-badge" height="30" alt="vscode logo"  />
+</div>
