@@ -4,7 +4,7 @@ Chemicalistronic Festival (CHEMICFEST) #8 Merupakan Festival tahunan sebagai sar
 
 Website ini dibuat oleh
 - [FPHaikal](https://github.com/fphaikal)
-- [Sinyo](https://github.com/Stalker-moment)
+- [Tierkun](https://github.com/Stalker-moment)
 
 ###
 
